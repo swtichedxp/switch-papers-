@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  padding-top: 70px;
+  padding-top: 70px; /* Ensures all body content starts below the fixed header */
   font-family: 'Inter', sans-serif;
   color: #fff;
   background-color: #0d0f19;
@@ -26,7 +26,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  display: flex;
+  display: flex; /* Corrected to use flexbox for horizontal alignment */
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
@@ -62,8 +62,7 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.search-toggle {
-    display: flex;
+.search-toggle, .menu-toggle {
     background: none;
     border: none;
     color: var(--text-color);
@@ -73,18 +72,7 @@ body {
     padding: 10px;
 }
 
-.menu-toggle {
-    display: flex;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    padding: 10px;
-}
-
-.menu-toggle:hover, .search-toggle:hover {
+.search-toggle:hover, .menu-toggle:hover {
   color: var(--accent-color);
 }
 
@@ -283,7 +271,7 @@ body {
   z-index: 1;
 }
 
-/* Categories page heading styling */
+/* Categories page heading styling and Search Results heading */
 .content h2 {
     font-size: clamp(1.8rem, 5vw, 3rem);
     font-weight: 600;
@@ -294,6 +282,7 @@ body {
     letter-spacing: 2px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     position: relative;
+    padding-top: 20px; /* Added padding to push it down from the fixed header */
 }
 
 .content h2::after {
@@ -671,4 +660,4 @@ body {
     .popup-content p {
         font-size: 0.9rem;
     }
-  }
+}
