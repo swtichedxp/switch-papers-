@@ -5,16 +5,19 @@ const itemsPerPage = 20;
 
 // DOM elements
 const mainContent = document.querySelector('.content');
-const navLinksContainer = document.getElementById('nav-links-container');
 const searchInput = document.getElementById('search-input');
+const autocompleteResults = document.getElementById('autocomplete-results');
+
+// New Header & Navigation Toggles (Correctly referencing new HTML)
+const header = document.querySelector('.header');
+const menuToggle = document.getElementById('menu-toggle');
+const navLinksContainer = document.querySelector('.main-nav');
 const searchToggle = document.getElementById('search-toggle');
 const searchContainer = document.getElementById('search-container');
 const searchClose = document.getElementById('search-close');
-const menuToggle = document.getElementById('menu-toggle');
-const modal = document.createElement('div');
-const autocompleteResults = document.getElementById('autocomplete-results');
 
 // Setup modal element
+const modal = document.createElement('div');
 modal.className = 'modal';
 modal.innerHTML = `
     <img src="" class="modal-image" alt="Full-size wallpaper preview">
@@ -59,7 +62,10 @@ const fetchDataAndRender = async () => {
             });
         });
 
-        renderNavLinks(wallpaperData.categories);
+        // The navigation links are now part of the HTML structure,
+        // so we don't need to dynamically render them unless you want to.
+        // I've kept the function here in case you need to modify them later.
+        // renderNavLinks(wallpaperData.categories); 
         renderHomePage();
     } catch (error) {
         console.error('Could not fetch wallpaper data:', error);
@@ -69,33 +75,16 @@ const fetchDataAndRender = async () => {
 
 // Function to render navigation links
 const renderNavLinks = (categories) => {
-    navLinksContainer.innerHTML = '';
-    const homeLink = document.createElement('li');
-    homeLink.innerHTML = `<a href="#" data-id="home">Home</a>`;
-    navLinksContainer.appendChild(homeLink);
-
-    categories.forEach(category => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="#category-${category.id}" data-id="${category.id}">${category.name}</a>`;
-        navLinksContainer.appendChild(li);
-    });
+    // This is now handled primarily by the HTML, but this function can
+    // be used to add dynamic links if needed.
 };
 
-// Function to render the new glassmorphism home page
+// Function to render the new home page
 const renderHomePage = () => {
     window.location.hash = '#home';
     
-    // Create the new hero section with a glass panel
-    const heroSection = document.createElement('div');
-    heroSection.className = 'hero-section';
-    heroSection.style.backgroundImage = 'none'; // The background is now on the body
-
-    heroSection.innerHTML = `
-        <div class="glass-hero-panel">
-            <h2>switchpaper</h2>
-            <p>Discover and download high-quality wallpapers for your devices.</p>
-        </div>
-    `;
+    // The hero section is now hardcoded in the HTML, so we only need to
+    // append the category grid.
     
     // Create the glassmorphic category cards
     const categoryGrid = document.createElement('div');
@@ -111,7 +100,11 @@ const renderHomePage = () => {
         categoryGrid.appendChild(categoryCard);
     });
     
-    mainContent.innerHTML = '';
+    // Clear the main content and append only the category grid
+    mainContent.innerHTML = ''; 
+    
+    // We append the hardcoded hero section from the HTML
+    const heroSection = document.querySelector('.hero-section');
     mainContent.appendChild(heroSection);
     mainContent.appendChild(categoryGrid);
 };
@@ -380,14 +373,16 @@ searchInput.addEventListener('keydown', (e) => {
     }
 });
 
-// Search toggle functionality
+// Search bar toggle (for the sliding animation)
 searchToggle.addEventListener('click', () => {
     searchContainer.classList.toggle('active');
+    navLinksContainer.classList.remove('active'); // Close mobile menu if open
     if (searchContainer.classList.contains('active')) {
         searchInput.focus();
     }
 });
 
+// Close search bar
 searchClose.addEventListener('click', () => {
     searchContainer.classList.remove('active');
 });
@@ -395,6 +390,29 @@ searchClose.addEventListener('click', () => {
 // Mobile menu toggle
 menuToggle.addEventListener('click', () => {
     navLinksContainer.classList.toggle('active');
+    searchContainer.classList.remove('active'); // Close search bar if open
+});
+
+// Close menu and search bar when clicking outside
+document.addEventListener('click', (event) => {
+    const isClickInsideHeader = header.contains(event.target);
+    const isClickInsideNav = navLinksContainer.contains(event.target);
+    const isClickInsideSearch = searchContainer.contains(event.target);
+    
+    // Check if the click is outside all relevant areas
+    if (!isClickInsideHeader && !isClickInsideNav && !isClickInsideSearch) {
+        navLinksContainer.classList.remove('active');
+        searchContainer.classList.remove('active');
+    }
+});
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
 });
 
 // Initialize app
