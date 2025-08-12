@@ -12,17 +12,27 @@
 </head>
 <body>
 
-    <header class="header">
-        <h1 class="site-name">switchpaper</h1>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2 class="site-name">switchpaper</h2>
+            <button class="sidebar-close" id="sidebar-close"><i class="fas fa-times"></i></button>
+        </div>
         <nav class="main-nav">
             <ul class="nav-links" id="nav-links-container">
-                <li><a href="#home" data-id="home">Home</a></li>
-                <li><a href="#categories" data-id="categories">Categories</a></li>
-                <li><a href="#about" data-id="about">About</a></li>
-                <li><a href="#contact" data-id="contact">Contact</a></li>
-                <li class="sign-in-btn-mobile"><button>Sign in</button></li>
+                <li><a href="#home" data-id="home" class="nav-link-item"><i class="fas fa-home icon"></i> Home</a></li>
+                <li><a href="#categories" data-id="categories" class="nav-link-item"><i class="fas fa-th-large icon"></i> Categories</a></li>
+                <li><a href="#about" data-id="about" class="nav-link-item"><i class="fas fa-info-circle icon"></i> About</a></li>
+                <li><a href="#contact" data-id="contact" class="nav-link-item"><i class="fas fa-envelope icon"></i> Contact</a></li>
             </ul>
         </nav>
+        <div class="sidebar-footer">
+            <button class="cta-btn secondary-btn sign-in-btn-mobile">Sign in</button>
+        </div>
+    </div>
+
+    <header class="header">
+        <h1 class="site-name">switchpaper</h1>
         <div class="header-icons">
             <button class="search-toggle" id="search-toggle">
                 <i class="fas fa-search"></i>
@@ -31,13 +41,21 @@
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        <button class="sign-in-btn-desktop">Sign in</button>
+        <nav class="main-nav-desktop">
+            <ul class="nav-links-desktop">
+                <li><a href="#home" data-id="home">Home</a></li>
+                <li><a href="#categories" data-id="categories">Categories</a></li>
+                <li><a href="#about" data-id="about">About</a></li>
+                <li><a href="#contact" data-id="contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="cta-btn primary-btn sign-in-btn-desktop">Sign in</button>
     </header>
 
     <div class="search-container" id="search-container">
         <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input">
-        <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
         <div class="autocomplete-results" id="autocomplete-results"></div>
+        <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
     </div>
     
     <main class="content">
@@ -51,7 +69,7 @@
                 </div>
             </div>
         </div>
-        <div id="dynamic-content-container">
+        <div id="dynamic-content-container" class="main-content-container">
             </div>
     </main>
 
