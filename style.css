@@ -98,6 +98,7 @@ body {
 
 /* Search Bar Styling */
 .search-container {
+    /* This positions the search bar relative to the header, not the viewport. */
     position: absolute;
     top: 0;
     left: 0;
@@ -296,13 +297,16 @@ body {
   position: absolute;
   z-index: 2;
   bottom: 20px;
-  left: 20px;
+  /* Adjusting positioning for centering on mobile */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  /* Original styles */
   font-size: clamp(2rem, 5vw, 3rem);
   color: #fff;
   margin: 0;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
   pointer-events: none;
-  text-align: left;
 }
 
 /* Wallpaper Grid */
@@ -359,3 +363,4 @@ body {
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(8px);
   color: var(--accent-color);
+  border:
