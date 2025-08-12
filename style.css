@@ -24,13 +24,14 @@ body {
 .navbar {
   position: fixed;
   top: 0;
+  left: 0; /* Added to ensure it's pinned to the left edge */
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 25px;
   height: 70px;
-  background: var(--header-bg);
+  background: transparent; /* Changed to transparent to match the background */
   z-index: 100;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -44,14 +45,13 @@ body {
   text-transform: none;
   letter-spacing: 0;
   text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
-  /* No longer need margin-right: auto with justify-content: space-between */
 }
 
 .nav-icons {
     display: flex;
     align-items: center;
     gap: 15px;
-    z-index: 101; /* Ensure buttons are clickable */
+    z-index: 101;
 }
 
 .menu-toggle, .search-toggle {
@@ -112,7 +112,7 @@ body {
     left: 0;
     width: 100%;
     height: 70px;
-    background: var(--header-bg);
+    background: transparent; /* Changed to transparent */
     display: flex;
     align-items: center;
     padding: 0 25px;
@@ -120,7 +120,6 @@ body {
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
     z-index: 102;
-    flex-wrap: wrap;
     justify-content: space-between;
     backdrop-filter: blur(10px);
 }
@@ -132,13 +131,13 @@ body {
 .search-input {
     flex-grow: 1;
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
-    border-radius: 50px; /* More modern, pill shape */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
     padding: 10px 20px;
     color: #fff;
     font-size: 1rem;
-    margin-right: 10px;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2); /* Inset shadow for depth */
+    margin-right: 15px; /* Added more space to separate input and button */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 
@@ -159,7 +158,8 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     transition: color 0.3s ease;
-    z-index: 103; /* Ensure it's on top of the search bar */
+    z-index: 103;
+    padding: 10px; /* Added padding to make it a larger clickable area */
 }
 
 .search-close:hover {
