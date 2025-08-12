@@ -14,10 +14,19 @@
 
     <nav class="navbar">
         <h1 class="site-name">switchpaper</h1>
-        <button class="menu-toggle" id="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </button>
+        <div class="nav-icons">
+            <button class="search-toggle" id="search-toggle">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
         <ul class="nav-links" id="nav-links-container"></ul>
+        <div class="search-container" id="search-container">
+            <input type="text" placeholder="Search wallpapers..." class="search-input">
+            <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
+        </div>
     </nav>
 
     <main class="content"></main>
