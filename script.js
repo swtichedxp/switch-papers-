@@ -59,7 +59,6 @@ const fetchDataAndRender = async () => {
             });
         });
 
-        renderCategories(wallpaperData.categories);
         renderNavLinks(wallpaperData.categories);
         renderHomePage();
     } catch (error) {
@@ -82,29 +81,39 @@ const renderNavLinks = (categories) => {
     });
 };
 
-// Function to render category hero section on the home page
-const renderCategories = (categories) => {
-    const categoryGrid = document.createElement('div');
-    categoryGrid.className = 'category-hero-grid';
-    categories.forEach(category => {
-        const categoryHero = document.createElement('a');
-        categoryHero.href = `#category-${category.id}`;
-        categoryHero.className = 'category-hero';
-        categoryHero.style.backgroundImage = `url('${category.category_image_url}')`;
-        categoryHero.dataset.id = category.id;
-        categoryHero.innerHTML = `<h3>${category.name}</h3>`;
-        categoryGrid.appendChild(categoryHero);
-    });
-    mainContent.appendChild(categoryGrid);
-};
-
-// Function to render the home page
+// Function to render the new glassmorphism home page
 const renderHomePage = () => {
     window.location.hash = '#home';
-    mainContent.innerHTML = `<div class="hero-section" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/406/261/158/windows-10-wallpaper-preview.jpg');">
-        <h2 class="hero-title">switchpaper</h2>
-    </div>`;
-    renderCategories(wallpaperData.categories);
+    
+    // Create the new hero section with a glass panel
+    const heroSection = document.createElement('div');
+    heroSection.className = 'hero-section';
+    heroSection.style.backgroundImage = 'none'; // The background is now on the body
+
+    heroSection.innerHTML = `
+        <div class="glass-hero-panel">
+            <h2>switchpaper</h2>
+            <p>Discover and download high-quality wallpapers for your devices.</p>
+        </div>
+    `;
+    
+    // Create the glassmorphic category cards
+    const categoryGrid = document.createElement('div');
+    categoryGrid.className = 'glass-card-grid';
+    wallpaperData.categories.forEach(category => {
+        const categoryCard = document.createElement('a');
+        categoryCard.href = `#category-${category.id}`;
+        categoryCard.className = 'glass-card';
+        categoryCard.innerHTML = `
+            <img src="${category.category_image_url}" alt="${category.name}">
+            <h3>${category.name}</h3>
+        `;
+        categoryGrid.appendChild(categoryCard);
+    });
+    
+    mainContent.innerHTML = '';
+    mainContent.appendChild(heroSection);
+    mainContent.appendChild(categoryGrid);
 };
 
 // Function to render a single category's wallpapers
