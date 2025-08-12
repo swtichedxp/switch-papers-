@@ -1,4 +1,4 @@
-/* universal styles & futuristic palette */
+/* Universal Styles & Futuristic Palette */
 :root {
 --bg-color: #0b0f1a;
 --card-bg: rgba(255, 255, 255, 0.05);
@@ -8,19 +8,17 @@
 --hover-color: rgba(0, 234, 255, 0.2);
 --glass-bg: rgba(255, 255, 255, 0.08);
 }
+
 body {
 margin: 0;
 padding: 0;
-font-family: 'roboto mono', monospace;
-/* Setting background to the provided image */
-background-image: url('https://files.catbox.moe/fo6k1n.jpg');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+font-family: 'Roboto Mono', monospace;
+background-color: var(--bg-color);
 color: var(--text-color);
 transition: background-image 0.5s ease-in-out;
 }
-/* floating header */
+
+/* Floating Header */
 .navbar {
 position: fixed;
 top: 20px;
@@ -39,13 +37,14 @@ align-items: center;
 padding: 0 25px;
 z-index: 1000;
 }
+
 .site-name {
 font-size: 1.5rem;
 font-weight: 600;
-/* Changed accent color to cyan */
-color: cyan;
+color: var(--accent-color);
 text-transform: uppercase;
 }
+
 .menu-toggle {
 background: none;
 border: none;
@@ -53,6 +52,7 @@ color: var(--text-color);
 font-size: 1.5rem;
 cursor: pointer;
 }
+
 .nav-links {
 list-style: none;
 padding: 0;
@@ -69,9 +69,11 @@ border-top: none;
 border-radius: 0 0 15px 15px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
+
 .nav-links.active {
 display: flex;
 }
+
 .nav-links li a {
 display: block;
 padding: 15px 20px;
@@ -80,15 +82,18 @@ text-decoration: none;
 font-size: 1rem;
 transition: background-color 0.3s ease;
 }
+
 .nav-links li a:hover {
 background-color: var(--hover-color);
 color: #fff;
 }
-/* main content area */
+
+/* Main Content Area */
 .content {
 padding: 100px 20px 40px 20px;
 }
-/* apple-style hero section */
+
+/* Apple-style Hero Section */
 .homepage-header {
 height: 80vh;
 display: flex;
@@ -97,23 +102,25 @@ justify-content: center;
 align-items: center;
 text-align: center;
 }
+
 .homepage-title {
 font-size: 4rem;
 font-weight: 700;
 margin-bottom: 10px;
-/* Changed accent color to cyan */
-color: cyan;
-text-shadow: 0 0 10px cyan;
-animation: fadein 1s ease-out;
+color: var(--accent-color);
+text-shadow: 0 0 10px var(--accent-color);
+animation: fadeIn 1s ease-out;
 }
+
 .homepage-subtitle {
 font-size: 1.5rem;
 color: var(--text-color);
 opacity: 0.8;
-animation: fadein 1s ease-out 0.5s forwards;
+animation: fadeIn 1s ease-out 0.5s forwards;
 opacity: 0;
 }
-/* category page header */
+
+/* Category Page Header */
 .category-page-header {
 background: var(--glass-bg);
 backdrop-filter: blur(10px);
@@ -125,21 +132,23 @@ padding: 30px 20px;
 margin: 0 20px 40px;
 text-align: center;
 }
+
 .category-title {
 font-size: 2rem;
 font-weight: 600;
-/* Changed accent color to cyan */
-color: cyan;
-text-shadow: 0 0 10px cyan;
+color: var(--accent-color);
+text-shadow: 0 0 10px var(--accent-color);
 margin: 0;
 }
-/* category grid (responsive) */
+
+/* Category Grid (Responsive) */
 .category-grid {
 display: grid;
 grid-template-columns: 1fr;
 gap: 25px;
 padding: 0 20px;
 }
+
 .category-card {
 position: relative;
 border-radius: 12px;
@@ -147,20 +156,23 @@ overflow: hidden;
 height: 250px;
 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 transition: transform 0.3s ease, box-shadow 0.3s ease;
-animation: fadeinslideup 0.6s ease forwards;
+animation: fadeInSlideUp 0.6s ease forwards;
 opacity: 0;
-transform: translatey(20px);
+transform: translateY(20px);
 }
+
 .category-card:hover {
-transform: translatey(-5px);
+transform: translateY(-5px);
 box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
+
 .category-card img {
 width: 100%;
 height: 100%;
 object-fit: cover;
 transition: transform 0.4s ease;
 }
+
 .category-info {
 position: absolute;
 bottom: 0;
@@ -171,18 +183,21 @@ padding: 15px;
 text-align: center;
 transition: background-color 0.3s ease;
 }
+
 .category-info h3 {
 margin: 0;
 font-size: 1.5rem;
 color: var(--text-color);
 }
-/* wallpaper grid (organized layout) */
+
+/* Wallpaper Grid (Organized Layout) */
 .wallpaper-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 gap: 20px;
 padding: 0 20px;
 }
+
 .wallpaper-card {
 position: relative;
 border-radius: 12px;
@@ -190,24 +205,28 @@ overflow: hidden;
 height: 200px;
 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 transition: transform 0.3s ease, box-shadow 0.3s ease;
-animation: fadeinscaleup 0.6s ease forwards;
+animation: fadeInScaleUp 0.6s ease forwards;
 opacity: 0;
 transform: scale(0.95);
 }
+
 .wallpaper-card:hover {
 transform: scale(1.02);
 box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
+
 .wallpaper-card img {
 width: 100%;
 height: 100%;
 object-fit: cover;
 transition: transform 0.4s ease;
 }
+
 .wallpaper-card:hover img {
 transform: scale(1.05);
 }
-/* download button */
+
+/* Download Button */
 .download-btn {
 position: absolute;
 bottom: 10px;
@@ -223,10 +242,12 @@ font-size: 0.9rem;
 opacity: 0;
 transition: opacity 0.3s ease;
 }
+
 .wallpaper-card:hover .download-btn {
 opacity: 1;
 }
-/* pagination */
+
+/* Pagination */
 .pagination {
 display: flex;
 justify-content: center;
@@ -235,6 +256,7 @@ margin-top: 40px;
 gap: 10px;
 padding-bottom: 20px;
 }
+
 .page-btn {
 background: var(--card-bg);
 border: 1px solid var(--border-color);
@@ -244,68 +266,88 @@ border-radius: 8px;
 cursor: pointer;
 transition: background-color 0.3s ease;
 }
+
 .page-btn:hover {
 background-color: var(--hover-color);
 }
+
 .page-btn.disabled {
 opacity: 0.5;
 cursor: not-allowed;
 }
-/* animations */
-@keyframes fadein {
+
+/* Animations */
+@keyframes fadeIn {
 from { opacity: 0; }
 to { opacity: 1; }
 }
-@keyframes fadeinslideup {
+@keyframes fadeInSlideUp {
 from { opacity: 0; transform: translateY(20px); }
 to { opacity: 1; transform: translateY(0); }
 }
-@keyframes fadeinscaleup {
+@keyframes fadeInScaleUp {
 from { opacity: 0; transform: scale(0.95); }
 to { opacity: 1; transform: scale(1); }
 }
-/* desktop styles */
+
+/* Desktop Styles */
 @media (min-width: 768px) {
 .navbar {
 width: 80%;
 left: 50%;
 transform: translateX(-50%);
 }
-.nav-links {
-display: flex;
-flex-direction: row;
-position: static;
-width: auto;
-background: none;
-border: none;
-box-shadow: none;
+
+.nav-links {  
+    display: flex;  
+    flex-direction: row;  
+    position: static;  
+    width: auto;  
+    background: none;  
+    border: none;  
+    box-shadow: none;  
+}  
+
+.nav-links li a {  
+    padding: 10px 15px;  
+}  
+
+.menu-toggle {  
+    display: none;  
+}  
+
+.content {  
+    max-width: 1200px;  
+    margin: 0 auto;  
+    padding-top: 120px;  
+}  
+
+.homepage-title {  
+    font-size: 6rem;  
+}  
+
+.homepage-subtitle {  
+    font-size: 2rem;  
+}  
+
+.category-grid {  
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));  
+    padding: 0;  
+}  
+
+.wallpaper-grid {  
+    padding: 0;  
+}  
+
+.category-page-header {  
+    margin: 0 auto 40px auto;  
+    max-width: 800px;  
 }
-.nav-links li a {
-padding: 10px 15px;
-}
-.menu-toggle {
-display: none;
-}
-.content {
-max-width: 1200px;
-margin: 0 auto;
-padding-top: 120px;
-}
-.homepage-title {
-font-size: 6rem;
-}
-.homepage-subtitle {
-font-size: 2rem;
-}
-.category-grid {
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-padding: 0;
-}
-.wallpaper-grid {
-padding: 0;
-}
-.category-page-header {
-margin: 0 auto 40px auto;
-max-width: 800px;
-}
-    }
+
+} 
+
+I wanna modify this ui to loon much more better and responsive 
+Wanna change the overall background to
+https://files.catbox.moe/fo6k1n.jpg
+
+And I want the color accnt to be cyan or make it match the badground
