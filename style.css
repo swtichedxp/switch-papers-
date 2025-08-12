@@ -51,6 +51,7 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-right: 20px;
     z-index: 101;
 }
 
@@ -124,7 +125,7 @@ body {
 }
 
 .search-container.active {
-    top: 70px; /* New: Slides it down to appear right below the header */
+    top: 50px; /* New: Slides it down to appear right below the header */
 }
 
 .search-input {
