@@ -1,401 +1,117 @@
-// Global variables
-let wallpaperData = { categories: [] };
-let currentPage = 1;
-const itemsPerPage = 20;
+// Await for the DOM to be fully loaded before running the script
+document.addEventListener('DOMContentLoaded', () => {
 
-// DOM elements
-const mainContent = document.querySelector('.content');
-const navLinksContainer = document.getElementById('nav-links-container');
-const searchInput = document.getElementById('search-input');
-const searchToggle = document.getElementById('search-toggle');
-const searchContainer = document.getElementById('search-container');
-const searchClose = document.getElementById('search-close');
-const menuToggle = document.getElementById('menu-toggle');
-const modal = document.createElement('div');
-const autocompleteResults = document.getElementById('autocomplete-results');
-
-// Setup modal element
-modal.className = 'modal';
-modal.innerHTML = `
-    <img src="" class="modal-image" alt="Full-size wallpaper preview">
-    <button class="modal-close"><i class="fas fa-times"></i></button>
-`;
-document.body.appendChild(modal);
-
-// Function to safely extract keywords
-const extractKeywords = (url) => {
-    try {
-        const fullFileName = url.split('/').pop();
-        if (!fullFileName || fullFileName.includes('favicon')) {
-            return [];
-        }
-        const fileNameWithoutExt = fullFileName.substring(0, fullFileName.lastIndexOf('.'));
-        if (fileNameWithoutExt) {
-            return fileNameWithoutExt.split('-').map(kw => kw.toLowerCase());
-        }
-    } catch (e) {
-        console.error('Failed to extract keywords from URL:', url, e);
-    }
-    return [];
-};
-
-// Main function to fetch and render data
-const fetchDataAndRender = async () => {
-    try {
-        const response = await fetch('wallpapers.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        wallpaperData = await response.json();
-
-        // Process data to include keywords from filenames
-        wallpaperData.categories.forEach(category => {
-            category.wallpapers.forEach(wallpaper => {
-                const fileKeywords = extractKeywords(wallpaper.url);
-                if (!wallpaper.keywords) {
-                    wallpaper.keywords = [];
-                }
-                wallpaper.keywords.push(...fileKeywords);
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const searchToggle = document.querySelector('.search-toggle');
+    const searchContainer = document.querySelector('.search-container');
+    const siteName = document.querySelector('.site-name');
+    const searchInput = document.querySelector('.search-input');
+    const autocompleteResults = document.querySelector('.autocomplete-results');
+    const searchClose = document.querySelector('.search-close');
+    const wallpaperGrid = document.querySelector('.wallpaper-grid');
+    const categoryContainer = document.getElementById('category-container');
+    const heroSection = document.querySelector('.hero-section');
+    
+    // Function to render categories
+    const renderCategories = (categories) => {
+        if (categoryContainer) {
+            categoryContainer.innerHTML = '';
+            categories.forEach(category => {
+                const card = document.createElement('a');
+                card.classList.add('glass-card');
+                card.href = `/category/${category.name.toLowerCase()}`;
+                card.innerHTML = `
+                    <img src="${category.imageUrl}" alt="${category.name} wallpapers">
+                    <h3>${category.name}</h3>
+                `;
+                categoryContainer.appendChild(card);
             });
+        }
+    };
+    
+    // Placeholder function to fetch data
+    // This will need to be connected to your working backend
+    const fetchData = async () => {
+        try {
+            // Replace with your actual backend endpoint
+            const response = await fetch('/api/categories');
+            const data = await response.json();
+            renderCategories(data.categories);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            // You can add a user-friendly message here
+            if (categoryContainer) {
+                 categoryContainer.innerHTML = '<p>Failed to load categories. Please try again later.</p>';
+            }
+        }
+    };
+    
+    // Call the data fetching function
+    // fetchData();
+    
+    // Toggle mobile menu
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
-
-        renderNavLinks(wallpaperData.categories);
-        renderHomePage();
-    } catch (error) {
-        console.error('Could not fetch wallpaper data:', error);
-        mainContent.innerHTML = '<div style="text-align: center; padding: 50px;">Failed to load wallpapers. Please check your internet connection and try again.</div>';
-    }
-};
-
-// Function to render navigation links
-const renderNavLinks = (categories) => {
-    navLinksContainer.innerHTML = '';
-    const homeLink = document.createElement('li');
-    homeLink.innerHTML = `<a href="#" data-id="home">Home</a>`;
-    navLinksContainer.appendChild(homeLink);
-
-    categories.forEach(category => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="#category-${category.id}" data-id="${category.id}">${category.name}</a>`;
-        navLinksContainer.appendChild(li);
-    });
-};
-
-// Function to render the new glassmorphism home page
-const renderHomePage = () => {
-    window.location.hash = '#home';
-    
-    // Create the new hero section with a glass panel
-    const heroSection = document.createElement('div');
-    heroSection.className = 'hero-section';
-    heroSection.style.backgroundImage = 'none'; // The background is now on the body
-
-    heroSection.innerHTML = `
-        <div class="glass-hero-panel">
-            <h2>switchpaper</h2>
-            <p>Discover and download high-quality wallpapers for your devices.</p>
-        </div>
-    `;
-    
-    // Create the glassmorphic category cards
-    const categoryGrid = document.createElement('div');
-    categoryGrid.className = 'glass-card-grid';
-    wallpaperData.categories.forEach(category => {
-        const categoryCard = document.createElement('a');
-        categoryCard.href = `#category-${category.id}`;
-        categoryCard.className = 'glass-card';
-        categoryCard.innerHTML = `
-            <img src="${category.category_image_url}" alt="${category.name}">
-            <h3>${category.name}</h3>
-        `;
-        categoryGrid.appendChild(categoryCard);
-    });
-    
-    mainContent.innerHTML = '';
-    mainContent.appendChild(heroSection);
-    mainContent.appendChild(categoryGrid);
-};
-
-// Function to render a single category's wallpapers
-const renderCategoryPage = (categoryId, page = 1) => {
-    const category = wallpaperData.categories.find(cat => cat.id === categoryId);
-    if (!category) {
-        mainContent.innerHTML = '<h2>Category not found!</h2>';
-        return;
     }
 
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const wallpapersToShow = category.wallpapers.slice(startIndex, endIndex);
-    const totalPages = Math.ceil(category.wallpapers.length / itemsPerPage);
-
-    mainContent.innerHTML = `<h2>${category.name}</h2><div class="wallpaper-grid"></div>`;
-    const wallpaperGrid = mainContent.querySelector('.wallpaper-grid');
-    
-    wallpapersToShow.forEach(wallpaper => {
-        const card = document.createElement('div');
-        card.className = 'wallpaper-card';
-        card.innerHTML = `
-            <img src="${wallpaper.url}" alt="${wallpaper.title}">
-            <div class="button-container">
-                <button class="preview-btn" data-url="${wallpaper.url}">Preview</button>
-                <a href="${wallpaper.url}" class="download-btn" download="${wallpaper.title}.jpg">Download</a>
-            </div>
-        `;
-        wallpaperGrid.appendChild(card);
-    });
-
-    renderPagination(categoryId, page, totalPages);
-};
-
-// Function to render search results
-const renderSearchResults = (query, page = 1) => {
-    const results = [];
-    if (query) {
-        const lowerCaseQuery = query.toLowerCase();
-        wallpaperData.categories.forEach(category => {
-            category.wallpapers.forEach(wallpaper => {
-                // Check if the query matches the title or any of the keywords
-                if (
-                    wallpaper.title.toLowerCase().includes(lowerCaseQuery) ||
-                    (wallpaper.keywords && wallpaper.keywords.some(kw => kw.includes(lowerCaseQuery)))
-                ) {
-                    results.push(wallpaper);
+    // Toggle search bar
+    if (searchToggle) {
+        searchToggle.addEventListener('click', () => {
+            const isSearchActive = searchContainer.classList.contains('active');
+            if (!isSearchActive) {
+                // Open search
+                searchContainer.classList.add('active');
+                siteName.style.opacity = '0';
+                siteName.style.visibility = 'hidden';
+                searchToggle.innerHTML = '<i class="fas fa-times"></i>';
+                searchInput.focus();
+                // Close nav menu if open
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
                 }
-            });
-        });
-    }
-
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const resultsToShow = results.slice(startIndex, endIndex);
-    const totalPages = Math.ceil(results.length / itemsPerPage);
-
-    mainContent.innerHTML = `<h2>Search Results for "${query}"</h2><div class="wallpaper-grid"></div>`;
-    const wallpaperGrid = mainContent.querySelector('.wallpaper-grid');
-
-    if (results.length === 0) {
-        mainContent.innerHTML += `<p style="text-align: center; font-size: 1.2rem; padding: 50px;">No wallpapers found for "${query}".</p>`;
-        return;
-    }
-
-    resultsToShow.forEach(wallpaper => {
-        const card = document.createElement('div');
-        card.className = 'wallpaper-card';
-        card.innerHTML = `
-            <img src="${wallpaper.url}" alt="${wallpaper.title}">
-            <div class="button-container">
-                <button class="preview-btn" data-url="${wallpaper.url}">Preview</button>
-                <a href="${wallpaper.url}" class="download-btn" download="${wallpaper.title}.jpg">Download</a>
-            </div>
-        `;
-        wallpaperGrid.appendChild(card);
-    });
-    renderPagination('search', page, totalPages, query);
-};
-
-// Function to render pagination controls
-const renderPagination = (viewId, currentPage, totalPages, query = '') => {
-    if (totalPages <= 1) {
-        return;
-    }
-
-    const paginationContainer = document.createElement('div');
-    paginationContainer.className = 'pagination';
-    
-    const prevBtn = document.createElement('button');
-    prevBtn.className = 'page-btn';
-    prevBtn.textContent = 'Previous';
-    if (currentPage === 1) prevBtn.disabled = true;
-
-    const pageInfo = document.createElement('span');
-    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-
-    const nextBtn = document.createElement('button');
-    nextBtn.className = 'page-btn';
-    nextBtn.textContent = 'Next';
-    if (currentPage === totalPages) nextBtn.disabled = true;
-
-    prevBtn.addEventListener('click', () => {
-        if (viewId === 'search') {
-            renderSearchResults(query, currentPage - 1);
-        } else {
-            renderCategoryPage(viewId, currentPage - 1);
-        }
-        window.scrollTo(0, 0);
-    });
-    
-    nextBtn.addEventListener('click', () => {
-        if (viewId === 'search') {
-            renderSearchResults(query, currentPage + 1);
-        } else {
-            renderCategoryPage(viewId, currentPage + 1);
-        }
-        window.scrollTo(0, 0);
-    });
-    
-    paginationContainer.appendChild(prevBtn);
-    paginationContainer.appendChild(pageInfo);
-    paginationContainer.appendChild(nextBtn);
-    mainContent.appendChild(paginationContainer);
-};
-
-// Event listeners for navigation, search, and downloads
-window.addEventListener('hashchange', () => {
-    const hash = window.location.hash;
-    if (hash === '#home' || !hash) {
-        renderHomePage();
-    } else if (hash.startsWith('#category-')) {
-        const categoryId = hash.substring(10);
-        renderCategoryPage(categoryId);
-    } else if (hash.startsWith('#search')) {
-        const params = new URLSearchParams(hash.substring(hash.indexOf('?')));
-        const query = params.get('q');
-        renderSearchResults(query);
-    }
-});
-
-document.body.addEventListener('click', (e) => {
-    // Handling navigation links
-    if (e.target.matches('.nav-links a')) {
-        e.preventDefault();
-        const categoryId = e.target.dataset.id;
-        if (categoryId === 'home') {
-            renderHomePage();
-        } else {
-            renderCategoryPage(categoryId);
-        }
-        // Close menu on mobile
-        if (window.innerWidth < 768) {
-            navLinksContainer.classList.remove('active');
-        }
-    }
-    
-    // Handling category hero links
-    if (e.target.matches('.category-hero')) {
-        e.preventDefault();
-        const categoryId = e.target.dataset.id;
-        renderCategoryPage(categoryId);
-    }
-
-    // Handling preview buttons
-    if (e.target.matches('.preview-btn')) {
-        const url = e.target.dataset.url;
-        modal.querySelector('.modal-image').src = url;
-        modal.classList.add('active');
-    }
-
-    // Handling download buttons
-    if (e.target.matches('.download-btn')) {
-        e.preventDefault(); // Prevent the default link behavior
-        const imageUrl = e.target.href;
-        const fileName = e.target.download;
-        
-        // --- POPUP LOGIC ---
-        const popup = document.createElement('div');
-        popup.className = 'download-popup';
-        popup.innerHTML = `
-            <div class="popup-content">
-                <h3>Download Image</h3>
-                <p>Sorry for the inconvenience. Our automatic download is temporarily unavailable.</p>
-                <p>To save the image:</p>
-                <p>1. On a mobile device, **press and hold** the image below.</p>
-                <p>2. Select **"Download image"** from the menu that appears.</p>
-                <img src="${imageUrl}" alt="${fileName}" class="popup-image">
-                <button class="popup-close-btn">Close</button>
-            </div>
-        `;
-        document.body.appendChild(popup);
-
-        // Add a handler to close the popup
-        popup.querySelector('.popup-close-btn').addEventListener('click', () => {
-            document.body.removeChild(popup);
-        });
-
-        // Add a handler to close the popup when clicking outside it
-        popup.addEventListener('click', (event) => {
-            if (event.target === popup) {
-                document.body.removeChild(popup);
+            } else {
+                // Close search
+                searchContainer.classList.remove('active');
+                siteName.style.opacity = '1';
+                siteName.style.visibility = 'visible';
+                searchToggle.innerHTML = '<i class="fas fa-search"></i>';
             }
         });
     }
 
-    // Handling modal close button
-    if (e.target.matches('.modal-close') || e.target.matches('.modal-close i') || e.target === modal) {
-        modal.classList.remove('active');
-    }
-});
-
-// Autocomplete and search functionality
-searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
-    autocompleteResults.innerHTML = '';
-    
-    if (query.length > 1) {
-        const allKeywords = new Set();
-        wallpaperData.categories.forEach(category => {
-            category.wallpapers.forEach(wallpaper => {
-                if (wallpaper.keywords) {
-                    wallpaper.keywords.forEach(kw => allKeywords.add(kw));
-                }
-            });
-        });
-        
-        const matchingKeywords = Array.from(allKeywords)
-            .filter(kw => kw.includes(query))
-            .sort()
-            .slice(0, 5);
-
-        if (matchingKeywords.length > 0) {
-            autocompleteResults.classList.add('active');
-            matchingKeywords.forEach(kw => {
-                const item = document.createElement('div');
-                item.className = 'autocomplete-item';
-                item.textContent = kw;
-                item.addEventListener('click', () => {
-                    searchInput.value = kw;
-                    autocompleteResults.classList.remove('active');
-                    renderSearchResults(kw);
-                    window.location.hash = `#search?q=${encodeURIComponent(kw)}`;
-                });
-                autocompleteResults.appendChild(item);
-            });
-        } else {
-            autocompleteResults.classList.remove('active');
-        }
-    } else {
-        autocompleteResults.classList.remove('active');
-    }
-});
-
-searchInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        const query = searchInput.value.trim();
-        if (query) {
-            renderSearchResults(query);
-            window.location.hash = `#search?q=${encodeURIComponent(query)}`;
-            autocompleteResults.classList.remove('active');
+    // Handle closing search with the dedicated close button
+    if (searchClose) {
+        searchClose.addEventListener('click', () => {
             searchContainer.classList.remove('active');
+            siteName.style.opacity = '1';
+            siteName.style.visibility = 'visible';
+            searchToggle.innerHTML = '<i class="fas fa-search"></i>';
+        });
+    }
+
+    // Event listeners for autocomplete search
+    if (searchInput) {
+        searchInput.addEventListener('input', async () => {
+            const query = searchInput.value;
+            if (query.length > 2) {
+                // This is a placeholder for your autocomplete logic
+                // Replace this with a fetch call to your backend
+                console.log('Fetching autocomplete for:', query);
+                autocompleteResults.classList.add('active');
+            } else {
+                autocompleteResults.classList.remove('active');
+            }
+        });
+    }
+
+    // Close autocomplete on outside click
+    document.addEventListener('click', (e) => {
+        if (autocompleteResults && !autocompleteResults.contains(e.target) && !searchInput.contains(e.target)) {
+            autocompleteResults.classList.remove('active');
         }
-    }
-});
+    });
 
-// Search toggle functionality
-searchToggle.addEventListener('click', () => {
-    searchContainer.classList.toggle('active');
-    if (searchContainer.classList.contains('active')) {
-        searchInput.focus();
-    }
 });
-
-searchClose.addEventListener('click', () => {
-    searchContainer.classList.remove('active');
-});
-
-// Mobile menu toggle
-menuToggle.addEventListener('click', () => {
-    navLinksContainer.classList.toggle('active');
-});
-
-// Initialize app
-fetchDataAndRender();
