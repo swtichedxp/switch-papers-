@@ -18,7 +18,7 @@ body {
 
 /* Header */
 .navbar {
-  position: relative; /* Changed to relative for search bar positioning */
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,7 +31,7 @@ body {
 
 .site-name {
   font-family: 'Pacifico', cursive;
-  font-size: 2rem; /* Reduced font size */
+  font-size: 2rem;
   font-weight: 400;
   color: var(--accent-color);
   text-transform: none;
@@ -177,11 +177,53 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Preview Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--accent-color);
+}
+
+
 /* Hero Section Layout */
 .hero-section {
   position: relative;
   width: 100%;
-  height: 90vh; /* Full viewport height for impact */
+  height: 90vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -296,10 +338,24 @@ body {
   transform: scale(1.1);
 }
 
-.download-btn {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
+/* Updated styles for both buttons */
+.wallpaper-card .button-container {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px);
+}
+
+.wallpaper-card:hover .button-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.preview-btn, .download-btn {
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(8px);
   color: var(--accent-color);
@@ -308,14 +364,13 @@ body {
   padding: 10px 20px;
   text-decoration: none;
   font-size: 1rem;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateY(10px);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.wallpaper-card:hover .download-btn {
-  opacity: 1;
-  transform: translateY(0);
+.preview-btn:hover, .download-btn:hover {
+    background-color: var(--accent-color);
+    color: #000;
 }
 
 /* Pagination */
@@ -389,4 +444,4 @@ body {
   .hero-section {
     height: 60vh;
   }
-}
+                  }
