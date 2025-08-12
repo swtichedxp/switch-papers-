@@ -24,14 +24,14 @@ body {
 .navbar {
   position: fixed;
   top: 0;
-  left: 0; /* Added to ensure it's pinned to the left edge */
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 25px;
   height: 70px;
-  background: transparent; /* Changed to transparent to match the background */
+  background: transparent;
   z-index: 100;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -108,11 +108,11 @@ body {
 /* Search Bar Styling */
 .search-container {
     position: absolute;
-    top: 0;
+    top: 70px; /* New: Places the search bar right below the header */
     left: 0;
     width: 100%;
     height: 70px;
-    background: transparent; /* Changed to transparent */
+    background: transparent;
     display: flex;
     align-items: center;
     padding: 0 25px;
@@ -136,7 +136,7 @@ body {
     padding: 10px 20px;
     color: #fff;
     font-size: 1rem;
-    margin-right: 15px; /* Added more space to separate input and button */
+    margin-right: 15px;
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
@@ -159,7 +159,7 @@ body {
     cursor: pointer;
     transition: color 0.3s ease;
     z-index: 103;
-    padding: 10px; /* Added padding to make it a larger clickable area */
+    padding: 10px;
 }
 
 .search-close:hover {
@@ -169,7 +169,7 @@ body {
 /* Autocomplete suggestions */
 .autocomplete-results {
     position: absolute;
-    top: 70px;
+    top: 140px;
     left: 0;
     width: 100%;
     max-height: 200px;
@@ -180,6 +180,7 @@ body {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
     display: none;
     padding: 10px 0;
+    z-index: 99;
 }
 
 .autocomplete-results.active {
