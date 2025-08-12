@@ -231,7 +231,7 @@ const renderPagination = (viewId, currentPage, totalPages, query = '') => {
     mainContent.appendChild(paginationContainer);
 };
 
-// Event listeners for navigation and search
+// Event listeners for navigation, search, and downloads
 window.addEventListener('hashchange', () => {
     const hash = window.location.hash;
     if (hash === '#home' || !hash) {
@@ -274,6 +274,30 @@ document.body.addEventListener('click', (e) => {
         const url = e.target.dataset.url;
         modal.querySelector('.modal-image').src = url;
         modal.classList.add('active');
+    }
+
+    // Handling download buttons
+    if (e.target.matches('.download-btn')) {
+        e.preventDefault(); // Prevent the default link behavior
+        const imageUrl = e.target.href;
+        const fileName = e.target.download;
+        
+        // Use the proxy to build the correct download link
+        const proxyUrl = 'https://switchimage-proxy.onrender.com';
+        const downloadUrl = `${proxyUrl}/download?url=${encodeURIComponent(imageUrl)}&filename=${encodeURIComponent(fileName)}`;
+        
+        // Create a temporary link element
+        const tempLink = document.createElement('a');
+        tempLink.style.display = 'none';
+        tempLink.href = downloadUrl;
+        tempLink.download = fileName;
+        document.body.appendChild(tempLink);
+        
+        // Simulate a click on the temporary link
+        tempLink.click();
+        
+        // Clean up the temporary link
+        document.body.removeChild(tempLink);
     }
 
     // Handling modal close button
