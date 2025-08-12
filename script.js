@@ -4,18 +4,18 @@ let currentPage = 1;
 const itemsPerPage = 20;
 
 // DOM elements
-const mainContent = document.querySelector('.content');
+const mainContent = document.getElementById('dynamic-content-container');
 const searchInput = document.getElementById('search-input');
 const autocompleteResults = document.getElementById('autocomplete-results');
 
-// Corrected Header & Navigation DOM elements
+// Correctly selected Header & Navigation DOM elements
 const header = document.querySelector('.header');
 const menuToggle = document.getElementById('menu-toggle');
-// Correctly targeting the UL element with the active class
 const navLinksContainer = document.getElementById('nav-links-container'); 
 const searchToggle = document.getElementById('search-toggle');
 const searchContainer = document.getElementById('search-container');
 const searchClose = document.getElementById('search-close');
+const heroSection = document.querySelector('.hero-section');
 
 // Setup modal element
 const modal = document.createElement('div');
@@ -75,10 +75,8 @@ const fetchDataAndRender = async () => {
 const renderHomePage = () => {
     window.location.hash = '#home';
     
-    // The hero section is now hardcoded in the HTML, so we only need to
-    // create and append the category grid to the content area.
-    
-    const heroSection = document.querySelector('.hero-section');
+    // Clear dynamic content container
+    mainContent.innerHTML = '';
     
     // Create the glassmorphic category cards
     const categoryGrid = document.createElement('div');
@@ -94,9 +92,6 @@ const renderHomePage = () => {
         categoryGrid.appendChild(categoryCard);
     });
     
-    // Clear the main content and append only the category grid
-    mainContent.innerHTML = ''; 
-    mainContent.appendChild(heroSection);
     mainContent.appendChild(categoryGrid);
 };
 
@@ -227,12 +222,16 @@ const renderPagination = (viewId, currentPage, totalPages, query = '') => {
 // Event listeners for navigation, search, and downloads
 window.addEventListener('hashchange', () => {
     const hash = window.location.hash;
+    // Hide the hero section on category and search pages
     if (hash === '#home' || !hash) {
+        heroSection.style.display = 'flex';
         renderHomePage();
     } else if (hash.startsWith('#category-')) {
+        heroSection.style.display = 'none';
         const categoryId = hash.substring(10);
         renderCategoryPage(categoryId);
     } else if (hash.startsWith('#search')) {
+        heroSection.style.display = 'none';
         const params = new URLSearchParams(hash.substring(hash.indexOf('?')));
         const query = params.get('q');
         renderSearchResults(query);
@@ -245,21 +244,22 @@ document.body.addEventListener('click', (e) => {
         e.preventDefault();
         const categoryId = e.target.dataset.id;
         if (categoryId === 'home') {
-            renderHomePage();
+            window.location.hash = '#home';
         } else {
-            renderCategoryPage(categoryId);
+            window.location.hash = `#category-${categoryId}`;
         }
         // Close menu on mobile
         if (window.innerWidth < 768) {
-            navLinksContainer.classList.remove('active');
+            navLinksContainer.parentNode.classList.remove('active');
         }
     }
     
     // Handling category hero links
-    if (e.target.matches('.glass-card')) {
+    if (e.target.matches('.glass-card, .glass-card *')) {
         e.preventDefault();
-        const categoryId = e.target.getAttribute('href').substring(10);
-        renderCategoryPage(categoryId);
+        const cardLink = e.target.closest('.glass-card');
+        const categoryId = cardLink.getAttribute('href').substring(10);
+        window.location.hash = `#category-${categoryId}`;
     }
 
     // Handling preview buttons
@@ -308,6 +308,15 @@ document.body.addEventListener('click', (e) => {
     if (e.target.matches('.modal-close') || e.target.matches('.modal-close i') || e.target === modal) {
         modal.classList.remove('active');
     }
+
+    // Handling hero CTA buttons
+    if (e.target.matches('.primary-btn')) {
+        window.location.hash = '#categories'; // Assuming 'Explore' goes to categories
+    }
+    if (e.target.matches('.secondary-btn')) {
+        // Implement logic for a 'Random' wallpaper if needed
+        console.log('Random button clicked');
+    }
 });
 
 // Autocomplete and search functionality
@@ -339,7 +348,6 @@ searchInput.addEventListener('input', () => {
                 item.addEventListener('click', () => {
                     searchInput.value = kw;
                     autocompleteResults.classList.remove('active');
-                    renderSearchResults(kw);
                     window.location.hash = `#search?q=${encodeURIComponent(kw)}`;
                 });
                 autocompleteResults.appendChild(item);
@@ -356,7 +364,6 @@ searchInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         const query = searchInput.value.trim();
         if (query) {
-            renderSearchResults(query);
             window.location.hash = `#search?q=${encodeURIComponent(query)}`;
             autocompleteResults.classList.remove('active');
             searchContainer.classList.remove('active');
@@ -364,11 +371,11 @@ searchInput.addEventListener('keydown', (e) => {
     }
 });
 
-// Search bar toggle (for the sliding animation)
+// Search bar toggle
 searchToggle.addEventListener('click', () => {
     searchContainer.classList.toggle('active');
-    // We now toggle the .main-nav directly as that is the parent of the nav links
-    navLinksContainer.classList.remove('active'); // Close mobile menu if open
+    // Close mobile menu if open
+    navLinksContainer.closest('.main-nav').classList.remove('active');
     if (searchContainer.classList.contains('active')) {
         searchInput.focus();
     }
@@ -381,20 +388,19 @@ searchClose.addEventListener('click', () => {
 
 // Mobile menu toggle
 menuToggle.addEventListener('click', () => {
-    // Toggling the .active class on the nav-links container (the ul)
-    navLinksContainer.classList.toggle('active');
+    // Toggling the .active class on the main-nav container
+    navLinksContainer.closest('.main-nav').classList.toggle('active');
     searchContainer.classList.remove('active'); // Close search bar if open
 });
 
 // Close menu and search bar when clicking outside
 document.addEventListener('click', (event) => {
     const isClickInsideHeader = header.contains(event.target);
-    const isClickInsideNav = navLinksContainer.contains(event.target);
-    const isClickInsideSearch = searchContainer.contains(event.target);
+    const isClickInsideSearchContainer = searchContainer.contains(event.target);
     
-    // Check if the click is outside all relevant areas
-    if (!isClickInsideHeader && !isClickInsideNav && !isClickInsideSearch) {
-        navLinksContainer.classList.remove('active');
+    // Check if the click is outside both the header and search container
+    if (!isClickInsideHeader && !isClickInsideSearchContainer) {
+        navLinksContainer.closest('.main-nav').classList.remove('active');
         searchContainer.classList.remove('active');
     }
 });
@@ -410,4 +416,3 @@ window.addEventListener('scroll', () => {
 
 // Initialize app
 fetchDataAndRender();
-OK
