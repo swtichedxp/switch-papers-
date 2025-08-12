@@ -1,8 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchDataAndRender();
-    document.getElementById('menu-toggle').addEventListener('click', () => {
-        document.getElementById('nav-links-container').classList.toggle('active');
+    
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinksContainer = document.getElementById('nav-links-container');
+    const searchToggle = document.getElementById('search-toggle');
+    const searchContainer = document.getElementById('search-container');
+    const searchClose = document.getElementById('search-close');
+
+    menuToggle.addEventListener('click', () => {
+        navLinksContainer.classList.toggle('active');
+        searchContainer.classList.remove('active'); // Close search bar if menu is opened
     });
+    
+    searchToggle.addEventListener('click', () => {
+        searchContainer.classList.toggle('active');
+        navLinksContainer.classList.remove('active'); // Close menu if search bar is opened
+    });
+    
+    searchClose.addEventListener('click', () => {
+        searchContainer.classList.remove('active');
+    });
+
 });
 
 let wallpaperData;
@@ -40,6 +58,9 @@ const renderCategories = (categories) => {
         if (e.target.tagName === 'A') {
             e.preventDefault();
             const pageType = e.target.dataset.page;
+            const navLinksContainer = document.getElementById('nav-links-container');
+            navLinksContainer.classList.remove('active');
+
             if (pageType === 'home') {
                 renderHomePage();
             } else if (pageType === 'category') {
@@ -57,7 +78,7 @@ const renderHomePage = () => {
 
     const homepageHeader = document.createElement('header');
     homepageHeader.className = 'hero-section';
-    homepageHeader.style.backgroundImage = `url(homepage-cover.jpg)`;
+    homepageHeader.style.backgroundImage = `url(${wallpaperData.homepage_cover_url})`;
     homepageHeader.innerHTML = `
         <h2 class="hero-title">Discover the perfect wallpaper</h2>
     `;
@@ -115,14 +136,14 @@ const renderCategoryPage = (categoryId, page = 1) => {
     paginatedWallpapers.forEach((wallpaper) => {
         const wallpaperCard = document.createElement('div');
         wallpaperCard.className = 'wallpaper-card';
+        const fileName = wallpaper.url.split('/').pop();
         wallpaperCard.innerHTML = `
             <img src="${wallpaper.url}" alt="${wallpaper.title}">
-            <button class="download-btn" data-url="${wallpaper.url}" data-filename="${wallpaper.title}.jpg">Download</button>
+            <button class="download-btn" data-url="${wallpaper.url}" data-filename="${fileName}">Download</button>
         `;
         wallpaperGridContainer.appendChild(wallpaperCard);
     });
 
-    // New event listener for the download buttons
     mainContent.querySelectorAll('.download-btn').forEach(button => {
         button.addEventListener('click', async (e) => {
             const imageUrl = e.target.dataset.url;
