@@ -1,53 +1,43 @@
-/* Universal Styles & Futuristic Palette - REVISED */
+/* Universal Styles & New Palette */
 :root {
   --bg-color: #0b0f1a;
-  --card-bg: rgba(255, 255, 255, 0.05);
-  --border-color: rgba(255, 255, 255, 0.1);
   --text-color: #e0e0e0;
   --accent-color: #00ffff;
-  --hover-color: rgba(0, 255, 255, 0.2);
-  --glass-bg: rgba(255, 255, 255, 0.08);
+  --hero-overlay: rgba(0, 0, 0, 0.4);
+  --header-bg: rgba(13, 15, 25, 0.9);
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto Mono', monospace;
-  color: var(--text-color);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
   background-color: #0d0f19;
   transition: background-image 0.5s ease-in-out;
 }
 
-/* Floating Header - REVISED */
+/* Header */
 .navbar {
-  /* No longer fixed or floating */
   position: static;
-  height: 70px;
-  background: rgba(13, 15, 25, 0.8);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  /* Removed border and shadow */
-  border-radius: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 25px; /* Adjusted padding to touch edges */
-  z-index: 1000;
+  padding: 0 25px;
+  height: 70px;
+  background: var(--header-bg);
+  z-index: 100;
   transition: all 0.3s ease;
 }
 
 .site-name {
-  font-family: 'Poppins', sans-serif; /* New font */
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-family: 'Pacifico', cursive; /* New font for the logo */
+  font-size: 2.5rem;
+  font-weight: 400;
   color: var(--accent-color);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 8px var(--accent-color);
-  margin-right: auto; /* Pushes menu to the right */
+  text-transform: none;
+  letter-spacing: 0;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+  margin-right: auto;
 }
 
 .menu-toggle {
@@ -70,15 +60,14 @@ body {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 70px; /* Positioned below the non-fixed header */
+  top: 70px;
   right: 0;
   width: 100%;
-  background: rgba(13, 15, 25, 0.9);
-  border: 1px solid var(--border-color);
-  border-top: none;
-  border-radius: 0 0 20px 20px;
+  background: var(--header-bg);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
   overflow: hidden;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .nav-links.active {
@@ -91,128 +80,105 @@ body {
   color: var(--text-color);
   text-decoration: none;
   font-size: 1.1rem;
-  letter-spacing: 1px;
+  text-transform: none; /* Sentence case */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links li a:hover {
-  background-color: var(--hover-color);
-  color: var(--accent-color);
-}
-
-/* Main Content Area - REVISED */
-.content {
-  padding: 25px; /* Removed top padding as header is no longer fixed */
-}
-
-/* Apple-style Hero Section - REVISED */
-.homepage-header {
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.homepage-title {
-  font-size: clamp(3rem, 10vw, 6rem);
-  font-weight: 800;
-  margin-bottom: 15px;
+  background-color: var(--accent-color);
   color: #fff;
-  background: linear-gradient(90deg, #00ffff, #00aaff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.3);
+}
+
+/* Hero Section Layout */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Full viewport height for impact */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
   animation: fadeIn 1s ease-out;
 }
 
-.homepage-subtitle {
-  font-size: clamp(1rem, 4vw, 1.8rem);
-  color: var(--text-color);
-  opacity: 0.8;
-  animation: fadeIn 1s ease-out 0.5s forwards;
-  opacity: 0;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-/* Category Page Header - REVISED */
-.category-page-header {
-  background: rgba(13, 15, 25, 0.8);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
-  padding: 40px 30px;
-  margin: 0 25px 50px;
-  text-align: center;
-}
-
-.category-title {
-  font-size: clamp(1.8rem, 5vw, 3rem);
-  font-weight: 700;
-  color: var(--accent-color);
-  text-shadow: 0 0 15px var(--accent-color), 0 0 5px rgba(0, 255, 255, 0.5);
-  margin: 0;
-}
-
-/* Category Grid (Responsive) - REVISED */
-.category-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  padding: 0 25px;
-}
-
-.category-card {
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  height: 300px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  animation: fadeInSlideUp 0.8s ease forwards;
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.category-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
-}
-
-.category-card img {
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
+  background: var(--hero-overlay);
+  z-index: 1;
 }
 
-.category-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.0));
-  padding: 25px 15px 15px;
+.hero-title {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Category Grid (Hero-style) */
+.category-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.category-hero {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.category-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--hero-overlay);
   transition: background-color 0.3s ease;
 }
 
-.category-info h3 {
-  margin: 0;
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  color: var(--text-color);
+.category-hero:hover::before {
+  background: rgba(0, 0, 0, 0.6);
 }
 
-/* Wallpaper Grid - REVISED */
+.category-hero h3 {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #fff;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  pointer-events: none; /* Allows click through to the link */
+}
+
+/* Wallpaper Grid */
 .wallpaper-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
-  padding: 0 25px;
+  padding: 50px 25px;
 }
 
 .wallpaper-card {
@@ -222,9 +188,6 @@ body {
   height: 250px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  animation: fadeInScaleUp 0.8s ease forwards;
-  opacity: 0;
-  transform: scale(0.98);
 }
 
 .wallpaper-card:hover {
@@ -243,7 +206,6 @@ body {
   transform: scale(1.1);
 }
 
-/* Download Button - REVISED */
 .download-btn {
   position: absolute;
   bottom: 15px;
@@ -266,7 +228,7 @@ body {
   transform: translateY(0);
 }
 
-/* Pagination - REVISED */
+/* Pagination */
 .pagination {
   display: flex;
   justify-content: center;
@@ -296,25 +258,17 @@ body {
   cursor: not-allowed;
 }
 
-/* Animations - REVISED */
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-@keyframes fadeInSlideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInScaleUp {
-  from { opacity: 0; transform: scale(0.98); }
-  to { opacity: 1; transform: scale(1); }
-}
 
-/* Desktop Styles - REVISED */
+/* Desktop Styles */
 @media (min-width: 768px) {
   .navbar {
     width: 100%;
-    padding: 0 50px; /* More padding on desktop */
+    padding: 0 50px;
   }
 
   .nav-links {
@@ -339,29 +293,10 @@ body {
   .content {
     max-width: 1400px;
     margin: 0 auto;
-    padding-top: 50px; /* Reduced padding as header is not fixed */
+    padding-top: 50px;
   }
 
-  .homepage-title {
-    font-size: 8rem;
+  .hero-section {
+    height: 60vh;
   }
-
-  .homepage-subtitle {
-    font-size: 2.5rem;
-  }
-
-  .category-grid {
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    padding: 0;
-  }
-
-  .wallpaper-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 0;
-  }
-
-  .category-page-header {
-    margin: 0 auto 50px auto;
-    max-width: 900px;
-  }
-                              }
+}
