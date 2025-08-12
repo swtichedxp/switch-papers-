@@ -58,31 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
             searchContainer.classList.remove('active');
         }
     });
-
-    document.querySelector('.content').addEventListener('click', (e) => {
-        if (e.target.classList.contains('preview-btn')) {
-            const imageUrl = e.target.dataset.url;
-            modalImage.src = imageUrl;
-            previewModal.classList.add('active');
-        } else if (e.target.classList.contains('download-btn')) {
-            const imageUrl = e.target.dataset.url;
-            const filename = e.target.dataset.filename;
-
-            try {
-                // This is the re-implemented download logic
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = imageUrl;
-                a.download = filename;
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-            } catch (error) {
-                console.error('Download failed:', error);
-                alert('Could not download the image. Please try again.');
-            }
-        }
-    });
 });
 
 let wallpaperData;
@@ -213,6 +188,26 @@ const renderCategoryPage = (categoryId, page = 1) => {
             </div>
         `;
         wallpaperGridContainer.appendChild(wallpaperCard);
+
+        const previewBtn = wallpaperCard.querySelector('.preview-btn');
+        const downloadBtn = wallpaperCard.querySelector('.download-btn');
+        const modalImage = document.querySelector('.modal-image');
+        const previewModal = document.getElementById('preview-modal');
+
+        previewBtn.addEventListener('click', () => {
+            modalImage.src = wallpaper.url;
+            previewModal.classList.add('active');
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = wallpaper.url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        });
     });
 
     const paginationContainer = document.createElement('div');
@@ -307,6 +302,26 @@ const renderSearchResults = (wallpapers, title) => {
             </div>
         `;
         wallpaperGridContainer.appendChild(wallpaperCard);
+        
+        const previewBtn = wallpaperCard.querySelector('.preview-btn');
+        const downloadBtn = wallpaperCard.querySelector('.download-btn');
+        const modalImage = document.querySelector('.modal-image');
+        const previewModal = document.getElementById('preview-modal');
+
+        previewBtn.addEventListener('click', () => {
+            modalImage.src = wallpaper.url;
+            previewModal.classList.add('active');
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = wallpaper.url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        });
     });
 };
 
