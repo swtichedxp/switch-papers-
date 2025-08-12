@@ -4,12 +4,12 @@
   --text-color: #e0e0e0;
   --accent-color: #00ffff;
   --hero-overlay: rgba(0, 0, 0, 0.4);
-  --header-bg: rgba(13, 15, 25, 0.95); /* Darker background blur */
+  --header-bg: rgba(13, 15, 25, 0.95);
 }
 
 body {
   margin: 0;
-  padding-top: 70px; /* Ensures all body content starts below the fixed header */
+  padding-top: 70px;
   font-family: 'Inter', sans-serif;
   color: #fff;
   background-color: #0d0f19;
@@ -26,10 +26,10 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  display: flex; /* Corrected to use flexbox for horizontal alignment */
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15px;
+  padding: 0 20px; /* Increased padding from edges */
   height: 70px;
   background: var(--header-bg);
   z-index: 100;
@@ -53,7 +53,7 @@ body {
 
 .site-name {
   font-family: 'Pacifico', cursive;
-  font-size: 1.5rem; /* Smaller logo as requested */
+  font-size: 1.5rem;
   font-weight: 400;
   color: var(--accent-color);
   text-transform: none;
@@ -272,6 +272,10 @@ body {
 }
 
 /* Categories page heading styling and Search Results heading */
+.content {
+    margin: 0 20px; /* Added margin to align with header padding */
+}
+
 .content h2 {
     font-size: clamp(1.8rem, 5vw, 3rem);
     font-weight: 600;
@@ -282,7 +286,7 @@ body {
     letter-spacing: 2px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     position: relative;
-    padding-top: 20px; /* Added padding to push it down from the fixed header */
+    padding-top: 20px;
 }
 
 .content h2::after {
@@ -660,4 +664,4 @@ body {
     .popup-content p {
         font-size: 0.9rem;
     }
-}
+  }
