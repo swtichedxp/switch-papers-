@@ -57,7 +57,7 @@ const renderHomePage = () => {
 
     const homepageHeader = document.createElement('header');
     homepageHeader.className = 'hero-section';
-    homepageHeader.style.backgroundImage = `url(homepage-cover.jpg)`; // Assuming a homepage cover image
+    homepageHeader.style.backgroundImage = `url(homepage-cover.jpg)`;
     homepageHeader.innerHTML = `
         <h2 class="hero-title">Discover the perfect wallpaper</h2>
     `;
@@ -95,9 +95,8 @@ const renderCategoryPage = (categoryId, page = 1) => {
     }
 
     const mainContent = document.querySelector('.content');
-    mainContent.innerHTML = ''; // Clear content first
+    mainContent.innerHTML = '';
 
-    // Hero section for the category page
     const categoryHeroHeader = document.createElement('header');
     categoryHeroHeader.className = 'hero-section';
     categoryHeroHeader.style.backgroundImage = `url(${category.category_image_url})`;
@@ -116,12 +115,36 @@ const renderCategoryPage = (categoryId, page = 1) => {
     paginatedWallpapers.forEach((wallpaper) => {
         const wallpaperCard = document.createElement('div');
         wallpaperCard.className = 'wallpaper-card';
-        const fileName = wallpaper.url.split('/').pop().split('?')[0];
         wallpaperCard.innerHTML = `
             <img src="${wallpaper.url}" alt="${wallpaper.title}">
-            <a href="${wallpaper.url}" download="${fileName}" class="download-btn">Download</a>
+            <button class="download-btn" data-url="${wallpaper.url}" data-filename="${wallpaper.title}.jpg">Download</button>
         `;
         wallpaperGridContainer.appendChild(wallpaperCard);
+    });
+
+    // New event listener for the download buttons
+    mainContent.querySelectorAll('.download-btn').forEach(button => {
+        button.addEventListener('click', async (e) => {
+            const imageUrl = e.target.dataset.url;
+            const filename = e.target.dataset.filename;
+
+            try {
+                const response = await fetch(imageUrl);
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                a.remove();
+            } catch (error) {
+                console.error('Download failed:', error);
+                alert('Could not download the image. Please try again.');
+            }
+        });
     });
 
     const paginationContainer = document.createElement('div');
