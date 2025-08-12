@@ -1,69 +1,100 @@
-/* Universal Styles */
+/* Universal Styles & Futuristic Palette */
+:root {
+    --bg-color: #0b0f1a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-color: #e0e0e0;
+    --accent-color: #00eaff; /* Futuristic neon blue */
+    --hover-color: rgba(0, 234, 255, 0.2);
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #0b0f1a;
-    color: #f0f2f5;
-    transition: background-color 0.5s ease;
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-image 0.5s ease-in-out;
 }
 
-/* Floating Navbar Styles */
+/* Mobile-First Navbar (Horizontal) */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
-    height: 100%;
-    
-    /* Glassmorphism Effect */
-    background: rgba(255, 255, 255, 0.05);
+    width: 100%;
+    height: 60px;
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-    
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     display: flex;
-    flex-direction: column;
-    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
     z-index: 1000;
 }
 
+.navbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .site-name {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #e0e0e0;
+    color: var(--accent-color);
+    text-transform: uppercase;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block; /* Show on mobile */
 }
 
 .nav-links {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: none; /* Hidden by default on mobile */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    flex-direction: column;
+}
+
+.nav-links.active {
+    display: flex;
 }
 
 .nav-links li a {
     display: block;
-    padding: 10px 15px;
-    color: #b0b0b0;
+    padding: 15px 20px;
+    color: var(--text-color);
     text-decoration: none;
-    font-weight: 400;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 .nav-links li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--hover-color);
     color: #fff;
 }
 
 /* Main Content Area */
 .content {
-    margin-left: 250px;
-    padding: 40px;
-    max-width: calc(100% - 250px);
+    padding-top: 80px; /* Space for the fixed navbar */
+    padding: 20px;
 }
 
 .homepage-header {
@@ -72,20 +103,22 @@ body {
 }
 
 .homepage-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 10px;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color);
 }
 
 .homepage-subtitle {
-    font-size: 1.2rem;
-    color: #888;
+    font-size: 1.1rem;
+    color: var(--text-color);
 }
 
 /* Category Grid */
 .category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Single column for mobile */
     gap: 25px;
 }
 
@@ -94,11 +127,8 @@ body {
     border-radius: 12px;
     overflow: hidden;
     height: 250px;
-    cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    /* Animations */
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInSlideUp 0.6s ease forwards;
@@ -138,7 +168,7 @@ body {
 .category-info h3 {
     margin: 0;
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--text-color);
 }
 
 /* Sick Animations */
@@ -150,5 +180,49 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* --- Media Queries for Desktop Layout --- */
+@media (min-width: 768px) {
+    .navbar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-bottom: none;
+        border-right: 1px solid var(--border-color);
+    }
+    
+    .navbar-header {
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .site-name {
+        font-size: 1.8rem;
+    }
+
+    .menu-toggle {
+        display: none; /* Hide on desktop */
+    }
+
+    .nav-links {
+        display: flex; /* Always show on desktop */
+        position: static;
+        flex-direction: column;
+    }
+
+    .content {
+        margin-left: 250px;
+        padding-top: 40px;
+        max-width: calc(100% - 250px);
+    }
+    
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
