@@ -5,6 +5,8 @@
   --accent-color: #00ffff;
   --hero-overlay: rgba(0, 0, 0, 0.4);
   --header-bg: rgba(13, 15, 25, 0.95);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
 }
 
 body {
@@ -20,7 +22,7 @@ body {
   transition: background-image 0.5s ease-in-out;
 }
 
-/* Header */
+/* Header & Navigation */
 .navbar {
   position: fixed;
   top: 0;
@@ -29,12 +31,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 25px; /* Shifted icons in from the edge */
+  padding: 0 25px; 
   height: 70px;
-  background: var(--header-bg);
+  background: transparent;
   z-index: 100;
   transition: background 0.3s ease;
   backdrop-filter: blur(10px);
+}
+
+.navbar.scrolled {
+  background: var(--header-bg);
 }
 
 .site-name {
@@ -45,6 +51,7 @@ body {
   text-transform: none;
   letter-spacing: 0;
   text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+  transition: opacity 0.3s ease;
 }
 
 .nav-icons {
@@ -106,26 +113,26 @@ body {
   color: #fff;
 }
 
-/* Search Bar Styling */
+/* Search Bar Styling (Modern Animation) */
 .search-container {
     position: absolute;
-    top: -70px; /* Hides it by moving it up by its own height */
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(0);
+    width: 90%;
     display: flex;
     align-items: center;
-    padding: 0 25px;
-    box-sizing: border-box;
-    transition: top 0.3s ease-in-out; /* Animates the 'top' property */
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    height: 100%;
     z-index: 102;
-    justify-content: space-between;
-    backdrop-filter: blur(10px);
 }
 
 .search-container.active {
-    top: 50px; /* Slides it down to appear right below the header */
+    transform: translate(-50%, -50%) scaleX(1);
+    opacity: 1;
+    visibility: visible;
 }
 
 .search-input {
@@ -136,7 +143,6 @@ body {
     padding: 10px 20px;
     color: #fff;
     font-size: 1rem;
-    margin-right: 15px;
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
@@ -158,8 +164,7 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     transition: color 0.3s ease;
-    z-index: 103;
-    padding: 10px;
+    margin-left: 10px;
 }
 
 .search-close:hover {
@@ -169,7 +174,7 @@ body {
 /* Autocomplete suggestions */
 .autocomplete-results {
     position: absolute;
-    top: 140px;
+    top: 70px;
     left: 0;
     width: 100%;
     max-height: 200px;
@@ -266,7 +271,7 @@ body {
   z-index: 1;
 }
 
-/* Categories page heading styling */
+/* Categories page heading styling and Search Results heading */
 .content h2 {
     font-size: clamp(1.8rem, 5vw, 3rem);
     font-weight: 600;
@@ -277,6 +282,7 @@ body {
     letter-spacing: 2px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     position: relative;
+    padding-top: 20px;
 }
 
 .content h2::after {
