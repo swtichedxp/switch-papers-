@@ -3,34 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>switchpaper</title>
+    <title>switchpaper - AI Wallpaper</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-    <nav class="navbar">
-        <h1 class="site-name">switchpaper</h1>
-        <div class="nav-icons">
-            <button class="search-toggle" id="search-toggle">
-                <i class="fas fa-search"></i>
-            </button>
-            <button class="menu-toggle" id="menu-toggle">
+    <header class="navbar">
+        <div class="nav-left">
+            <button class="menu-toggle" aria-label="Toggle Navigation">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        <ul class="nav-links" id="nav-links-container"></ul>
-        <div class="search-container" id="search-container">
-            <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input">
-            <div class="autocomplete-results" id="autocomplete-results"></div>
-            <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
-        </div>
-    </nav>
 
-    <main class="content"></main>
+        <div class="nav-center">
+            <h1 class="site-name">switchpaper</h1>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search wallpapers...">
+                <button class="search-close" aria-label="Close Search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="nav-right">
+            <button class="search-toggle" aria-label="Toggle Search">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/categories">Categories</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <div class="glass-hero-panel">
+            <h2>SWITCHPAPER</h2>
+            <p>Discover and download high-quality wallpapers for your devices.</p>
+        </div>
+    </div>
+
+    <main class="content">
+        <h2>Categories</h2>
+        <div class="glass-card-grid" id="category-container">
+            </div>
+    </main>
+
+    <div class="modal" id="preview-modal">
+        <button class="modal-close" id="close-modal">&times;</button>
+        <img src="" alt="Wallpaper Preview" class="modal-image" id="modal-image-element">
+    </div>
 
     <script src="script.js"></script>
 </body>
