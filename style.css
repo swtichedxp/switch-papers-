@@ -9,11 +9,10 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding-top: 70px; /* New: To prevent content from being hidden by the fixed header */
   font-family: 'Inter', sans-serif;
   color: #fff;
   background-color: #0d0f19;
-  /* New background image from the user */
   background-image: url('https://files.catbox.moe/fo6k1n.jpg'); 
   background-size: cover;
   background-position: center;
@@ -23,7 +22,9 @@ body {
 
 /* Header */
 .navbar {
-  position: relative;
+  position: fixed; /* New: Makes the header "float" on scroll */
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +33,6 @@ body {
   background: var(--header-bg);
   z-index: 100;
   transition: all 0.3s ease;
-  /* Glassmorphism Blur Effect */
   backdrop-filter: blur(10px);
 }
 
@@ -121,7 +121,6 @@ body {
     z-index: 102;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* Glassmorphism Blur Effect */
     backdrop-filter: blur(10px);
 }
 
@@ -257,14 +256,29 @@ body {
   z-index: 1;
 }
 
-.hero-title {
-  position: relative;
-  z-index: 2;
-  font-size: clamp(2.5rem, 8vw, 4rem);
-  font-weight: 600;
-  margin: 0;
-  color: #fff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+/* Categories page heading styling */
+.content h2 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+    margin: 30px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
 }
 
 /* Glassmorphism Hero Panel */
@@ -614,4 +628,4 @@ body {
     .popup-content p {
         font-size: 0.9rem;
     }
-  }
+      }
