@@ -60,7 +60,7 @@ body {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 70px;
+  top: 70px; /* Positioned below the non-fixed header */
   right: 0;
   width: 100%;
   background: var(--header-bg);
@@ -140,12 +140,12 @@ body {
   width: 100%;
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* Removed flex to enable custom positioning */
+  display: block; 
   text-align: center;
   transition: transform 0.3s ease;
   overflow: hidden;
+  margin-bottom: 25px; /* Added spacing between sections */
 }
 
 .category-hero::before {
@@ -164,13 +164,16 @@ body {
 }
 
 .category-hero h3 {
-  position: relative;
+  position: absolute; /* Positioned absolutely */
   z-index: 2;
+  bottom: 20px; /* Moved to the bottom */
+  left: 20px; /* Moved to the left */
   font-size: clamp(2rem, 5vw, 3rem);
   color: #fff;
   margin: 0;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
-  pointer-events: none; /* Allows click through to the link */
+  pointer-events: none;
+  text-align: left;
 }
 
 /* Wallpaper Grid */
@@ -299,4 +302,4 @@ body {
   .hero-section {
     height: 60vh;
   }
-}
+  }
