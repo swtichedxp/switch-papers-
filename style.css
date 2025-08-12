@@ -4,7 +4,7 @@
   --text-color: #e0e0e0;
   --accent-color: #00ffff;
   --hero-overlay: rgba(0, 0, 0, 0.4);
-  --header-bg: rgba(13, 15, 25, 0.9);
+  --header-bg: rgba(13, 15, 25, 0.95);
 }
 
 body {
@@ -29,11 +29,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 25px;
+  padding: 0 25px; /* Shifted icons in from the edge */
   height: 70px;
-  background: transparent;
+  background: var(--header-bg);
   z-index: 100;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
   backdrop-filter: blur(10px);
 }
 
@@ -109,7 +109,7 @@ body {
 /* Search Bar Styling */
 .search-container {
     position: absolute;
-    top: -70px; /* New: Hides it by moving it up by its own height */
+    top: -70px; /* Hides it by moving it up by its own height */
     left: 0;
     width: 100%;
     height: 70px;
@@ -125,7 +125,7 @@ body {
 }
 
 .search-container.active {
-    top: 50px; /* New: Slides it down to appear right below the header */
+    top: 50px; /* Slides it down to appear right below the header */
 }
 
 .search-input {
