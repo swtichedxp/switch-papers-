@@ -18,7 +18,7 @@ body {
 
 /* Header */
 .navbar {
-  position: static;
+  position: relative; /* Changed to relative for search bar positioning */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,8 +30,8 @@ body {
 }
 
 .site-name {
-  font-family: 'Pacifico', cursive; /* New font for the logo */
-  font-size: 2.5rem;
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem; /* Reduced font size */
   font-weight: 400;
   color: var(--accent-color);
   text-transform: none;
@@ -40,16 +40,22 @@ body {
   margin-right: auto;
 }
 
-.menu-toggle {
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-toggle, .search-toggle {
   background: none;
   border: none;
   color: var(--text-color);
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-.menu-toggle:hover {
+.menu-toggle:hover, .search-toggle:hover {
   color: var(--accent-color);
 }
 
@@ -60,7 +66,7 @@ body {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 70px; /* Positioned below the non-fixed header */
+  top: 70px;
   right: 0;
   width: 100%;
   background: var(--header-bg);
@@ -72,7 +78,7 @@ body {
 
 .nav-links.active {
   display: flex;
-  z-index: 101; /* This ensures the menu is always on top */
+  z-index: 101;
 }
 
 .nav-links li a {
@@ -81,13 +87,62 @@ body {
   color: var(--text-color);
   text-decoration: none;
   font-size: 1.1rem;
-  text-transform: none; /* Sentence case */
+  text-transform: none;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links li a:hover {
   background-color: var(--accent-color);
   color: #fff;
+}
+
+/* Search Bar Styling */
+.search-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: var(--header-bg);
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    box-sizing: border-box;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 102;
+}
+
+.search-container.active {
+    transform: translateY(0);
+}
+
+.search-input {
+    flex-grow: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.search-input::placeholder {
+    color: #a0a0a0;
+}
+
+.search-close {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.search-close:hover {
+    color: var(--accent-color);
 }
 
 /* Hero Section Layout */
@@ -141,12 +196,11 @@ body {
   width: 100%;
   background-size: cover;
   background-position: center;
-  /* Removed flex to enable custom positioning */
   display: block; 
   text-align: center;
   transition: transform 0.3s ease;
   overflow: hidden;
-  margin-bottom: 25px; /* Added spacing between sections */
+  margin-bottom: 25px;
 }
 
 .category-hero::before {
@@ -165,10 +219,10 @@ body {
 }
 
 .category-hero h3 {
-  position: absolute; /* Positioned absolutely */
+  position: absolute;
   z-index: 2;
-  bottom: 20px; /* Moved to the bottom */
-  left: 20px; /* Moved to the left */
+  bottom: 20px;
+  left: 20px;
   font-size: clamp(2rem, 5vw, 3rem);
   color: #fff;
   margin: 0;
@@ -303,4 +357,4 @@ body {
   .hero-section {
     height: 60vh;
   }
-}
+  }
