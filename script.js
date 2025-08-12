@@ -282,22 +282,33 @@ document.body.addEventListener('click', (e) => {
         const imageUrl = e.target.href;
         const fileName = e.target.download;
         
-        // Use the proxy to build the correct download link
-        const proxyUrl = 'https://switchimage-proxy.onrender.com';
-        const downloadUrl = `${proxyUrl}/download-image?url=${encodeURIComponent(imageUrl)}&filename=${encodeURIComponent(fileName)}`;
-        
-        // Create a temporary link element
-        const tempLink = document.createElement('a');
-        tempLink.style.display = 'none';
-        tempLink.href = downloadUrl;
-        tempLink.download = fileName;
-        document.body.appendChild(tempLink);
-        
-        // Simulate a click on the temporary link
-        tempLink.click();
-        
-        // Clean up the temporary link
-        document.body.removeChild(tempLink);
+        // --- POPUP LOGIC ---
+        const popup = document.createElement('div');
+        popup.className = 'download-popup';
+        popup.innerHTML = `
+            <div class="popup-content">
+                <h3>Download Image</h3>
+                <p>Sorry for the inconvenience. Our automatic download is temporarily unavailable.</p>
+                <p>To save the image:</p>
+                <p>1. On a mobile device, **press and hold** the image below.</p>
+                <p>2. Select **"Download image"** from the menu that appears.</p>
+                <img src="${imageUrl}" alt="${fileName}" class="popup-image">
+                <button class="popup-close-btn">Close</button>
+            </div>
+        `;
+        document.body.appendChild(popup);
+
+        // Add a handler to close the popup
+        popup.querySelector('.popup-close-btn').addEventListener('click', () => {
+            document.body.removeChild(popup);
+        });
+
+        // Add a handler to close the popup when clicking outside it
+        popup.addEventListener('click', (event) => {
+            if (event.target === popup) {
+                document.body.removeChild(popup);
+            }
+        });
     }
 
     // Handling modal close button
