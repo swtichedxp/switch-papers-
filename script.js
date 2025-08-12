@@ -52,40 +52,37 @@ const renderCategories = (categories) => {
 
 const renderHomePage = () => {
     const mainContent = document.querySelector('.content');
-    mainContent.innerHTML = `
-        <header class="homepage-header">
-            <h2 class="homepage-title">Switchpaper</h2>
-            <p class="homepage-subtitle">Discover the perfect wallpaper for your screen.</p>
-        </header>
-        <section class="category-grid" id="category-grid-container"></section>
-    `;
+    mainContent.innerHTML = '';
     document.body.style.backgroundImage = 'none';
 
-    const categoryGridContainer = document.getElementById('category-grid-container');
+    const homepageHeader = document.createElement('header');
+    homepageHeader.className = 'hero-section';
+    homepageHeader.style.backgroundImage = `url(homepage-cover.jpg)`; // Assuming a homepage cover image
+    homepageHeader.innerHTML = `
+        <h2 class="hero-title">Discover the perfect wallpaper</h2>
+    `;
+    mainContent.appendChild(homepageHeader);
+
+    const categoryGridContainer = document.createElement('section');
+    categoryGridContainer.className = 'category-hero-grid';
+    mainContent.appendChild(categoryGridContainer);
+
     const categories = wallpaperData.categories;
 
-    categories.forEach((category, index) => {
-        const categoryCard = document.createElement('div');
-        categoryCard.className = 'category-card';
-        categoryCard.style.animationDelay = `${index * 0.1}s`;
-        categoryCard.innerHTML = `
-            <a href="#" data-page="category" data-category-id="${category.id}">
-                <img src="${category.category_image_url}" alt="${category.name}">
-                <div class="category-info">
-                    <h3>${category.name}</h3>
-                </div>
-            </a>
-        `;
-        categoryGridContainer.appendChild(categoryCard);
-    });
+    categories.forEach((category) => {
+        const categoryHero = document.createElement('a');
+        categoryHero.className = 'category-hero';
+        categoryHero.href = '#';
+        categoryHero.dataset.page = 'category';
+        categoryHero.dataset.categoryId = category.id;
+        categoryHero.style.backgroundImage = `url(${category.category_image_url})`;
+        categoryHero.innerHTML = `<h3>${category.name}</h3>`;
+        categoryGridContainer.appendChild(categoryHero);
 
-    categoryGridContainer.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            if (e.target.closest('.category-card')) {
-                e.preventDefault();
-                const categoryId = e.target.closest('a').dataset.categoryId;
-                renderCategoryPage(categoryId, 1);
-            }
+        categoryHero.addEventListener('click', (e) => {
+            e.preventDefault();
+            const categoryId = e.target.dataset.categoryId;
+            renderCategoryPage(categoryId, 1);
         });
     });
 };
@@ -98,27 +95,27 @@ const renderCategoryPage = (categoryId, page = 1) => {
     }
 
     const mainContent = document.querySelector('.content');
+    mainContent.innerHTML = ''; // Clear content first
+
+    // Hero section for the category page
+    const categoryHeroHeader = document.createElement('header');
+    categoryHeroHeader.className = 'hero-section';
+    categoryHeroHeader.style.backgroundImage = `url(${category.category_image_url})`;
+    categoryHeroHeader.innerHTML = `<h2 class="hero-title">${category.name} Wallpapers</h2>`;
+    mainContent.appendChild(categoryHeroHeader);
+    document.body.style.backgroundImage = `none`;
+
     const start = (page - 1) * WALLPAPERS_PER_PAGE;
     const end = start + WALLPAPERS_PER_PAGE;
     const paginatedWallpapers = category.wallpapers.slice(start, end);
 
-    mainContent.innerHTML = `
-        <header class="category-page-header">
-            <h2 class="category-title">${category.name} Wallpapers</h2>
-        </header>
-        <section class="wallpaper-grid" id="wallpaper-grid-container"></section>
-        <div id="pagination-container" class="pagination"></div>
-    `;
+    const wallpaperGridContainer = document.createElement('section');
+    wallpaperGridContainer.className = 'wallpaper-grid';
+    mainContent.appendChild(wallpaperGridContainer);
 
-    document.body.style.backgroundImage = `url(${category.category_image_url})`;
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundPosition = 'center';
-
-    const wallpaperGridContainer = document.getElementById('wallpaper-grid-container');
-    paginatedWallpapers.forEach((wallpaper, index) => {
+    paginatedWallpapers.forEach((wallpaper) => {
         const wallpaperCard = document.createElement('div');
         wallpaperCard.className = 'wallpaper-card';
-        wallpaperCard.style.animationDelay = `${index * 0.1}s`;
         const fileName = wallpaper.url.split('/').pop().split('?')[0];
         wallpaperCard.innerHTML = `
             <img src="${wallpaper.url}" alt="${wallpaper.title}">
@@ -127,12 +124,18 @@ const renderCategoryPage = (categoryId, page = 1) => {
         wallpaperGridContainer.appendChild(wallpaperCard);
     });
 
+    const paginationContainer = document.createElement('div');
+    paginationContainer.id = 'pagination-container';
+    paginationContainer.className = 'pagination';
+    mainContent.appendChild(paginationContainer);
+
     renderPagination(categoryId, page, category.wallpapers.length);
 };
 
 const renderPagination = (categoryId, currentPage, totalWallpapers) => {
     const totalPages = Math.ceil(totalWallpapers / WALLPAPERS_PER_PAGE);
     const paginationContainer = document.getElementById('pagination-container');
+    if (!paginationContainer) return;
     paginationContainer.innerHTML = '';
 
     if (totalPages > 1) {
