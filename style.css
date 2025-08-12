@@ -2,14 +2,14 @@
 :root {
   --bg-color: #0b0f1a;
   --text-color: #e0e0e0;
-  --accent-color: #00ffff; /* Updated to Cyan */
+  --accent-color: #00ffff;
   --hero-overlay: rgba(0, 0, 0, 0.4);
   --header-bg: rgba(13, 15, 25, 0.9);
 }
 
 body {
   margin: 0;
-  padding-top: 70px; /* New: To prevent content from being hidden by the fixed header */
+  padding-top: 70px;
   font-family: 'Inter', sans-serif;
   color: #fff;
   background-color: #0d0f19;
@@ -22,7 +22,7 @@ body {
 
 /* Header */
 .navbar {
-  position: fixed; /* New: Makes the header "float" on scroll */
+  position: fixed;
   top: 0;
   width: 100%;
   display: flex;
@@ -44,13 +44,14 @@ body {
   text-transform: none;
   letter-spacing: 0;
   text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
-  margin-right: auto;
+  /* No longer need margin-right: auto with justify-content: space-between */
 }
 
 .nav-icons {
     display: flex;
     align-items: center;
     gap: 15px;
+    z-index: 101; /* Ensure buttons are clickable */
 }
 
 .menu-toggle, .search-toggle {
@@ -131,12 +132,20 @@ body {
 .search-input {
     flex-grow: 1;
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--accent-color);
-    border-radius: 5px;
-    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    border-radius: 50px; /* More modern, pill shape */
+    padding: 10px 20px;
     color: #fff;
     font-size: 1rem;
     margin-right: 10px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2); /* Inset shadow for depth */
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-color);
 }
 
 .search-input::placeholder {
@@ -150,6 +159,7 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     transition: color 0.3s ease;
+    z-index: 103; /* Ensure it's on top of the search bar */
 }
 
 .search-close:hover {
@@ -226,7 +236,6 @@ body {
 .modal-close:hover {
     color: var(--accent-color);
 }
-
 
 /* Hero Section Layout */
 .hero-section {
@@ -515,7 +524,6 @@ body {
 /* Desktop Styles */
 @media (min-width: 768px) {
   .navbar {
-    width: 100%;
     padding: 0 50px;
   }
 
@@ -628,4 +636,4 @@ body {
     .popup-content p {
         font-size: 0.9rem;
     }
-      }
+}
