@@ -3,1233 +3,1650 @@
     {
       "id": "windows",
       "name": "Windows",
-      "category_image_url": "https://c4.wallpaperflare.com/wallpaper/433/193/631/windows-10-microsoft-hd-wallpaper-preview.jpg",
-      "keywords": [
-        "windows",
-        "microsoft",
-        "windows 10",
-        "windows 11",
-        "os",
-        "operating system"
-      ],
+      "category_image_url": "images/windows_cover.jpg",
       "wallpapers": [
         {
-          "name": "windows 10 microsoft hd wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/433/193/631/windows-10-microsoft-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "windows 10 logo minimalism blurred wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/650/710/378/windows-10-logo-minimalism-blurred-wallpaper-preview.jpg"
-        },
-        {
-          "name": "windows 10 microsoft windows operating system wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/666/714/531/windows-10-microsoft-windows-operating-system-wallpaper-preview.jpg"
-        },
-        {
-          "name": "windows 10 microsoft operating system wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/415/710/452/windows-10-microsoft-operating-system-wallpaper-preview.jpg"
-        }
-      ]
-    },
-    {
-      "id": "nature",
-      "name": "Nature",
-      "category_image_url": "https://c4.wallpaperflare.com/wallpaper/661/231/761/river-landscape-waterfall-nature-wallpaper-preview.jpg",
-      "keywords": [
-        "nature",
-        "landscape",
-        "river",
-        "forest",
-        "mountains",
-        "waterfall"
-      ],
-      "wallpapers": [
-        {
-          "name": "river landscape waterfall nature wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/661/231/761/river-landscape-waterfall-nature-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital digital art artwork illustration landscape hd wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/251/946/357/digital-digital-art-artwork-illustration-landscape-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "lake blue moonlight moon wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/297/22/531/lake-blue-moonlight-moon-wallpaper-preview.jpg"
-        },
-        {
-          "name": "nature landscape trees digital art wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/767/612/930/nature-landscape-trees-digital-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital digital art artwork illustration landscape hd wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/806/990/536/digital-digital-art-artwork-illustration-landscape-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital digital art artwork fantasy art landscape hd wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/34/925/142/digital-digital-art-artwork-fantasy-art-landscape-hd-wallpaper-preview.jpg"
-        }
-      ]
-    },
-    {
-      "id": "cyberpunk",
-      "name": "Cyberpunk wallpapers",
-      "category_image_url": "https://c4.wallpaperflare.com/wallpaper/664/373/122/forest-mikael-gustafsson-landscape-horizon-wallpaper-preview.jpg",
-      "keywords": [
-        "nature",
-        "natural",
-        "nature wallpaper",
-        "nature image",
-        "landscape",
-        "land"
-      ],
-      "wallpapers": []
-    },
-    {
-      "id": "random",
-      "name": "Random",
-      "category_image_url": "https://c4.wallpaperflare.com/wallpaper/251/946/357/digital-digital-art-artwork-illustration-landscape-hd-wallpaper-preview.jpg",
-      "keywords": [
-        "random",
-        "all",
-        "people",
-        "things",
-        "car",
-        "digital art",
-        "illustration",
-        "artwork",
-        "movies",
-        "video games",
-        "anime",
-        "fantasy",
-        "abstract",
-        "minimalist",
-        "quotes",
-        "typography",
-        "nature",
-        "animals",
-        "technology"
-      ],
-      "wallpapers": [
-        {
-          "name": "brooklyn-bridge-multiple-display-new-york-city-people-actresses-hd-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/339/87/595/3840x1080-px-brooklyn-bridge-multiple-display-new-york-city-people-actresses-hd-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "skull-and-bones-2018-video-game-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/440/217/250/skull-and-bones-2018-video-game-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-art-photoshop-concept-art-futuristic-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/364/854/488/digital-art-photoshop-concept-art-futuristic-wallpaper-preview.jpg"
-        },
-        {
-          "name": "celebrity-discussing-the-divine-comedy-with-dante-salvador-dali-artwork-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/288/102/464/celebrity-discussing-the-divine-comedy-with-dante-salvador-dali-artwork-wallpaper-preview.jpg"
-        },
-        {
-          "name": "men-jacket-backpacks-futuristic-futuristic-city-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/181/108/36/men-jacket-backpacks-futuristic-futuristic-city-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "world-of-warcraft-battle-for-azeroth-video-games-warcraft-alliance-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/1020/1/213/world-of-warcraft-battle-for-azeroth-video-games-warcraft-alliance-wallpaper-preview.jpg"
-        },
-        {
-          "name": "artwork-digital-art-sergey-zabelin-cyberpunk-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/28/886/343/artwork-digital-art-sergey-zabelin-cyberpunk-wallpaper-preview.jpg"
-        },
-        {
-          "name": "abstract-ganesha-trees-monks-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/208/589/213/abstract-ganesha-trees-monks-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-illustration-photography-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/688/446/433/digital-digital-art-artwork-illustration-photography-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "simple-simple-background-minimalism-black-background-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/658/800/994/simple-simple-background-minimalism-black-background-wallpaper-preview.jpg"
-        },
-        {
-          "name": "uchiha-itachi-naruto-shippuuden-anbu-silhouette-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/365/244/884/uchiha-itachi-naruto-shippuuden-anbu-silhouette-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-night-city-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/247/977/121/digital-digital-art-artwork-night-city-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "gyms-motivational-quote-bruce-lee-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/853/328/897/gyms-motivational-quote-bruce-lee-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-illustration-landscape-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/251/946/357/digital-digital-art-artwork-illustration-landscape-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-illustration-drawing-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/266/749/195/digital-digital-art-artwork-illustration-drawing-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-illustration-concept-art-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/687/194/405/digital-digital-art-artwork-illustration-concept-art-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "star-wars-darth-vader-artwork-lightsaber-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/659/734/329/star-wars-darth-vader-artwork-lightsaber-wallpaper-preview.jpg"
-        },
-        {
-          "name": "the-lord-of-the-rings-j-r-r-tolkien-the-eye-of-sauron-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/207/78/365/the-lord-of-the-rings-j-r-r-tolkien-the-eye-of-sauron-wallpaper-preview.jpg"
-        },
-        {
-          "name": "street-art-artwork-digital-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/944/948/10/street-art-artwork-digital-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "stranger-things-bicycle-tv-netflix-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/136/128/878/stranger-things-bicycle-tv-netflix-wallpaper-preview.jpg"
-        },
-        {
-          "name": "dark-alone-loneliness-sad-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/898/942/445/dark-alone-loneliness-sad-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-3d-night-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/400/646/349/digital-digital-art-artwork-3d-night-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-art-asian-architecture-fantasy-art-town-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/295/653/112/digital-art-asian-architecture-fantasy-art-town-wallpaper-preview.jpg"
-        },
-        {
-          "name": "people-cristiano-ronaldo-soccer-portugal-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/701/760/868/people-cristiano-ronaldo-soccer-portugal-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-drawing-digital-painting-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/608/468/955/digital-digital-art-artwork-drawing-digital-painting-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "artwork-legion-people-dark-anonymous-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/393/917/178/artwork-legion-people-dark-anonymous-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-illustration-drawing-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/86/168/901/digital-digital-art-artwork-illustration-drawing-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-illustration-landscape-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/806/990/536/digital-digital-art-artwork-illustration-landscape-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-cowboy-bebop-spike-spiegel-smoking-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/159/149/68/anime-cowboy-bebop-spike-spiegel-smoking-wallpaper-preview.jpg"
-        },
-        {
-          "name": "the-lord-of-the-rings-silhouette-the-lord-of-the-rings-the-fellowship-of-the-ring-movies-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/558/467/744/the-lord-of-the-rings-silhouette-the-lord-of-the-rings-the-fellowship-of-the-ring-movies-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-illustration-drawing-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/846/616/937/digital-digital-art-artwork-illustration-drawing-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-fantasy-art-landscape-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/34/925/142/digital-digital-art-artwork-fantasy-art-landscape-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "car-purple-retrowave-landscape-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/663/420/862/car-purple-retrowave-landscape-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-drawing-digital-painting-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/106/429/185/digital-digital-art-artwork-drawing-digital-painting-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "dunkirk-movies-aircraft-fire-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/781/824/857/dunkirk-movies-aircraft-fire-wallpaper-preview.jpg"
-        },
-        {
-          "name": "lake-blue-moonlight-moon-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/297/22/531/lake-blue-moonlight-moon-wallpaper-preview.jpg"
-        },
-        {
-          "name": "sword-blood-fantasy-armor-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/403/855/787/sword-blood-fantasy-armor-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-futuristic-futuristic-city-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/559/456/991/digital-digital-art-artwork-futuristic-futuristic-city-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "manga-one-piece-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/965/883/624/manga-one-piece-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-illustration-fantasy-art-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/856/363/595/digital-digital-art-artwork-illustration-fantasy-art-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "nature-landscape-trees-digital-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/767/612/930/nature-landscape-trees-digital-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "3d-pirates-humor-gun-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/826/673/142/3d-pirates-humor-gun-wallpaper-preview.jpg"
-        },
-        {
-          "name": "painting-adolf-hiremy-hirschl-hermes-death-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/968/308/877/painting-adolf-hiremy-hirschl-hermes-death-wallpaper-preview.jpg"
-        },
-        {
-          "name": "death-baby-students-school-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/958/66/509/death-baby-students-school-wallpaper-preview.jpg"
-        },
-        {
-          "name": "movies-flash-superman-wonder-woman-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/884/965/115/movies-flash-superman-wonder-woman-wallpaper-preview.jpg"
-        },
-        {
-          "name": "painting-sea-cliff-claude-monet-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/581/377/216/painting-sea-cliff-claude-monet-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-art-futuristic-city-car-artwork-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/990/547/605/digital-art-futuristic-city-car-artwork-wallpaper-preview.jpg"
-        },
-        {
-          "name": "painting-artwork-prussia-concerts-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/1000/42/381/painting-artwork-prussia-concerts-wallpaper-preview.jpg"
-        },
-        {
-          "name": "women-cleavage-models-aria-giovanni-1920x1200-people-models-female-hd-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/979/902/361/women-cleavage-models-aria-giovanni-1920x1200-people-models-female-hd-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "5bd320d590bcf-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/297/288/1009/5bd320d590bcf-wallpaper-preview.jpg"
-        },
-        {
-          "name": "max-sokolovich-women-model-women-with-cars-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/667/392/848/max-sokolovich-women-model-women-with-cars-wallpaper-preview.jpg"
-        },
-        {
-          "name": "brunettes-women-water-models-outdoors-jordan-carver-1920x1280-people-models-female-hd-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/169/317/259/brunettes-women-water-models-outdoors-jordan-carver-1920x1280-people-models-female-hd-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "manga-oyasumi-punpun-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/587/108/959/manga-oyasumi-punpun-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-digital-art-artwork-painting-drawing-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/943/826/490/digital-digital-art-artwork-painting-drawing-hd-wallpaper-preview.jpg"
-        },
-        {
-          "name": "god-lord-krishna-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/741/147/681/god-lord-krishna-wallpaper-preview.jpg"
-        },
-        {
-          "name": "adults-analysis-brainstorming-collaboration",
-          "url": "https://c0.wallpaperflare.com/preview/811/935/645/adults-analysis-brainstorming-collaboration.jpg"
-        },
-        {
-          "name": "laptop-computer-dark-room",
-          "url": "https://c1.wallpaperflare.com/preview/14/432/956/laptop-computer-dark-room.jpg"
-        },
-        {
-          "name": "islamic-prayer-dusk-sun",
-          "url": "https://c0.wallpaperflare.com/preview/267/712/965/islamic-prayer-dusk-sun.jpg"
-        },
-        {
-          "name": "art-florence-photo-goddess",
-          "url": "https://c1.wallpaperflare.com/preview/441/771/653/art-florence-photo-goddess.jpg"
-        },
-        {
-          "name": "technology-code-coding-computer",
-          "url": "https://c1.wallpaperflare.com/preview/623/487/747/technology-code-coding-computer.jpg"
-        },
-        {
-          "name": "backlit-couple-dawn-love",
-          "url": "https://c0.wallpaperflare.com/preview/545/764/949/backlit-couple-dawn-love.jpg"
-        },
-        {
-          "name": "alley-city-neon-urban",
-          "url": "https://c0.wallpaperflare.com/preview/751/536/29/alley-city-neon-urban.jpg"
-        },
-        {
-          "name": "fish-underwater-red-betta",
-          "url": "https://c1.wallpaperflare.com/preview/567/681/300/fish-underwater-red-betta.jpg"
-        },
-        {
-          "name": "concery-wallpaper-festival-party",
-          "url": "https://c0.wallpaperflare.com/preview/285/1009/176/concery-wallpaper-festival-party.jpg"
-        },
-        {
-          "name": "technology-computer-creative-design",
-          "url": "https://c1.wallpaperflare.com/preview/811/367/789/technology-computer-creative-design.jpg"
-        },
-        {
-          "name": "seoul-korea-mac-wallpaper-pc-wallpaper",
-          "url": "https://c0.wallpaperflare.com/preview/280/30/526/seoul-korea-mac-wallpaper-pc-wallpaper.jpg"
-        },
-        {
-          "name": "tori-torii-shrine-b-w",
-          "url": "https://c1.wallpaperflare.com/preview/547/477/77/tori-torii-shrine-b-w.jpg"
-        },
-        {
-          "name": "grunge-texture-crumpled-wall",
-          "url": "https://c1.wallpaperflare.com/preview/120/176/1002/grunge-texture-crumpled-wall.jpg"
-        },
-        {
-          "name": "house-of-allah-mecca-mosque-muslim",
-          "url": "https://c1.wallpaperflare.com/preview/603/632/998/house-of-allah-mecca-mosque-muslim.jpg"
-        },
-        {
-          "name": "digital-art-drawing-people-nier-automata-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/274/29/113/digital-art-drawing-people-nier-automata-wallpaper-preview.jpg"
-        },
-        {
-          "name": "actress-kajal-agarwal-indian-girls-1400x2104-people-actresses-hd-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/289/405/261/actress-kajal-agarwal-indian-girls-1400x2104-people-actresses-hd-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "actress-saree-kajal-agarwal-indian-girls-1400x2104-people-actresses-hd-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/189/781/159/actress-saree-kajal-agarwal-indian-girls-1400x2104-people-actresses-hd-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "actress-kajal-agarwal-indian-girls-1400x2104-people-actresses-hd-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/659/238/425/actress-kajal-agarwal-indian-girls-1400x2104-people-actresses-hd-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "actress-saree-kajal-agarwal-indian-girls-1400x2104-people-actresses-hd-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/609/464/64/actress-saree-kajal-agarwal-indian-girls-1400x2104-people-actresses-hd-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "actress-saree-kajal-agarwal-indian-girls-1400x2104-people-actresses-hd-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/551/968/951/actress-saree-kajal-agarwal-indian-girls-1400x2104-people-actresses-hd-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "affection-afterglow-backlit-blur",
-          "url": "https://c1.wallpaperflare.com/preview/190/67/674/affection-afterglow-backlit-blur.jpg"
-        },
-        {
-          "name": "self-portrait-wanderer-above-the-sea-of-fog-caspar-david-friedrich-1818",
-          "url": "https://c1.wallpaperflare.com/preview/329/260/23/self-portrait-wanderer-above-the-sea-of-fog-caspar-david-friedrich-1818.jpg"
-        },
-        {
-          "name": "asian-decoration-elephant-face",
-          "url": "https://c1.wallpaperflare.com/preview/565/48/1010/asian-decoration-elephant-face.jpg"
-        },
-        {
-          "name": "religion-god-people-cross",
-          "url": "https://c1.wallpaperflare.com/preview/477/304/908/religion-god-people-cross.jpg"
-        },
-        {
-          "name": "jesus-religion-church-mercy",
-          "url": "https://c1.wallpaperflare.com/preview/791/106/414/jesus-religion-church-mercy.jpg"
-        },
-        {
-          "name": "multiple-display-brain-creativity-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/913/735/618/multiple-display-brain-creativity-wallpaper-preview.jpg"
-        },
-        {
-          "name": "video-game-art-video-games-artwork-the-last-of-us-ii-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/504/386/358/video-game-art-video-games-artwork-the-last-of-us-ii-wallpaper-preview.jpg"
-        },
-        {
-          "name": "hayao-miyazaki-howl-s-moving-castle-anime-studio-ghibli-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/671/134/338/hayao-miyazaki-howl-s-moving-castle-anime-studio-ghibli-wallpaper-preview.jpg"
-        },
-        {
-          "name": "neon-genesis-evangelion-mech-eva-unit-01-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/650/492/864/neon-genesis-evangelion-mech-eva-unit-01-wallpaper-preview.jpg"
-        },
-        {
-          "name": "uchiha-itachi-naruto-shippuuden-edo-tensei-sharingan-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/440/997/189/uchiha-itachi-naruto-shippuuden-edo-tensei-sharingan-wallpaper-preview.jpg"
-        },
-        {
-          "name": "purple-color-burst-hd-wallpaper-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/767/726/541/purple-color-burst-hd-wallpaper-wallpaper-preview.jpg"
-        },
-        {
-          "name": "simple-simple-background-minimalism-black-background-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/658/800/994/simple-simple-background-minimalism-black-background-wallpaper-preview.jpg"
-        },
-        {
-          "name": "sword-blood-fantasy-armor-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/403/855/787/sword-blood-fantasy-armor-wallpaper-preview.jpg"
-        },
-        {
-          "name": "fantasy-art-warrior-dark-souls-iii-dark-souls-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/951/583/798/fantasy-art-warrior-dark-souls-iii-dark-souls-wallpaper-preview.jpg"
-        },
-        {
-          "name": "deer-geometry-wireframe-artwork-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/337/481/82/deer-geometry-wireframe-artwork-wallpaper-preview.jpg"
-        },
-        {
-          "name": "movie-avengers-infinity-war-black-panther-movie-black-widow-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/296/400/37/movie-avengers-infinity-war-black-panther-movie-black-widow-wallpaper-preview.jpg"
-        },
-        {
-          "name": "abstract-fantasy-art-simple-background-digital-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/177/182/521/abstract-fantasy-art-simple-background-digital-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "rick-and-morty-tv-rick-sanchez-morty-smith-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/410/59/609/rick-and-morty-tv-rick-sanchez-morty-smith-wallpaper-preview.jpg"
-        },
-        {
-          "name": "iron-man-dark-background-superhero-grid-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/648/716/840/iron-man-dark-background-superhero-grid-wallpaper-preview.jpg"
-        },
-        {
-          "name": "fantasy-art-artwork-fan-art-science-fiction-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/556/382/458/fantasy-art-artwork-fan-art-science-fiction-wallpaper-preview.jpg"
-        },
-        {
-          "name": "colorful-abstract-digital-art-shapes-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/167/899/648/colorful-abstract-digital-art-shapes-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-one-piece-monkey-d-luffy-nami-one-piece-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/923/720/848/anime-one-piece-monkey-d-luffy-nami-one-piece-wallpaper-preview.jpg"
-        },
-        {
-          "name": "lion-colorful-digital-art-animals-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/457/443/825/lion-colorful-digital-art-animals-wallpaper-preview.jpg"
-        },
-        {
-          "name": "superheroes-dc-comics-8k-dark-background-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/928/54/349/superheroes-dc-comics-8k-dark-background-wallpaper-preview.jpg"
-        },
-        {
-          "name": "abstract-minimalism-square-paint-splatter-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/885/40/839/abstract-minimalism-square-paint-splatter-wallpaper-preview.jpg"
-        },
-        {
-          "name": "pattern-digital-art-triangle-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/106/906/355/pattern-digital-art-triangle-wallpaper-preview.jpg"
-        },
-        {
-          "name": "windows-10-microsoft-windows-operating-system-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/666/714/531/windows-10-microsoft-windows-operating-system-wallpaper-preview.jpg"
-        },
-        {
-          "name": "one-piece-sanji-germa-66-roronoa-zoro-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/172/489/310/one-piece-sanji-germa-66-roronoa-zoro-wallpaper-preview.jpg"
-        },
-        {
-          "name": "naruto-shippuuden-anime-uzumaki-naruto-uchiha-sasuke-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/337/871/597/naruto-shippuuden-anime-uzumaki-naruto-uchiha-sasuke-wallpaper-preview.jpg"
-        },
-        {
-          "name": "kentaro-miura-berserk-guts-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/12/827/723/kentaro-miura-berserk-guts-wallpaper-preview.jpg"
-        },
-        {
-          "name": "naruto-shippuuden-uzumaki-naruto-uchiha-sasuke-rinnegan-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/591/238/424/naruto-shippuuden-uzumaki-naruto-uchiha-sasuke-rinnegan-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-anime-girls-white-hair-long-hair-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/751/338/401/anime-anime-girls-white-hair-long-hair-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-anime-girls-azur-lane-glowing-eyes-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/929/770/396/anime-anime-girls-azur-lane-glowing-eyes-wallpaper-preview.jpg"
-        },
-        {
-          "name": "iron-man-marvel-comics-superhero-tony-stark-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/776/211/785/iron-man-marvel-comics-superhero-tony-stark-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-studio-ghibli-spirted-away-spirited-away-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/556/593/206/anime-studio-ghibli-spirted-away-spirited-away-wallpaper-preview.jpg"
-        },
-        {
-          "name": "technics-design-data-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/568/358/498/technics-design-data-wallpaper-preview.jpg"
-        },
-        {
-          "name": "windows-10-logo-minimalism-blurred-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/650/710/378/windows-10-logo-minimalism-blurred-wallpaper-preview.jpg"
-        },
-        {
-          "name": "5bd35c821d939-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/362/193/295/5bd35c821d939-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-titans-shingeki-no-kyojin-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/889/804/14/anime-titans-shingeki-no-kyojin-wallpaper-preview.jpg"
-        },
-        {
-          "name": "artwork-anime-uchiha-sasuke-naruto-shippuuden-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/787/473/68/artwork-anime-uchiha-sasuke-naruto-shippuuden-wallpaper-preview.jpg"
-        },
-        {
-          "name": "creative-graphics-sky-starry-sky-starry-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/175/128/20/creative-graphics-sky-starry-sky-starry-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-naruto-deidara-naruto-hidan-naruto-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/503/279/714/anime-naruto-deidara-naruto-hidan-naruto-wallpaper-preview.jpg"
-        },
-        {
-          "name": "black-minimalism-humor-simple-background-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/291/283/830/black-minimalism-humor-simple-background-wallpaper-preview.jpg"
-        },
-        {
-          "name": "linux-kali-linux-nethunter-kali-linux-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/108/252/903/linux-kali-linux-nethunter-kali-linux-wallpaper-preview.jpg"
-        },
-        {
-          "name": "abstract-brain-science-artwork-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/967/867/776/abstract-brain-science-artwork-wallpaper-preview.jpg"
-        },
-        {
-          "name": "digital-art-simple-background-minimalism-butterfly-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/223/681/271/digital-art-simple-background-minimalism-butterfly-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-one-piece-brook-one-piece-franky-one-piece-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/778/348/985/anime-one-piece-brook-one-piece-franky-one-piece-wallpaper-preview.jpg"
-        },
-        {
-          "name": "typography-quote-creativity-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/383/713/309/typography-quote-creativity-motivational-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-girls-monochrome-glitch-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/9/874/350/anime-girls-monochrome-glitch-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "marvel-comics-the-avengers-spider-man-avengers-infinity-war-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/719/640/12/marvel-comics-the-avengers-spider-man-avengers-infinity-war-wallpaper-preview.jpg"
-        },
-        {
-          "name": "3d-digital-art-abstract-simple-background-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/275/953/312/3d-digital-art-abstract-simple-background-wallpaper-preview.jpg"
-        },
-        {
-          "name": "windows-10-microsoft-operating-system-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/415/710/452/windows-10-microsoft-operating-system-wallpaper-preview.jpg"
-        },
-        {
-          "name": "one-piece-anime-manga-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/616/987/635/one-piece-anime-manga-wallpaper-preview.jpg"
-        },
-        {
-          "name": "dragon-ball-super-vegeta-super-saiyajin-blue-super-saiyan-blue-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/104/517/295/dragon-ball-super-vegeta-super-saiyajin-blue-super-saiyan-blue-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-one-piece-brook-one-piece-franky-one-piece-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/304/611/782/anime-one-piece-brook-one-piece-franky-one-piece-wallpaper-preview.jpg"
-        },
-        {
-          "name": "technics-design-technology-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/204/67/597/technics-design-technology-wallpaper-preview.jpg"
-        },
-        {
-          "name": "minimalism-code-quote-text-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/967/89/86/minimalism-code-quote-text-wallpaper-preview.jpg"
-        },
-        {
-          "name": "naruto-shippuuden-uzumaki-naruto-namikaze-minato-crying-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/815/850/356/naruto-shippuuden-uzumaki-naruto-namikaze-minato-crying-wallpaper-preview.jpg"
-        },
-        {
-          "name": "wlop-artwork-women-digital-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/328/266/395/wlop-artwork-women-digital-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-one-piece-zoro-roronoa-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/72/624/1004/anime-one-piece-zoro-roronoa-wallpaper-preview.jpg"
-        },
-        {
-          "name": "quote-motivational-digital-art-typography-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/126/117/95/quote-motivational-digital-art-typography-wallpaper-preview.jpg"
-        },
-        {
-          "name": "one-piece-monkey-d-luffy-hokusai-waves-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/245/866/531/one-piece-monkey-d-luffy-hokusai-waves-wallpaper-preview.jpg"
-        },
-        {
-          "name": "apple-colorful-background-creative-logo-blue-purple-and-pink-apple-brand-logo-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/537/840/924/apple-colorful-background-creative-logo-blue-purple-and-pink-apple-brand-logo-wallpaper-preview.jpg"
-        },
-        {
-          "name": "video-games-retro-games-anime-cartoon-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/192/788/7/video-games-retro-games-anime-cartoon-wallpaper-preview.jpg"
-        },
-        {
-          "name": "minimalism-abstract-pattern-digital-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/413/925/249/minimalism-abstract-pattern-digital-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "vincent-van-gogh-painting-the-starry-night-classic-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/743/193/102/vincent-van-gogh-painting-the-starry-night-classic-art-wallpaper-preview.jpg"
-        },
-        {
-          "name": "one-piece-tony-tony-chopper-nami-roronoa-zoro-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/919/561/125/one-piece-tony-tony-chopper-nami-roronoa-zoro-wallpaper-preview.jpg"
-        },
-        {
-          "name": "art-and-creative-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/432/372/864/art-and-creative-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-naruto-akatsuki-naruto-deidara-naruto-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/391/107/724/anime-naruto-akatsuki-naruto-deidara-naruto-wallpaper-preview.jpg"
-        },
-        {
-          "name": "women-anime-girls-brunette-cat-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/757/911/790/women-anime-girls-brunette-cat-wallpaper-preview.jpg"
-        },
-        {
-          "name": "squirt-background-paint-colors-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/299/830/530/squirt-background-paint-colors-wallpaper-preview.jpg"
-        },
-        {
-          "name": "the-great-wave-off-kanagawa-painting-japanese-waves-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/283/881/127/the-great-wave-off-kanagawa-painting-japanese-waves-wallpaper-preview.jpg"
-        },
-        {
-          "name": "one-piece-monkey-d-luffy-sabo-portgas-d-ace-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/793/126/441/one-piece-monkey-d-luffy-sabo-portgas-d-ace-wallpaper-preview.jpg"
-        },
-        {
-          "name": "anime-naruto-akatsuki-naruto-deidara-naruto-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/311/58/344/anime-naruto-akatsuki-naruto-deidara-naruto-wallpaper-preview.jpg"
-        },
-        {
-          "name": "naruto-shippuuden-masashi-kishimoto-uzumaki-naruto-haruno-sakura-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/1000/269/216/naruto-shippuuden-masashi-kishimoto-uzumaki-naruto-haruno-sakura-wallpaper-preview.jpg"
-        },
-        {
-          "name": "quote-typography-inspirational-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/853/443/669/quote-typography-inspirational-motivational-wallpaper-preview.jpg"
-        },
-        {
-          "name": "berserk-kentaro-miura-guts-manga-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/656/150/342/berserk-kentaro-miura-guts-manga-wallpaper-preview.jpg"
-        },
-        {
-          "name": "god-lord-krishna-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/661/37/264/god-lord-krishna-wallpaper-preview.jpg"
-        },
-        {
-          "name": "quote-humor-blue-typography-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/662/196/926/quote-humor-blue-typography-wallpaper-preview.jpg"
-        },
-        {
-          "name": "god-lord-krishna-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/771/2/557/god-lord-krishna-wallpaper-preview.jpg"
-        },
-        {
-          "name": "god-lord-krishna-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/1001/272/32/god-lord-krishna-wallpaper-preview.jpg"
-        },
-        {
-          "name": "technology-computer-creative-design",
-          "url": "https://c1.wallpaperflare.com/preview/811/367/789/technology-computer-creative-design.jpg"
-        },
-        {
-          "name": "ganesh-ganesha-hindu-india",
-          "url": "https://c0.wallpaperflare.com/preview/645/821/95/ganesh-ganesha-hindu-india.jpg"
-        },
-        {
-          "name": "naruto-shippuuden-akatsuki-uchiha-itachi-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/817/397/84/naruto-shippuuden-akatsuki-uchiha-itachi-wallpaper-preview.jpg"
-        }
-      ]
-    },
-    {
-      "id": "motivation",
-      "name": "motivation",
-      "category_image_url": "https://c4.wallpaperflare.com/wallpaper/296/480/1011/hustle-work-motivational-black-hd-wallpaper-preview.jpg",
-      "keywords": [
-        "motivational",
-        "motivation",
-        "hustle",
-        "bustle",
-        "hassle",
-        "work",
-        "depression",
-        "inspirational",
-        "quotes",
-        "typography",
-        "minimal",
-        "simple",
-        "programming",
-        "sports",
-        "life",
-        "training"
-      ],
-      "wallpapers": [
-        {
-          "name": "ultra-wide-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/307/539/622/ultra-wide-motivational-wallpaper-preview.jpg"
+          "id": "win1",
+          "url": "https://c4.wallpaperflare.com/wallpaper/1007/71/635/windows-10-technology-minimalism-black-wallpaper-preview.jpg",
+          "title": "Windows 1"
         },
         {
-          "name": "feelings-quote-black-white-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/285/846/367/feelings-quote-black-white-wallpaper-preview.jpg"
+          "id": "win2",
+          "url": "https://c4.wallpaperflare.com/wallpaper/454/39/603/windows-logo-blue-dark-windows-10-wallpaper-preview.jpg",
+          "title": "Windows 2"
         },
         {
-          "name": "hustle-work-motivational-black-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/296/480/1011/hustle-work-motivational-black-hd-wallpaper-preview.jpg"
+          "id": "win3",
+          "url": "https://c4.wallpaperflare.com/wallpaper/765/406/516/landscape-4k-bliss-windows-xp-wallpaper-preview.jpg",
+          "title": "Windows 3"
         },
         {
-          "name": "quote-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/349/987/690/quote-motivational-wallpaper-preview.jpg"
+          "id": "win4",
+          "url": "https://c4.wallpaperflare.com/wallpaper/447/378/354/windows-1hd-wallpaper-balls-hd-wallpaper-wallpaper-preview.jpg",
+          "title": "Windows 4"
         },
         {
-          "name": "typography-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/603/752/913/typography-motivational-wallpaper-preview.jpg"
+          "id": "win5",
+          "url": "https://c4.wallpaperflare.com/wallpaper/971/171/781/windows-10-simple-microsoft-windows-black-background-wallpaper-preview.jpg",
+          "title": "Windows 5"
         },
         {
-          "name": "gyms-motivational-quote-bruce-lee-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/853/328/897/gyms-motivational-quote-bruce-lee-wallpaper-preview.jpg"
+          "id": "win6",
+          "url": "https://c4.wallpaperflare.com/wallpaper/79/444/1019/microsoft-windows-windows-10-wallpaper-preview.jpg",
+          "title": "Windows 6"
         },
         {
-          "name": "motivational-mountains-typography-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/833/926/572/motivational-mountains-typography-wallpaper-preview.jpg"
+          "id": "win7",
+          "url": "https://c4.wallpaperflare.com/wallpaper/975/421/110/windows-10-black-4k-8k-wallpaper-preview.jpg",
+          "title": "Windows 7"
         },
         {
-          "name": "motivational-working-out-simple-sport-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/491/234/364/motivational-working-out-simple-sport-wallpaper-preview.jpg"
+          "id": "win8",
+          "url": "https://c4.wallpaperflare.com/wallpaper/472/4/59/dpcdpc11-windows-11-minimalism-dark-mode-hd-wallpaper-preview.jpg",
+          "title": "Windows 8"
         },
         {
-          "name": "programmers-programming-motivational-code-text-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/603/260/908/programmers-programming-motivational-code-text-hd-wallpaper-preview.jpg"
+          "id": "win9",
+          "url": "https://c4.wallpaperflare.com/wallpaper/716/926/431/microsoft-windows-10-logo-windows-10-logo-wallpaper-preview.jpg",
+          "title": "Windows 9"
         },
         {
-          "name": "quote-inspirational-typography-fan-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/80/898/379/quote-inspirational-typography-fan-art-wallpaper-preview.jpg"
+          "id": "win10",
+          "url": "https://c4.wallpaperflare.com/wallpaper/847/889/156/windows-11-dark-mode-hd-wallpaper-preview.jpg",
+          "title": "Windows 10"
         },
         {
-          "name": "motivational-dark-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/821/452/909/motivational-dark-wallpaper-preview.jpg"
+          "id": "win11",
+          "url": "https://c4.wallpaperflare.com/wallpaper/40/849/87/anime-girls-wallpaper-preview.jpg",
+          "title": "Windows 11"
         },
         {
-          "name": "time-style-labels-coffee-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/447/811/696/time-style-labels-coffee-wallpaper-preview.jpg"
+          "id": "win12",
+          "url": "https://c4.wallpaperflare.com/wallpaper/436/788/61/windows-11-microsoft-windows-logo-dark-gradient-hd-wallpaper-preview.jpg",
+          "title": "Windows 12"
         },
         {
-          "name": "quote-typography-inspirational-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/482/332/889/quote-typography-inspirational-motivational-wallpaper-preview.jpg"
+          "id": "win13",
+          "url": "https://c4.wallpaperflare.com/wallpaper/696/916/976/restaurant-dark-anime-girls-anime-alone-hd-wallpaper-preview.jpg",
+          "title": "Windows 13"
         },
         {
-          "name": "quote-motivational-typography-cityscape-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/597/181/201/quote-motivational-typography-cityscape-wallpaper-preview.jpg"
+          "id": "win14",
+          "url": "https://c4.wallpaperflare.com/wallpaper/794/320/992/windows-7-dark-microsoft-windows-blue-wallpaper-preview.jpg",
+          "title": "Windows 14"
         },
         {
-          "name": "simple-minimalism-digital-art-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/711/336/1021/simple-minimalism-digital-art-motivational-wallpaper-preview.jpg"
+          "id": "win15",
+          "url": "https://c4.wallpaperflare.com/wallpaper/425/94/409/windows-10-wallpaper-preview.jpg",
+          "title": "Windows 15"
         },
         {
-          "name": "inspirational-motivational-quote-quotes-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/448/704/37/inspirational-motivational-quote-quotes-wallpaper-preview.jpg"
+          "id": "win16",
+          "url": "https://c4.wallpaperflare.com/wallpaper/30/548/39/windows-11-gradient-polygon-art-minimalism-hd-wallpaper-preview.jpg",
+          "title": "Windows 16"
         },
         {
-          "name": "just-be-yourself-just-be-yourself-quote-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/176/221/315/just-be-yourself-just-be-yourself-quote-wallpaper-preview.jpg"
+          "id": "win17",
+          "url": "https://c4.wallpaperflare.com/wallpaper/559/697/150/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 17"
         },
         {
-          "name": "work-very-hard-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/527/318/382/work-very-hard-hd-wallpaper-preview.jpg"
+          "id": "win18",
+          "url": "https://c4.wallpaperflare.com/wallpaper/220/528/905/windows-10-black-wallpaper-preview.jpg",
+          "title": "Windows 18"
         },
         {
-          "name": "typography-digital-art-2d-depth-of-field-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/435/718/386/typography-digital-art-2d-depth-of-field-wallpaper-preview.jpg"
+          "id": "win19",
+          "url": "https://c4.wallpaperflare.com/wallpaper/322/315/802/windows-10-red-in-4k-wallpaper-preview.jpg",
+          "title": "Windows 19"
         },
         {
-          "name": "lion-motivational-typography-animals-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/891/739/777/lion-motivational-typography-animals-wallpaper-preview.jpg"
+          "id": "win20",
+          "url": "https://c4.wallpaperflare.com/wallpaper/253/947/731/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 20"
         },
         {
-          "name": "quote-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/238/492/873/quote-motivational-wallpaper-preview.jpg"
+          "id": "win21",
+          "url": "https://c4.wallpaperflare.com/wallpaper/268/96/863/anime-anime-girls-original-characters-short-hair-wallpaper-preview.jpg",
+          "title": "Windows 21"
         },
         {
-          "name": "typography-quote-creativity-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/383/713/309/typography-quote-creativity-motivational-wallpaper-preview.jpg"
+          "id": "win22",
+          "url": "https://c4.wallpaperflare.com/wallpaper/33/261/282/5bd28eeaec175-wallpaper-preview.jpg",
+          "title": "Windows 22"
         },
         {
-          "name": "abstract-digital-art-men-flying-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/396/313/232/abstract-digital-art-men-flying-wallpaper-preview.jpg"
+          "id": "win23",
+          "url": "https://c4.wallpaperflare.com/wallpaper/406/979/698/amiga-retro-games-window-computer-wallpaper-preview.jpg",
+          "title": "Windows 23"
         },
         {
-          "name": "motivational-nike-jumping-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/594/953/235/motivational-nike-jumping-wallpaper-preview.jpg"
+          "id": "win24",
+          "url": "https://c4.wallpaperflare.com/wallpaper/197/17/282/windows-vista-microsoft-windows-operating-system-wallpaper-preview.jpg",
+          "title": "Windows 24"
         },
         {
-          "name": "typography-motivational-quote-digital-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/889/192/29/typography-motivational-quote-digital-art-wallpaper-preview.jpg"
+          "id": "win25",
+          "url": "https://c4.wallpaperflare.com/wallpaper/302/487/746/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 25"
         },
         {
-          "name": "quote-motivational-arnold-schwarzenegger-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/440/469/70/quote-motivational-arnold-schwarzenegger-wallpaper-preview.jpg"
+          "id": "win26",
+          "url": "https://c4.wallpaperflare.com/wallpaper/342/166/508/windows-10-abstract-gmunk-wallpaper-preview.jpg",
+          "title": "Windows 26"
         },
         {
-          "name": "motivational-quote-minimalism-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/483/485/119/motivational-quote-minimalism-wallpaper-preview.jpg"
+          "id": "win27",
+          "url": "https://c4.wallpaperflare.com/wallpaper/911/672/978/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 27"
         },
         {
-          "name": "typography-quote-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/7/81/258/typography-quote-motivational-wallpaper-preview.jpg"
+          "id": "win28",
+          "url": "https://c4.wallpaperflare.com/wallpaper/583/513/69/microsoft-windows-windows-7-operating-system-wallpaper-preview.jpg",
+          "title": "Windows 28"
         },
         {
-          "name": "quote-inspirational-typography-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/244/41/128/quote-inspirational-typography-motivational-wallpaper-preview.jpg"
+          "id": "win29",
+          "url": "https://c4.wallpaperflare.com/wallpaper/680/277/174/sitting-women-legs-window-wallpaper-preview.jpg",
+          "title": "Windows 29"
         },
         {
-          "name": "inspirational-motivational-quote-quotes-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/841/262/469/inspirational-motivational-quote-quotes-wallpaper-preview.jpg"
+          "id": "win30",
+          "url": "https://c4.wallpaperflare.com/wallpaper/445/233/174/microsoft-microsoft-windows-10-wallpaper-preview.jpg",
+          "title": "Windows 30"
         },
         {
-          "name": "harry-potter-albus-dumbledore-quote-simple-background-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/117/570/517/harry-potter-albus-dumbledore-quote-simple-background-wallpaper-preview.jpg"
+          "id": "win31",
+          "url": "https://c4.wallpaperflare.com/wallpaper/505/881/248/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 31"
         },
         {
-          "name": "imam-motivational-eagle-islam-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/40/403/608/imam-motivational-eagle-islam-wallpaper-preview.jpg"
+          "id": "win32",
+          "url": "https://c4.wallpaperflare.com/wallpaper/763/641/316/ios-11-4k-windows-wallpaper-preview.jpg",
+          "title": "Windows 32"
         },
         {
-          "name": "programmers-programming-motivational-code-text-hd-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/300/702/343/programmers-programming-motivational-code-text-hd-wallpaper-preview.jpg"
+          "id": "win33",
+          "url": "https://c4.wallpaperflare.com/wallpaper/912/685/297/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 33"
         },
         {
-          "name": "minimalism-simple-background-quote-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/662/910/457/minimalism-simple-background-quote-motivational-wallpaper-preview.jpg"
+          "id": "win34",
+          "url": "https://c4.wallpaperflare.com/wallpaper/61/864/865/windows-10-2-wallpaper-preview.jpg",
+          "title": "Windows 34"
         },
         {
-          "name": "quote-bruce-lee-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/442/992/1001/quote-bruce-lee-motivational-wallpaper-preview.jpg"
+          "id": "win35",
+          "url": "https://c4.wallpaperflare.com/wallpaper/159/923/683/windows-11-windows11-simple-microsoft-minimalism-hd-wallpaper-preview.jpg",
+          "title": "Windows 35"
         },
         {
-          "name": "minimalism-motivational-inspirational-typography-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/636/189/292/minimalism-motivational-inspirational-typography-wallpaper-preview.jpg"
+          "id": "win36",
+          "url": "https://c4.wallpaperflare.com/wallpaper/212/944/939/windows-10-windows-11-minimalism-abstract-gradient-hd-wallpaper-preview.jpg",
+          "title": "Windows 36"
         },
         {
-          "name": "motivational-typography-minimalism-digital-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/995/757/311/motivational-typography-minimalism-digital-art-wallpaper-preview.jpg"
+          "id": "win37",
+          "url": "https://c4.wallpaperflare.com/wallpaper/237/341/268/caidychen-original-characters-anime-girls-short-hair-wallpaper-preview.jpg",
+          "title": "Windows 37"
         },
         {
-          "name": "simple-background-simple-motivational-quote-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/425/883/754/simple-background-simple-motivational-quote-wallpaper-preview.jpg"
+          "id": "win38",
+          "url": "https://c4.wallpaperflare.com/wallpaper/406/261/158/windows-10-wallpaper-preview.jpg",
+          "title": "Windows 38"
         },
         {
-          "name": "inspirational-motivational-quote-quotes-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/551/133/281/inspirational-motivational-quote-quotes-wallpaper-preview.jpg"
+          "id": "win39",
+          "url": "https://c4.wallpaperflare.com/wallpaper/885/40/839/abstract-minimalism-square-paint-splatter-wallpaper-preview.jpg",
+          "title": "Windows 39"
         },
         {
-          "name": "life-quote-typography-green-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/807/298/411/life-quote-typography-green-wallpaper-preview.jpg"
+          "id": "win40",
+          "url": "https://c4.wallpaperflare.com/wallpaper/945/179/586/windows-11-simple-microsoft-hd-wallpaper-preview.jpg",
+          "title": "Windows 40"
         },
         {
-          "name": "books-keep-calm-and-quote-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/302/456/881/books-keep-calm-and-quote-motivational-wallpaper-preview.jpg"
+          "id": "win41",
+          "url": "https://c4.wallpaperflare.com/wallpaper/150/935/590/fenetre-windows-10-hd-wallpaper-preview.jpg",
+          "title": "Windows 41"
         },
         {
-          "name": "life-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/714/922/335/life-motivational-wallpaper-preview.jpg"
+          "id": "win42",
+          "url": "https://c4.wallpaperflare.com/wallpaper/499/527/791/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 42"
         },
         {
-          "name": "quote-text-motivational-osho-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/52/952/1016/quote-text-motivational-osho-wallpaper-preview.jpg"
+          "id": "win43",
+          "url": "https://c4.wallpaperflare.com/wallpaper/683/633/291/windows-11-microsoft-hd-wallpaper-preview.jpg",
+          "title": "Windows 43"
         },
         {
-          "name": "life-minimalism-quote-typography-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/576/240/929/life-minimalism-quote-typography-wallpaper-preview.jpg"
+          "id": "win44",
+          "url": "https://c4.wallpaperflare.com/wallpaper/344/958/356/windows-10-windows-10-anniversary-logo-hd-wallpaper-preview.jpg",
+          "title": "Windows 44"
         },
         {
-          "name": "motivational-black-background-typography-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/654/495/649/motivational-black-background-typography-wallpaper-preview.jpg"
+          "id": "win45",
+          "url": "https://c4.wallpaperflare.com/wallpaper/650/710/378/windows-10-logo-minimalism-blurred-wallpaper-preview.jpg",
+          "title": "Windows 45"
         },
         {
-          "name": "quote-typography-text-digital-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/481/328/29/quote-typography-text-digital-art-wallpaper-preview.jpg"
+          "id": "win46",
+          "url": "https://c4.wallpaperflare.com/wallpaper/280/939/631/windows-window-on-the-desktop-windows-10-1920x1080-hd-wallpaper-preview.jpg",
+          "title": "Windows 46"
         },
         {
-          "name": "typography-quote-bokeh-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/793/103/631/typography-quote-bokeh-motivational-wallpaper-preview.jpg"
+          "id": "win47",
+          "url": "https://c4.wallpaperflare.com/wallpaper/878/6/421/windows-10-operating-system-microsoft-windows-computer-wallpaper-preview.jpg",
+          "title": "Windows 47"
         },
         {
-          "name": "simple-desk-clocks-books-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/11/624/62/simple-desk-clocks-books-wallpaper-preview.jpg"
+          "id": "win48",
+          "url": "https://c4.wallpaperflare.com/wallpaper/570/927/590/1366x768-px-androids-microsoft-windows-robot-windows-10-space-galaxies-hd-art-wallpaper-preview.jpg",
+          "title": "Windows 48"
         },
         {
-          "name": "exercising-motivational-text-dark-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/643/777/87/exercising-motivational-text-dark-wallpaper-preview.jpg"
+          "id": "win49",
+          "url": "https://c4.wallpaperflare.com/wallpaper/203/636/834/minimalism-landscape-digital-windows-11-hd-wallpaper-preview.jpg",
+          "title": "Windows 49"
         },
         {
-          "name": "red-background-typo-typography-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/384/115/816/red-background-typo-typography-motivational-wallpaper-preview.jpg"
+          "id": "win50",
+          "url": "https://c4.wallpaperflare.com/wallpaper/974/565/254/windows-11-windows-10-minimalism-hd-wallpaper-preview.jpg",
+          "title": "Windows 50"
         },
         {
-          "name": "bokeh-mood-motivational-poem-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/806/214/475/bokeh-mood-motivational-poem-wallpaper-preview.jpg"
+          "id": "win51",
+          "url": "https://c4.wallpaperflare.com/wallpaper/711/852/840/windows-10-background-wallpaper-preview.jpg",
+          "title": "Windows 51"
         },
         {
-          "name": "bruce-lee-black-yellow-quote-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/467/740/891/bruce-lee-black-yellow-quote-wallpaper-preview.jpg"
+          "id": "win52",
+          "url": "https://c4.wallpaperflare.com/wallpaper/425/682/349/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 52"
         },
         {
-          "name": "blue-screen-of-death-microsoft-windows-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/147/436/981/blue-screen-of-death-microsoft-windows-motivational-wallpaper-preview.jpg"
+          "id": "win53",
+          "url": "https://c4.wallpaperflare.com/wallpaper/830/34/522/windows-11-macos-colorful-operating-system-windows-logo-hd-wallpaper-preview.jpg",
+          "title": "Windows 53"
         },
         {
-          "name": "battle-motivational-mortal-online-quote-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/515/203/692/battle-motivational-mortal-online-quote-wallpaper-preview.jpg"
+          "id": "win54",
+          "url": "https://c4.wallpaperflare.com/wallpaper/218/952/879/windows-11-microsoft-minimalism-digital-art-hd-wallpaper-preview.jpg",
+          "title": "Windows 54"
         },
         {
-          "name": "students-studying-motivational-minimalism-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/116/883/732/students-studying-motivational-minimalism-wallpaper-preview.jpg"
+          "id": "win55",
+          "url": "https://c4.wallpaperflare.com/wallpaper/666/714/531/windows-10-microsoft-windows-operating-system-wallpaper-preview.jpg",
+          "title": "Windows 55"
         },
         {
-          "name": "minimalism-quote-writing-black-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/604/666/450/minimalism-quote-writing-black-wallpaper-preview.jpg"
+          "id": "win56",
+          "url": "https://c4.wallpaperflare.com/wallpaper/511/241/162/microsoft-microsoft-windows-windows-10-wooden-surface-wallpaper-preview.jpg",
+          "title": "Windows 56"
         },
         {
-          "name": "humor-motivational-black-background-minimalism-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/465/78/448/humor-motivational-black-background-minimalism-wallpaper-preview.jpg"
+          "id": "win57",
+          "url": "https://c4.wallpaperflare.com/wallpaper/224/784/911/5bd29f10b38f7-wallpaper-preview.jpg",
+          "title": "Windows 57"
         },
         {
-          "name": "never-give-up-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/444/275/604/never-give-up-wallpaper-preview.jpg"
+          "id": "win58",
+          "url": "https://c4.wallpaperflare.com/wallpaper/695/331/660/digital-art-artwork-women-cityscape-wallpaper-preview.jpg",
+          "title": "Windows 58"
         },
         {
-          "name": "motivational-black-background-typography-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/933/880/967/motivational-black-background-typography-wallpaper-preview.jpg"
+          "id": "win59",
+          "url": "https://c4.wallpaperflare.com/wallpaper/162/275/582/microsoft-windows-windows-10-wallpaper-preview.jpg",
+          "title": "Windows 59"
         },
         {
-          "name": "quote-motivational-think-positively-txt-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/962/206/477/quote-motivational-think-positively-txt-wallpaper-preview.jpg"
+          "id": "win60",
+          "url": "https://c4.wallpaperflare.com/wallpaper/415/710/452/windows-10-microsoft-operating-system-wallpaper-preview.jpg",
+          "title": "Windows 60"
         },
         {
-          "name": "typography-quote-minimalism-digital-art-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/99/400/55/typography-quote-minimalism-digital-art-wallpaper-preview.jpg"
+          "id": "win61",
+          "url": "https://c4.wallpaperflare.com/wallpaper/359/676/935/windows-10-blue-sky-galaxy-wallpaper-preview.jpg",
+          "title": "Windows 61"
         },
         {
-          "name": "motivational-inspirational-life-quote-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/796/208/20/motivational-inspirational-life-quote-wallpaper-preview.jpg"
+          "id": "win62",
+          "url": "https://c4.wallpaperflare.com/wallpaper/547/424/16/windows-11-windows-11-se-microsoft-minimalism-operating-system-hd-wallpaper-preview.jpg",
+          "title": "Windows 62"
         },
         {
-          "name": "idiot-quote-humor-minimalism-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/737/502/366/idiot-quote-humor-minimalism-wallpaper-preview.jpg"
+          "id": "win63",
+          "url": "https://c4.wallpaperflare.com/wallpaper/850/221/294/windows-10-abstract-landscape-hd-wallpaper-preview.jpg",
+          "title": "Windows 63"
         },
         {
-          "name": "motivational-quote-minimalism-monochrome-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/318/741/132/motivational-quote-minimalism-monochrome-wallpaper-preview.jpg"
+          "id": "win64",
+          "url": "https://c4.wallpaperflare.com/wallpaper/553/119/620/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 64"
         },
         {
-          "name": "motivational-minimalism-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/313/831/602/motivational-minimalism-wallpaper-preview.jpg"
+          "id": "win65",
+          "url": "https://c4.wallpaperflare.com/wallpaper/722/563/713/dpcdpc11-windows-11-minimalism-windows-logo-white-hd-wallpaper-preview.jpg",
+          "title": "Windows 65"
         },
         {
-          "name": "minimalistic-motivation-text-typography-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/424/46/366/minimalistic-motivation-text-typography-wallpaper-preview.jpg"
+          "id": "win66",
+          "url": "https://c4.wallpaperflare.com/wallpaper/317/135/758/desaturated-desert-windows-10-windows-10x-windows-logo-hd-wallpaper-preview.jpg",
+          "title": "Windows 66"
         },
         {
-          "name": "inspirational-motivational-quote-quotes-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/56/712/987/inspirational-motivational-quote-quotes-wallpaper-preview.jpg"
+          "id": "win67",
+          "url": "https://c4.wallpaperflare.com/wallpaper/264/769/193/windows-windows-10-wallpaper-preview.jpg",
+          "title": "Windows 67"
         },
         {
-          "name": "quote-chess-typography-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/563/697/241/quote-chess-typography-motivational-wallpaper-preview.jpg"
+          "id": "win68",
+          "url": "https://c4.wallpaperflare.com/wallpaper/260/764/847/microsoft-windows-windows-10-minimalism-operating-system-wallpaper-preview.jpg",
+          "title": "Windows 68"
         },
         {
-          "name": "quote-motivational-digital-art-typography-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/126/117/95/quote-motivational-digital-art-typography-wallpaper-preview.jpg"
+          "id": "win69",
+          "url": "https://c4.wallpaperflare.com/wallpaper/878/968/35/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 69"
         },
         {
-          "name": "quote-simple-motivational-minimalism-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/139/610/492/quote-simple-motivational-minimalism-wallpaper-preview.jpg"
+          "id": "win70",
+          "url": "https://c4.wallpaperflare.com/wallpaper/987/319/586/windows-11-dark-theme-silk-hd-wallpaper-preview.jpg",
+          "title": "Windows 70"
         },
         {
-          "name": "think-positively-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/817/814/439/think-positively-wallpaper-preview.jpg"
+          "id": "win71",
+          "url": "https://c4.wallpaperflare.com/wallpaper/338/479/585/windows-10-windows-vista-operating-system-technology-windows-7-hd-wallpaper-preview.jpg",
+          "title": "Windows 71"
         },
         {
-          "name": "misc-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/907/109/211/misc-motivational-wallpaper-preview.jpg"
+          "id": "win72",
+          "url": "https://c4.wallpaperflare.com/wallpaper/488/636/57/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 72"
         },
         {
-          "name": "usain-bolt-running-motivational-quote-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/203/310/553/usain-bolt-running-motivational-quote-wallpaper-preview.jpg"
+          "id": "win73",
+          "url": "https://c4.wallpaperflare.com/wallpaper/681/945/301/windows-10-microsoft-gradient-blue-wallpaper-preview.jpg",
+          "title": "Windows 73"
         },
         {
-          "name": "quote-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/734/647/661/quote-motivational-wallpaper-preview.jpg"
+          "id": "win74",
+          "url": "https://c4.wallpaperflare.com/wallpaper/806/571/730/microsoft-windows-windows-10-galaxy-tent-wallpaper-preview.jpg",
+          "title": "Windows 74"
         },
         {
-          "name": "motivational-quote-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/140/91/745/motivational-quote-wallpaper-preview.jpg"
+          "id": "win75",
+          "url": "https://c4.wallpaperflare.com/wallpaper/474/914/509/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 75"
         },
         {
-          "name": "quote-blue-blue-background-typography-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/84/796/981/quote-blue-blue-background-typography-wallpaper-preview.jpg"
+          "id": "win76",
+          "url": "https://c4.wallpaperflare.com/wallpaper/624/21/247/microsoft-windows-windows-10-technology-hi-tech-wallpaper-preview.jpg",
+          "title": "Windows 76"
         },
         {
-          "name": "quote-motivational-minimalism-typography-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/870/934/525/quote-motivational-minimalism-typography-wallpaper-preview.jpg"
+          "id": "win77",
+          "url": "https://c4.wallpaperflare.com/wallpaper/622/626/517/windows-10-windows-10x-windows-11-minimalism-material-minimal-hd-wallpaper-preview.jpg",
+          "title": "Windows 77"
         },
         {
-          "name": "quote-typography-inspirational-motivational-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/853/443/669/quote-typography-inspirational-motivational-wallpaper-preview.jpg"
+          "id": "win78",
+          "url": "https://c4.wallpaperflare.com/wallpaper/364/348/987/windows-windows-10-wallpaper-preview.jpg",
+          "title": "Windows 78"
         },
         {
-          "name": "typography-motivational-word-clouds-simple-background-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/1004/573/189/typography-motivational-word-clouds-simple-background-wallpaper-preview.jpg"
+          "id": "win79",
+          "url": "https://c4.wallpaperflare.com/wallpaper/173/114/541/minimalism-black-background-error-simple-background-not-available-hd-wallpaper-preview.jpg",
+          "title": "Windows 79"
         },
         {
-          "name": "pattern-texture-mandala-green-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/835/374/449/pattern-texture-mandala-green-wallpaper-preview.jpg"
+          "id": "win80",
+          "url": "https://c4.wallpaperflare.com/wallpaper/336/163/715/honeycombs-abstract-minimalism-simple-background-wallpaper-preview.jpg",
+          "title": "Windows 80"
         }
       ]
     },
     {
       "id": "anime",
       "name": "Anime",
-      "category_image_url": "https://c4.wallpaperflare.com/wallpaper/1000/269/216/naruto-shippuuden-masashi-kishimoto-uzumaki-naruto-haruno-sakura-wallpaper-preview.jpg",
-      "keywords": [
-        "anime",
-        "manga",
-        "animation",
-        "naruto",
-        "one piece",
-        "dragon ball",
-        "studio ghibli",
-        "characters",
-        "art"
-      ],
+      "category_image_url": "images/anime_cover.jpg",
       "wallpapers": [
         {
-          "name": "uchiha-itachi-naruto-shippuuden-anbu-silhouette-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/365/244/884/uchiha-itachi-naruto-shippuuden-anbu-silhouette-wallpaper-preview.jpg"
+          "id": "anm1",
+          "url": "https://c4.wallpaperflare.com/wallpaper/695/331/660/digital-art-artwork-women-cityscape-wallpaper-preview.jpg",
+          "title": "Anime 1"
         },
         {
-          "name": "anime-cowboy-bebop-spike-spiegel-smoking-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/159/149/68/anime-cowboy-bebop-spike-spiegel-smoking-wallpaper-preview.jpg"
+          "id": "anm2",
+          "url": "https://c4.wallpaperflare.com/wallpaper/268/96/863/anime-anime-girls-original-characters-short-hair-wallpaper-preview.jpg",
+          "title": "Anime 2"
         },
         {
-          "name": "manga-one-piece-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/965/883/624/manga-one-piece-wallpaper-preview.jpg"
+          "id": "anm3",
+          "url": "https://c4.wallpaperflare.com/wallpaper/708/846/337/anime-demon-slayer-kimetsu-no-yaiba-tanjirou-kamado-hd-wallpaper-preview.jpg",
+          "title": "Anime 3"
         },
         {
-          "name": "hayao-miyazaki-howl-s-moving-castle-anime-studio-ghibli-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/671/134/338/hayao-miyazaki-howl-s-moving-castle-anime-studio-ghibli-wallpaper-preview.jpg"
+          "id": "anm4",
+          "url": "https://c4.wallpaperflare.com/wallpaper/291/819/697/illustration-city-anime-painting-wallpaper-preview.jpg",
+          "title": "Anime 4"
         },
         {
-          "name": "neon-genesis-evangelion-mech-eva-unit-01-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/650/492/864/neon-genesis-evangelion-mech-eva-unit-01-wallpaper-preview.jpg"
+          "id": "anm5",
+          "url": "https://c4.wallpaperflare.com/wallpaper/545/756/905/anime-anime-girls-mask-simple-background-hd-wallpaper-preview.jpg",
+          "title": "Anime 5"
         },
         {
-          "name": "uchiha-itachi-naruto-shippuuden-edo-tensei-sharingan-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/440/997/189/uchiha-itachi-naruto-shippuuden-edo-tensei-sharingan-wallpaper-preview.jpg"
+          "id": "anm6",
+          "url": "https://c4.wallpaperflare.com/wallpaper/682/435/620/naruto-anime-uzumaki-naruto-jiraiya-naruto-shippuuden-hd-wallpaper-preview.jpg",
+          "title": "Anime 6"
         },
         {
-          "name": "anime-one-piece-monkey-d-luffy-nami-one-piece-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/923/720/848/anime-one-piece-monkey-d-luffy-nami-one-piece-wallpaper-preview.jpg"
+          "id": "anm7",
+          "url": "https://c4.wallpaperflare.com/wallpaper/370/127/644/uchiha-sasuke-rinnegan-eternal-mangekyou-sharingan-naruto-shippuuden-wallpaper-preview.jpg",
+          "title": "Anime 7"
         },
         {
-          "name": "one-piece-sanji-germa-66-roronoa-zoro-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/172/489/310/one-piece-sanji-germa-66-roronoa-zoro-wallpaper-preview.jpg"
+          "id": "anm8",
+          "url": "https://c4.wallpaperflare.com/wallpaper/885/751/661/rain-artwork-women-earring-wallpaper-preview.jpg",
+          "title": "Anime 8"
         },
         {
-          "name": "naruto-shippuuden-anime-uzumaki-naruto-uchiha-sasuke-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/337/871/597/naruto-shippuuden-anime-uzumaki-naruto-uchiha-sasuke-wallpaper-preview.jpg"
+          "id": "anm9",
+          "url": "https://c4.wallpaperflare.com/wallpaper/997/210/533/anime-attack-on-titan-attack-on-titan-levi-ackerman-wallpaper-preview.jpg",
+          "title": "Anime 9"
         },
         {
-          "name": "kentaro-miura-berserk-guts-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/12/827/723/kentaro-miura-berserk-guts-wallpaper-preview.jpg"
+          "id": "anm10",
+          "url": "https://c4.wallpaperflare.com/wallpaper/100/30/528/anime-naruto-itachi-uchiha-wallpaper-preview.jpg",
+          "title": "Anime 10"
         },
         {
-          "name": "naruto-shippuuden-uzumaki-naruto-uchiha-sasuke-rinnegan-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/591/238/424/naruto-shippuuden-uzumaki-naruto-uchiha-sasuke-rinnegan-wallpaper-preview.jpg"
+          "id": "anm11",
+          "url": "https://c4.wallpaperflare.com/wallpaper/295/163/719/anime-anime-boys-picture-in-picture-kimetsu-no-yaiba-kamado-tanjirō-hd-wallpaper-preview.jpg",
+          "title": "Anime 11"
         },
         {
-          "name": "anime-anime-girls-white-hair-long-hair-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/751/338/401/anime-anime-girls-white-hair-long-hair-wallpaper-preview.jpg"
+          "id": "anm12",
+          "url": "https://c4.wallpaperflare.com/wallpaper/760/459/710/aoi-ogata-anime-girls-wallpaper-preview.jpg",
+          "title": "Anime 12"
         },
         {
-          "name": "anime-anime-girls-azur-lane-glowing-eyes-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/929/770/396/anime-anime-girls-azur-lane-glowing-eyes-wallpaper-preview.jpg"
+          "id": "anm13",
+          "url": "https://c4.wallpaperflare.com/wallpaper/693/688/935/uchiha-madara-naruto-shippuuden-wallpaper-preview.jpg",
+          "title": "Anime 13"
         },
         {
-          "name": "anime-studio-ghibli-spirted-away-spirited-away-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/556/593/206/anime-studio-ghibli-spirted-away-spirited-away-wallpaper-preview.jpg"
+          "id": "anm14",
+          "url": "https://c4.wallpaperflare.com/wallpaper/548/274/337/dbz-dragon-ball-z-goku-dragon-ball-super-wallpaper-preview.jpg",
+          "title": "Anime 14"
         },
         {
-          "name": "anime-titans-shingeki-no-kyojin-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/889/804/14/anime-titans-shingeki-no-kyojin-wallpaper-preview.jpg"
+          "id": "anm15",
+          "url": "https://c4.wallpaperflare.com/wallpaper/470/652/917/anime-naruto-naruto-uzumaki-sasuke-uchiha-wallpaper-preview.jpg",
+          "title": "Anime 15"
         },
         {
-          "name": "artwork-anime-uchiha-sasuke-naruto-shippuuden-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/787/473/68/artwork-anime-uchiha-sasuke-naruto-shippuuden-wallpaper-preview.jpg"
+          "id": "anm16",
+          "url": "https://c4.wallpaperflare.com/wallpaper/826/109/269/spiderman-into-the-spider-verse-2018-movies-movies-spiderman-wallpaper-preview.jpg",
+          "title": "Anime 16"
         },
         {
-          "name": "anime-naruto-deidara-naruto-hidan-naruto-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/503/279/714/anime-naruto-deidara-naruto-hidan-naruto-wallpaper-preview.jpg"
+          "id": "anm17",
+          "url": "https://c4.wallpaperflare.com/wallpaper/917/245/80/anime-demon-slayer-kimetsu-no-yaiba-tanjirou-kamado-hd-wallpaper-preview.jpg",
+          "title": "Anime 17"
         },
         {
-          "name": "anime-one-piece-brook-one-piece-franky-one-piece-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/778/348/985/anime-one-piece-brook-one-piece-franky-one-piece-wallpaper-preview.jpg"
+          "id": "anm18",
+          "url": "https://c4.wallpaperflare.com/wallpaper/555/163/727/anime-demon-slayer-kimetsu-no-yaiba-zenitsu-agatsuma-hd-wallpaper-preview.jpg",
+          "title": "Anime 18"
         },
         {
-          "name": "anime-one-piece-brook-one-piece-franky-one-piece-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/304/611/782/anime-one-piece-brook-one-piece-franky-one-piece-wallpaper-preview.jpg"
+          "id": "anm19",
+          "url": "https://c4.wallpaperflare.com/wallpaper/531/951/621/digital-digital-art-artwork-illustration-minimalism-hd-wallpaper-preview.jpg",
+          "title": "Anime 19"
         },
         {
-          "name": "naruto-shippuuden-uzumaki-naruto-namikaze-minato-crying-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/815/850/356/naruto-shippuuden-uzumaki-naruto-namikaze-minato-crying-wallpaper-preview.jpg"
+          "id": "anm20",
+          "url": "https://c4.wallpaperflare.com/wallpaper/915/998/470/anime-anime-girls-bicycle-brunette-wallpaper-preview.jpg",
+          "title": "Anime 20"
         },
         {
-          "name": "anime-one-piece-zoro-roronoa-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/72/624/1004/anime-one-piece-zoro-roronoa-wallpaper-preview.jpg"
+          "id": "anm21",
+          "url": "https://c4.wallpaperflare.com/wallpaper/626/913/146/cyberpunk-skyscraper-upside-down-animated-movies-wallpaper-preview.jpg",
+          "title": "Anime 21"
         },
         {
-          "name": "one-piece-monkey-d-luffy-hokusai-waves-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/245/866/531/one-piece-monkey-d-luffy-hokusai-waves-wallpaper-preview.jpg"
+          "id": "anm22",
+          "url": "https://c4.wallpaperflare.com/wallpaper/966/951/802/digital-digital-art-artwork-illustration-fantasy-art-hd-wallpaper-preview.jpg",
+          "title": "Anime 22"
         },
         {
-          "name": "one-piece-tony-tony-chopper-nami-roronoa-zoro-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/919/561/125/one-piece-tony-tony-chopper-nami-roronoa-zoro-wallpaper-preview.jpg"
+          "id": "anm23",
+          "url": "https://c4.wallpaperflare.com/wallpaper/852/288/907/spider-man-into-the-spider-verse-animation-4k-wallpaper-preview.jpg",
+          "title": "Anime 23"
         },
         {
-          "name": "anime-naruto-akatsuki-naruto-deidara-naruto-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/391/107/724/anime-naruto-akatsuki-naruto-deidara-naruto-wallpaper-preview.jpg"
+          "id": "anm24",
+          "url": "https://c4.wallpaperflare.com/wallpaper/642/695/642/anime-demon-slayer-kimetsu-no-yaiba-giyuu-tomioka-hd-wallpaper-preview.jpg",
+          "title": "Anime 24"
         },
         {
-          "name": "women-anime-girls-brunette-cat-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/757/911/790/women-anime-girls-brunette-cat-wallpaper-preview.jpg"
+          "id": "anm25",
+          "url": "https://c4.wallpaperflare.com/wallpaper/158/122/422/anime-anime-boys-jujutsu-kaisen-yuji-itadori-sakuna-hd-wallpaper-preview.jpg",
+          "title": "Anime 25"
         },
         {
-          "name": "one-piece-monkey-d-luffy-sabo-portgas-d-ace-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/793/126/441/one-piece-monkey-d-luffy-sabo-portgas-d-ace-wallpaper-preview.jpg"
+          "id": "anm26",
+          "url": "https://c4.wallpaperflare.com/wallpaper/365/244/884/uchiha-itachi-naruto-shippuuden-anbu-silhouette-wallpaper-preview.jpg",
+          "title": "Anime 26"
         },
         {
-          "name": "anime-naruto-akatsuki-naruto-deidara-naruto-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/311/58/344/anime-naruto-akatsuki-naruto-deidara-naruto-wallpaper-preview.jpg"
+          "id": "anm27",
+          "url": "https://c4.wallpaperflare.com/wallpaper/410/558/539/anime-anime-girls-underboob-liang-xing-wallpaper-preview.jpg",
+          "title": "Anime 27"
         },
         {
-          "name": "naruto-shippuuden-masashi-kishimoto-uzumaki-naruto-haruno-sakura-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/1000/269/216/naruto-shippuuden-masashi-kishimoto-uzumaki-naruto-haruno-sakura-wallpaper-preview.jpg"
+          "id": "anm28",
+          "url": "https://c4.wallpaperflare.com/wallpaper/736/291/696/digital-art-anime-girls-fantasy-art-archer-wallpaper-preview.jpg",
+          "title": "Anime 28"
         },
         {
-          "name": "berserk-kentaro-miura-guts-manga-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/656/150/342/berserk-kentaro-miura-guts-manga-wallpaper-preview.jpg"
+          "id": "anm29",
+          "url": "https://c4.wallpaperflare.com/wallpaper/617/733/79/anime-anime-girls-aoi-ogata-wallpaper-preview.jpg",
+          "title": "Anime 29"
         },
         {
-          "name": "naruto-shippuuden-akatsuki-uchiha-itachi-wallpaper",
-          "url": "https://c4.wallpaperflare.com/wallpaper/817/397/84/naruto-shippuuden-akatsuki-uchiha-itachi-wallpaper-preview.jpg"
+          "id": "anm30",
+          "url": "https://c4.wallpaperflare.com/wallpaper/714/495/609/landscape-artwork-digital-art-fantasy-art-wallpaper-preview.jpg",
+          "title": "Anime 30"
+        },
+        {
+          "id": "anm31",
+          "url": "https://c4.wallpaperflare.com/wallpaper/200/379/762/kekkai-sensen-anime-anime-boys-blue-wallpaper-preview.jpg",
+          "title": "Anime 31"
+        },
+        {
+          "id": "anm32",
+          "url": "https://c4.wallpaperflare.com/wallpaper/822/323/828/spiderman-into-the-spider-verse-2018-movies-movies-spiderman-wallpaper-preview.jpg",
+          "title": "Anime 32"
+        },
+        {
+          "id": "anm33",
+          "url": "https://c4.wallpaperflare.com/wallpaper/180/397/78/anime-naruto-itachi-uchiha-wallpaper-preview.jpg",
+          "title": "Anime 33"
+        },
+        {
+          "id": "anm34",
+          "url": "https://c4.wallpaperflare.com/wallpaper/952/824/961/makoto-shinkai-kimi-no-na-wa-wallpaper-preview.jpg",
+          "title": "Anime 34"
+        },
+        {
+          "id": "anm35",
+          "url": "https://c4.wallpaperflare.com/wallpaper/195/314/473/anime-demon-slayer-kimetsu-no-yaiba-zenitsu-agatsuma-hd-wallpaper-preview.jpg",
+          "title": "Anime 35"
+        },
+        {
+          "id": "anm36",
+          "url": "https://c4.wallpaperflare.com/wallpaper/757/911/790/women-anime-girls-brunette-cat-wallpaper-preview.jpg",
+          "title": "Anime 36"
+        },
+        {
+          "id": "anm37",
+          "url": "https://c4.wallpaperflare.com/wallpaper/613/22/414/anime-anime-girls-manga-computer-wallpaper-preview.jpg",
+          "title": "Anime 37"
+        },
+        {
+          "id": "anm38",
+          "url": "https://c4.wallpaperflare.com/wallpaper/184/515/626/digital-digital-art-artwork-illustration-drawing-hd-wallpaper-preview.jpg",
+          "title": "Anime 38"
+        },
+        {
+          "id": "anm39",
+          "url": "https://c4.wallpaperflare.com/wallpaper/395/147/709/venom-movie-venom-superheroes-logo-wallpaper-preview.jpg",
+          "title": "Anime 39"
+        },
+        {
+          "id": "anm40",
+          "url": "https://c4.wallpaperflare.com/wallpaper/222/466/510/anime-anime-girls-fate-grand-order-sakura-saber-wallpaper-preview.jpg",
+          "title": "Anime 40"
+        },
+        {
+          "id": "anm41",
+          "url": "https://c4.wallpaperflare.com/wallpaper/227/583/604/anime-anime-girls-digital-art-artwork-2d-hd-wallpaper-preview.jpg",
+          "title": "Anime 41"
+        },
+        {
+          "id": "anm42",
+          "url": "https://c4.wallpaperflare.com/wallpaper/892/692/922/howl-s-moving-castle-studio-ghibli-fantasy-art-clouds-daylight-hd-wallpaper-preview.jpg",
+          "title": "Anime 42"
+        },
+        {
+          "id": "anm43",
+          "url": "https://c4.wallpaperflare.com/wallpaper/1020/1/213/world-of-warcraft-battle-for-azeroth-video-games-warcraft-alliance-wallpaper-preview.jpg",
+          "title": "Anime 43"
+        },
+        {
+          "id": "anm44",
+          "url": "https://c4.wallpaperflare.com/wallpaper/663/947/813/oldboy-japanese-digital-art-artwork-wallpaper-preview.jpg",
+          "title": "Anime 44"
+        },
+        {
+          "id": "anm45",
+          "url": "https://c4.wallpaperflare.com/wallpaper/94/797/206/kimi-no-na-wa-makoto-shinkai-starry-night-comet-wallpaper-preview.jpg",
+          "title": "Anime 45"
+        },
+        {
+          "id": "anm46",
+          "url": "https://c4.wallpaperflare.com/wallpaper/295/163/719/anime-anime-boys-picture-in-picture-kimetsu-no-yaiba-kamado-tanjir%C5%8D-hd-wallpaper-preview.jpg",
+          "title": "Anime 46"
+        },
+        {
+          "id": "anm47",
+          "url": "https://c4.wallpaperflare.com/wallpaper/929/770/396/anime-anime-girls-azur-lane-glowing-eyes-wallpaper-preview.jpg",
+          "title": "Anime 47"
+        },
+        {
+          "id": "anm48",
+          "url": "https://c4.wallpaperflare.com/wallpaper/843/347/678/fate-series-fate-stay-night-anime-girls-saber-wallpaper-preview.jpg",
+          "title": "Anime 48"
+        },
+        {
+          "id": "anm49",
+          "url": "https://c4.wallpaperflare.com/wallpaper/658/800/994/simple-simple-background-minimalism-black-background-wallpaper-preview.jpg",
+          "title": "Anime 49"
+        },
+        {
+          "id": "anm50",
+          "url": "https://c4.wallpaperflare.com/wallpaper/414/432/59/uchiha-sasuke-naruto-shippuden-uchiha-itachi-1366x768-anime-naruto-hd-art-wallpaper-preview.jpg",
+          "title": "Anime 50"
+        },
+        {
+          "id": "anm51",
+          "url": "https://c4.wallpaperflare.com/wallpaper/889/804/14/anime-titans-shingeki-no-kyojin-wallpaper-preview.jpg",
+          "title": "Anime 51"
+        },
+        {
+          "id": "anm52",
+          "url": "https://c4.wallpaperflare.com/wallpaper/110/664/979/cyberpunk-video-games-pixel-art-the-last-night-wallpaper-preview.jpg",
+          "title": "Anime 52"
+        },
+        {
+          "id": "anm53",
+          "url": "https://c4.wallpaperflare.com/wallpaper/142/751/831/landscape-anime-digital-art-fantasy-art-wallpaper-preview.jpg",
+          "title": "Anime 53"
+        },
+        {
+          "id": "anm54",
+          "url": "https://c4.wallpaperflare.com/wallpaper/780/341/142/anime-sharingan-red-eyes-naruto-shippuuden-wallpaper-preview.jpg",
+          "title": "Anime 54"
+        },
+        {
+          "id": "anm55",
+          "url": "https://c4.wallpaperflare.com/wallpaper/848/927/678/minimalism-texture-black-background-black-armor-wallpaper-preview.jpg",
+          "title": "Anime 55"
+        },
+        {
+          "id": "anm56",
+          "url": "https://c4.wallpaperflare.com/wallpaper/787/854/424/jujutsu-kaisen-satoru-gojo-anime-boys-anime-girls-hd-wallpaper-preview.jpg",
+          "title": "Anime 56"
+        },
+        {
+          "id": "anm57",
+          "url": "https://c4.wallpaperflare.com/wallpaper/826/153/158/artwork-anime-landscape-painting-wallpaper-preview.jpg",
+          "title": "Anime 57"
+        },
+        {
+          "id": "anm58",
+          "url": "https://c4.wallpaperflare.com/wallpaper/751/338/401/anime-anime-girls-white-hair-long-hair-wallpaper-preview.jpg",
+          "title": "Anime 58"
+        },
+        {
+          "id": "anm59",
+          "url": "https://c4.wallpaperflare.com/wallpaper/705/826/351/digital-digital-art-artwork-illustration-ricodz-hd-wallpaper-preview.jpg",
+          "title": "Anime 59"
+        },
+        {
+          "id": "anm60",
+          "url": "https://c4.wallpaperflare.com/wallpaper/416/608/950/anime-anime-girls-original-characters-kyrie-meii-wallpaper-preview.jpg",
+          "title": "Anime 60"
+        },
+        {
+          "id": "anm61",
+          "url": "https://c4.wallpaperflare.com/wallpaper/834/893/285/anime-naruto-itachi-uchiha-madara-uchiha-wallpaper-preview.jpg",
+          "title": "Anime 61"
+        },
+        {
+          "id": "anm62",
+          "url": "https://c4.wallpaperflare.com/wallpaper/124/579/788/naruto-akatsuki-hd-wallpaper-wallpaper-preview.jpg",
+          "title": "Anime 62"
+        },
+        {
+          "id": "anm63",
+          "url": "https://c4.wallpaperflare.com/wallpaper/865/301/276/anime-solo-leveling-sung-jin-woo-hd-wallpaper-preview.jpg",
+          "title": "Anime 63"
+        },
+        {
+          "id": "anm64",
+          "url": "https://c4.wallpaperflare.com/wallpaper/138/378/568/wlop-violet-evergarden-anime-anime-girls-wallpaper-preview.jpg",
+          "title": "Anime 64"
+        },
+        {
+          "id": "anm65",
+          "url": "https://c4.wallpaperflare.com/wallpaper/803/347/759/anime-natural-light-landscape-forest-studio-ghibli-hd-wallpaper-preview.jpg",
+          "title": "Anime 65"
+        },
+        {
+          "id": "anm66",
+          "url": "https://c4.wallpaperflare.com/wallpaper/9/874/350/anime-girls-monochrome-glitch-art-wallpaper-preview.jpg",
+          "title": "Anime 66"
+        },
+        {
+          "id": "anm67",
+          "url": "https://c4.wallpaperflare.com/wallpaper/616/710/558/anime-dual-monitor-multi-wallpaper-preview.jpg",
+          "title": "Anime 67"
+        },
+        {
+          "id": "anm68",
+          "url": "https://c4.wallpaperflare.com/wallpaper/616/987/635/one-piece-anime-manga-wallpaper-preview.jpg",
+          "title": "Anime 68"
+        },
+        {
+          "id": "anm69",
+          "url": "https://c4.wallpaperflare.com/wallpaper/657/662/388/uchiha-itachi-naruto-anime-uchiha-sasuke-wallpaper-preview.jpg",
+          "title": "Anime 69"
+        },
+        {
+          "id": "anm70",
+          "url": "https://c4.wallpaperflare.com/wallpaper/772/105/265/naruto-shippuuden-anime-fox-hatake-kakashi-wallpaper-preview.jpg",
+          "title": "Anime 70"
+        },
+        {
+          "id": "anm71",
+          "url": "https://c4.wallpaperflare.com/wallpaper/66/993/107/anime-scars-face-mask-hatake-kakashi-wallpaper-preview.jpg",
+          "title": "Anime 71"
+        },
+        {
+          "id": "anm72",
+          "url": "https://c4.wallpaperflare.com/wallpaper/72/624/1004/anime-one-piece-zoro-roronoa-wallpaper-preview.jpg",
+          "title": "Anime 72"
+        },
+        {
+          "id": "anm73",
+          "url": "https://c4.wallpaperflare.com/wallpaper/869/512/849/anime-demon-slayer-kimetsu-no-yaiba-zenitsu-agatsuma-hd-wallpaper-preview.jpg",
+          "title": "Anime 73"
+        },
+        {
+          "id": "anm74",
+          "url": "https://c4.wallpaperflare.com/wallpaper/916/657/97/anime-your-name-hd-wallpaper-preview.jpg",
+          "title": "Anime 74"
+        },
+        {
+          "id": "anm75",
+          "url": "https://c4.wallpaperflare.com/wallpaper/337/481/82/deer-geometry-wireframe-artwork-wallpaper-preview.jpg",
+          "title": "Anime 75"
+        },
+        {
+          "id": "anm76",
+          "url": "https://c4.wallpaperflare.com/wallpaper/328/266/395/wlop-artwork-women-digital-art-wallpaper-preview.jpg",
+          "title": "Anime 76"
+        },
+        {
+          "id": "anm77",
+          "url": "https://c4.wallpaperflare.com/wallpaper/671/134/338/hayao-miyazaki-howl-s-moving-castle-anime-studio-ghibli-wallpaper-preview.jpg",
+          "title": "Anime 77"
+        },
+        {
+          "id": "anm78",
+          "url": "https://c4.wallpaperflare.com/wallpaper/103/5/162/anime-anime-boys-jujutsu-kaisen-satoru-gojo-hd-wallpaper-preview.jpg",
+          "title": "Anime 78"
+        },
+        {
+          "id": "anm79",
+          "url": "https://c4.wallpaperflare.com/wallpaper/392/904/931/illustration-city-landscape-anime-girls-wallpaper-preview.jpg",
+          "title": "Anime 79"
+        },
+        {
+          "id": "anm80",
+          "url": "https://c4.wallpaperflare.com/wallpaper/116/412/889/naruto-anime-uchiha-itachi-hd-wallpaper-preview.jpg",
+          "title": "Anime 80"
+        },
+        {
+          "id": "anm81",
+          "url": "https://c4.wallpaperflare.com/wallpaper/186/380/857/your-name-sky-stars-kimi-no-na-wa-wallpaper-preview.jpg",
+          "title": "Anime 81"
+        },
+        {
+          "id": "anm82",
+          "url": "https://www.wallpaperflare.com/fpublic/css/favicon.ico",
+          "title": "Anime 82"
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk",
+      "name": "Cyberpunk",
+      "category_image_url": "images/cyberpunk_cover.jpg",
+      "wallpapers": [
+        {
+          "id": "cyb1",
+          "url": "https://c4.wallpaperflare.com/wallpaper/364/854/488/digital-art-photoshop-concept-art-futuristic-wallpaper-preview.jpg",
+          "title": "Cyberpunk 1"
+        },
+        {
+          "id": "cyb2",
+          "url": "https://c4.wallpaperflare.com/wallpaper/110/664/979/cyberpunk-video-games-pixel-art-the-last-night-wallpaper-preview.jpg",
+          "title": "Cyberpunk 2"
+        },
+        {
+          "id": "cyb3",
+          "url": "https://c4.wallpaperflare.com/wallpaper/910/24/10/night-artwork-futuristic-city-cyberpunk-wallpaper-preview.jpg",
+          "title": "Cyberpunk 3"
+        },
+        {
+          "id": "cyb4",
+          "url": "https://c4.wallpaperflare.com/wallpaper/189/144/893/cyber-science-fiction-digital-art-concept-art-cyberpunk-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 4"
+        },
+        {
+          "id": "cyb5",
+          "url": "https://c4.wallpaperflare.com/wallpaper/478/422/462/cyberpunk-2077-games-ps-games-xbox-games-wallpaper-preview.jpg",
+          "title": "Cyberpunk 5"
+        },
+        {
+          "id": "cyb6",
+          "url": "https://c4.wallpaperflare.com/wallpaper/9/977/317/the-city-cyberpunk-art-fiction-wallpaper-preview.jpg",
+          "title": "Cyberpunk 6"
+        },
+        {
+          "id": "cyb7",
+          "url": "https://c4.wallpaperflare.com/wallpaper/8/637/191/digital-digital-art-artwork-futuristic-futuristic-city-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 7"
+        },
+        {
+          "id": "cyb8",
+          "url": "https://c4.wallpaperflare.com/wallpaper/632/790/513/digital-digital-art-artwork-city-lights-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 8"
+        },
+        {
+          "id": "cyb9",
+          "url": "https://c4.wallpaperflare.com/wallpaper/293/1013/173/cyberpunk-edgerunners-lucy-edgerunners-cyberpunk-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 9"
+        },
+        {
+          "id": "cyb10",
+          "url": "https://c4.wallpaperflare.com/wallpaper/553/564/19/cyberpunk-amoled-dark-vertical-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 10"
+        },
+        {
+          "id": "cyb11",
+          "url": "https://c4.wallpaperflare.com/wallpaper/285/471/731/night-cyberpunk-futuristic-city-artwork-wallpaper-preview.jpg",
+          "title": "Cyberpunk 11"
+        },
+        {
+          "id": "cyb12",
+          "url": "https://c4.wallpaperflare.com/wallpaper/266/749/195/digital-digital-art-artwork-illustration-drawing-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 12"
+        },
+        {
+          "id": "cyb13",
+          "url": "https://c4.wallpaperflare.com/wallpaper/924/734/541/night-artwork-futuristic-city-cyberpunk-wallpaper-preview.jpg",
+          "title": "Cyberpunk 13"
+        },
+        {
+          "id": "cyb14",
+          "url": "https://c4.wallpaperflare.com/wallpaper/386/853/217/car-vehicle-colorful-toyota-wallpaper-preview.jpg",
+          "title": "Cyberpunk 14"
+        },
+        {
+          "id": "cyb15",
+          "url": "https://c4.wallpaperflare.com/wallpaper/968/580/27/bladerunner-blade-runner-2049-cyberpunk-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 15"
+        },
+        {
+          "id": "cyb16",
+          "url": "https://c4.wallpaperflare.com/wallpaper/679/564/33/night-city-lights-city-lights-atmosphere-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 16"
+        },
+        {
+          "id": "cyb17",
+          "url": "https://c4.wallpaperflare.com/wallpaper/302/568/1003/bladerunner-blade-runner-blade-runner-2049-ana-de-armas-ryan-gosling-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 17"
+        },
+        {
+          "id": "cyb18",
+          "url": "https://c4.wallpaperflare.com/wallpaper/1000/580/1015/88-girl-anime-girls-cyberpunk-futuristic-wallpaper-preview.jpg",
+          "title": "Cyberpunk 18"
+        },
+        {
+          "id": "cyb19",
+          "url": "https://c4.wallpaperflare.com/wallpaper/28/886/343/artwork-digital-art-sergey-zabelin-cyberpunk-wallpaper-preview.jpg",
+          "title": "Cyberpunk 19"
+        },
+        {
+          "id": "cyb20",
+          "url": "https://c4.wallpaperflare.com/wallpaper/944/948/10/street-art-artwork-digital-art-wallpaper-preview.jpg",
+          "title": "Cyberpunk 20"
+        },
+        {
+          "id": "cyb21",
+          "url": "https://c4.wallpaperflare.com/wallpaper/33/809/178/video-game-cyberpunk-2077-keanu-reeves-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 21"
+        },
+        {
+          "id": "cyb22",
+          "url": "https://c4.wallpaperflare.com/wallpaper/843/56/876/night-artwork-futuristic-city-cyberpunk-wallpaper-preview.jpg",
+          "title": "Cyberpunk 22"
+        },
+        {
+          "id": "cyb23",
+          "url": "https://c4.wallpaperflare.com/wallpaper/996/184/951/night-artwork-futuristic-city-cyberpunk-wallpaper-preview.jpg",
+          "title": "Cyberpunk 23"
+        },
+        {
+          "id": "cyb24",
+          "url": "https://c4.wallpaperflare.com/wallpaper/988/455/665/night-futuristic-city-cyberpunk-cyber-wallpaper-preview.jpg",
+          "title": "Cyberpunk 24"
+        },
+        {
+          "id": "cyb25",
+          "url": "https://c4.wallpaperflare.com/wallpaper/364/318/503/digital-art-illustration-artwork-cityscape-wallpaper-preview.jpg",
+          "title": "Cyberpunk 25"
+        },
+        {
+          "id": "cyb26",
+          "url": "https://c4.wallpaperflare.com/wallpaper/626/913/146/cyberpunk-skyscraper-upside-down-animated-movies-wallpaper-preview.jpg",
+          "title": "Cyberpunk 26"
+        },
+        {
+          "id": "cyb27",
+          "url": "https://c4.wallpaperflare.com/wallpaper/38/61/92/cyberpunk-city-cyberpunk-city-neon-lights-wallpaper-preview.jpg",
+          "title": "Cyberpunk 27"
+        },
+        {
+          "id": "cyb28",
+          "url": "https://c4.wallpaperflare.com/wallpaper/441/413/205/the-game-neon-fangs-face-wallpaper-preview.jpg",
+          "title": "Cyberpunk 28"
+        },
+        {
+          "id": "cyb29",
+          "url": "https://c4.wallpaperflare.com/wallpaper/855/698/460/science-fiction-cityscape-futuristic-star-wars-wallpaper-preview.jpg",
+          "title": "Cyberpunk 29"
+        },
+        {
+          "id": "cyb30",
+          "url": "https://c4.wallpaperflare.com/wallpaper/975/511/725/cyber-cyberpunk-cyberpunk-2077-car-futuristic-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 30"
+        },
+        {
+          "id": "cyb31",
+          "url": "https://c4.wallpaperflare.com/wallpaper/87/313/242/cyberpunk-edgerunners-anime-girls-anime-lucy-edgerunners-david-edgerunners-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 31"
+        },
+        {
+          "id": "cyb32",
+          "url": "https://c4.wallpaperflare.com/wallpaper/152/207/689/digital-art-women-blonde-futuristic-wallpaper-preview.jpg",
+          "title": "Cyberpunk 32"
+        },
+        {
+          "id": "cyb33",
+          "url": "https://c4.wallpaperflare.com/wallpaper/36/315/643/eyes-look-girl-cyborg-wallpaper-preview.jpg",
+          "title": "Cyberpunk 33"
+        },
+        {
+          "id": "cyb34",
+          "url": "https://c4.wallpaperflare.com/wallpaper/832/995/631/cyberpunk-artwork-sniper-rifle-anime-girls-wallpaper-preview.jpg",
+          "title": "Cyberpunk 34"
+        },
+        {
+          "id": "cyb35",
+          "url": "https://c4.wallpaperflare.com/wallpaper/545/336/903/digital-digital-art-artwork-illustration-futuristic-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 35"
+        },
+        {
+          "id": "cyb36",
+          "url": "https://c4.wallpaperflare.com/wallpaper/833/968/24/minimalism-skull-robot-bird-wallpaper-preview.jpg",
+          "title": "Cyberpunk 36"
+        },
+        {
+          "id": "cyb37",
+          "url": "https://c4.wallpaperflare.com/wallpaper/784/780/834/fiora-league-of-legends-league-of-legends-women-cyberpunk-wallpaper-preview.jpg",
+          "title": "Cyberpunk 37"
+        },
+        {
+          "id": "cyb38",
+          "url": "https://c4.wallpaperflare.com/wallpaper/680/1001/190/digital-digital-art-artwork-neon-lights-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 38"
+        },
+        {
+          "id": "cyb39",
+          "url": "https://c4.wallpaperflare.com/wallpaper/871/328/915/cyberpunk-2077-cyberpunk-cd-projekt-red-video-games-judy-alvarez-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 39"
+        },
+        {
+          "id": "cyb40",
+          "url": "https://c4.wallpaperflare.com/wallpaper/295/948/969/cyberpunk-video-games-pixel-art-the-last-night-wallpaper-preview.jpg",
+          "title": "Cyberpunk 40"
+        },
+        {
+          "id": "cyb41",
+          "url": "https://c4.wallpaperflare.com/wallpaper/884/204/905/cyberpunk-edgerunners-cyberpunk-2077-cd-projekt-red-trigger-anime-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 41"
+        },
+        {
+          "id": "cyb42",
+          "url": "https://c4.wallpaperflare.com/wallpaper/534/826/507/lucy-edgerunners-cyberpunk-edgerunners-anime-anime-girls-cyberpunk-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 42"
+        },
+        {
+          "id": "cyb43",
+          "url": "https://c4.wallpaperflare.com/wallpaper/621/170/484/digital-digital-art-artwork-illustration-drawing-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 43"
+        },
+        {
+          "id": "cyb44",
+          "url": "https://c4.wallpaperflare.com/wallpaper/741/332/28/cyberpunk-neon-artwork-ship-wallpaper-preview.jpg",
+          "title": "Cyberpunk 44"
+        },
+        {
+          "id": "cyb45",
+          "url": "https://c4.wallpaperflare.com/wallpaper/943/63/773/cyberpunk-2077-cyberpunk-video-games-wallpaper-preview.jpg",
+          "title": "Cyberpunk 45"
+        },
+        {
+          "id": "cyb46",
+          "url": "https://c4.wallpaperflare.com/wallpaper/344/34/342/cyberpunk-purple-fantasy-art-city-wallpaper-preview.jpg",
+          "title": "Cyberpunk 46"
+        },
+        {
+          "id": "cyb47",
+          "url": "https://c0.wallpaperflare.com/preview/751/536/29/alley-city-neon-urban.jpg",
+          "title": "Cyberpunk 47"
+        },
+        {
+          "id": "cyb48",
+          "url": "https://c4.wallpaperflare.com/wallpaper/66/41/250/cyberpunk-futuristic-computer-interfaces-wallpaper-preview.jpg",
+          "title": "Cyberpunk 48"
+        },
+        {
+          "id": "cyb49",
+          "url": "https://c4.wallpaperflare.com/wallpaper/302/421/292/cyberpunk-2077-screen-shot-city-cyberpunk-night-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 49"
+        },
+        {
+          "id": "cyb50",
+          "url": "https://c1.wallpaperflare.com/preview/603/151/753/green-neon-night-photography-night-time.jpg",
+          "title": "Cyberpunk 50"
+        },
+        {
+          "id": "cyb51",
+          "url": "https://c4.wallpaperflare.com/wallpaper/554/29/143/cyber-science-fiction-digital-art-concept-art-cyberpunk-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 51"
+        },
+        {
+          "id": "cyb52",
+          "url": "https://c4.wallpaperflare.com/wallpaper/944/256/891/video-games-cyberpunk-cyberpunk-2077-ultrawide-wallpaper-preview.jpg",
+          "title": "Cyberpunk 52"
+        },
+        {
+          "id": "cyb53",
+          "url": "https://c4.wallpaperflare.com/wallpaper/288/722/467/cyberpunk-edgerunners-lucy-edgerunners-anime-girls-cyberpunk-2077-cyberpunk-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 53"
+        },
+        {
+          "id": "cyb54",
+          "url": "https://c0.wallpaperflare.com/preview/505/300/904/croatia-zagreb-retrowave-retrofuture.jpg",
+          "title": "Cyberpunk 54"
+        },
+        {
+          "id": "cyb55",
+          "url": "https://c4.wallpaperflare.com/wallpaper/990/547/605/digital-art-futuristic-city-car-artwork-wallpaper-preview.jpg",
+          "title": "Cyberpunk 55"
+        },
+        {
+          "id": "cyb56",
+          "url": "https://c4.wallpaperflare.com/wallpaper/783/604/988/cyberpunk-2077-cd-projekt-red-video-game-art-cyberpunk-photoshop-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 56"
+        },
+        {
+          "id": "cyb57",
+          "url": "https://c4.wallpaperflare.com/wallpaper/548/31/628/cyberpunk-fan-art-city-fantasy-city-wallpaper-preview.jpg",
+          "title": "Cyberpunk 57"
+        },
+        {
+          "id": "cyb58",
+          "url": "https://c4.wallpaperflare.com/wallpaper/656/975/618/cyberpunk-neon-futuristic-science-fiction-neon-lights-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 58"
+        },
+        {
+          "id": "cyb59",
+          "url": "https://c4.wallpaperflare.com/wallpaper/324/723/785/women-cyberpunk-2077-cosplay-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 59"
+        },
+        {
+          "id": "cyb60",
+          "url": "https://c4.wallpaperflare.com/wallpaper/796/270/435/cyberpunk-digital-art-futuristic-wallpaper-preview.jpg",
+          "title": "Cyberpunk 60"
+        },
+        {
+          "id": "cyb61",
+          "url": "https://c4.wallpaperflare.com/wallpaper/302/567/736/cyberpunk-2077-cyberpunk-video-games-video-game-characters-cd-projekt-red-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 61"
+        },
+        {
+          "id": "cyb62",
+          "url": "https://c4.wallpaperflare.com/wallpaper/112/67/642/cyberpunk-neon-wallpaper-preview.jpg",
+          "title": "Cyberpunk 62"
+        },
+        {
+          "id": "cyb63",
+          "url": "https://c1.wallpaperflare.com/preview/261/1002/366/neonwave-outrun-vaporwave-cyberpunk.jpg",
+          "title": "Cyberpunk 63"
+        },
+        {
+          "id": "cyb64",
+          "url": "https://c4.wallpaperflare.com/wallpaper/265/316/905/digital-digital-art-artwork-women-fantasy-girl-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 64"
+        },
+        {
+          "id": "cyb65",
+          "url": "https://c4.wallpaperflare.com/wallpaper/45/261/182/cyberpunk-2077-cyberpunk-cd-projekt-red-video-games-samurai-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 65"
+        },
+        {
+          "id": "cyb66",
+          "url": "https://c4.wallpaperflare.com/wallpaper/261/605/242/cyberpunk-2077-cyberpunk-edgerunners-david-martinez-edgerunners-lucy-edgerunners-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 66"
+        },
+        {
+          "id": "cyb67",
+          "url": "https://c4.wallpaperflare.com/wallpaper/455/360/900/night-artwork-futuristic-city-cyberpunk-wallpaper-preview.jpg",
+          "title": "Cyberpunk 67"
+        },
+        {
+          "id": "cyb68",
+          "url": "https://c4.wallpaperflare.com/wallpaper/701/819/827/cyberpunk-2077-cyberpunk-edgerunners-cd-projekt-red-cyberpunk-netflix-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 68"
+        },
+        {
+          "id": "cyb69",
+          "url": "https://c4.wallpaperflare.com/wallpaper/252/256/958/cyberpunk-2077-video-game-art-video-games-digital-art-wallpaper-preview.jpg",
+          "title": "Cyberpunk 69"
+        },
+        {
+          "id": "cyb70",
+          "url": "https://c4.wallpaperflare.com/wallpaper/962/717/218/cityscape-landscape-city-lights-city-lights-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 70"
+        },
+        {
+          "id": "cyb71",
+          "url": "https://c4.wallpaperflare.com/wallpaper/135/206/426/motorcycle-cityscape-street-light-street-wallpaper-preview.jpg",
+          "title": "Cyberpunk 71"
+        },
+        {
+          "id": "cyb72",
+          "url": "https://c4.wallpaperflare.com/wallpaper/410/1014/448/night-cyberpunk-futuristic-city-artwork-wallpaper-preview.jpg",
+          "title": "Cyberpunk 72"
+        },
+        {
+          "id": "cyb73",
+          "url": "https://c4.wallpaperflare.com/wallpaper/546/316/22/video-game-cyberpunk-2077-wallpaper-preview.jpg",
+          "title": "Cyberpunk 73"
+        },
+        {
+          "id": "cyb74",
+          "url": "https://c4.wallpaperflare.com/wallpaper/161/53/236/blade-runner-2049-cyberpunk-movies-blade-runner-wallpaper-preview.jpg",
+          "title": "Cyberpunk 74"
+        },
+        {
+          "id": "cyb75",
+          "url": "https://c4.wallpaperflare.com/wallpaper/829/500/975/cyberpunk-cyberpunk-2077-cyberpunk-edgerunners-lucy-edgerunners-anime-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 75"
+        },
+        {
+          "id": "cyb76",
+          "url": "https://c4.wallpaperflare.com/wallpaper/353/459/632/cyberpunk-video-games-pixel-art-the-last-night-wallpaper-preview.jpg",
+          "title": "Cyberpunk 76"
+        },
+        {
+          "id": "cyb77",
+          "url": "https://c4.wallpaperflare.com/wallpaper/802/376/3/digital-digital-art-artwork-drawing-digital-painting-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 77"
+        },
+        {
+          "id": "cyb78",
+          "url": "https://c4.wallpaperflare.com/wallpaper/565/305/193/cyberpunk-2077-cyberpunk-video-game-art-samurai-video-games-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 78"
+        },
+        {
+          "id": "cyb79",
+          "url": "https://c4.wallpaperflare.com/wallpaper/39/346/426/digital-art-men-city-futuristic-night-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 79"
+        },
+        {
+          "id": "cyb80",
+          "url": "https://c4.wallpaperflare.com/wallpaper/384/350/430/digital-art-artwork-cyber-cyberpunk-neon-hd-wallpaper-preview.jpg",
+          "title": "Cyberpunk 80"
+        },
+        {
+          "id": "cyb81",
+          "url": "https://www.wallpaperflare.com/fpublic/css/favicon.ico",
+          "title": "Cyberpunk 81"
+        }
+      ]
+    },
+    {
+      "id": "cars",
+      "name": "Cars",
+      "category_image_url": "images/cars_cover.jpg",
+      "wallpapers": [
+        {
+          "id": "car1",
+          "url": "https://c4.wallpaperflare.com/wallpaper/840/954/346/dark-night-rain-car-wallpaper-preview.jpg",
+          "title": "Car 1"
+        },
+        {
+          "id": "car2",
+          "url": "https://c4.wallpaperflare.com/wallpaper/990/547/605/digital-art-futuristic-city-car-artwork-wallpaper-preview.jpg",
+          "title": "Car 2"
+        },
+        {
+          "id": "car3",
+          "url": "https://c4.wallpaperflare.com/wallpaper/663/420/862/car-purple-retrowave-landscape-wallpaper-preview.jpg",
+          "title": "Car 3"
+        },
+        {
+          "id": "car4",
+          "url": "https://c4.wallpaperflare.com/wallpaper/843/56/876/night-artwork-futuristic-city-cyberpunk-wallpaper-preview.jpg",
+          "title": "Car 4"
+        },
+        {
+          "id": "car5",
+          "url": "https://c4.wallpaperflare.com/wallpaper/1022/53/128/ultra-wide-car-nissan-skyline-gt-r-wallpaper-preview.jpg",
+          "title": "Car 5"
+        },
+        {
+          "id": "car6",
+          "url": "https://c4.wallpaperflare.com/wallpaper/943/63/773/cyberpunk-2077-cyberpunk-video-games-wallpaper-preview.jpg",
+          "title": "Car 6"
+        },
+        {
+          "id": "car7",
+          "url": "https://c4.wallpaperflare.com/wallpaper/910/24/10/night-artwork-futuristic-city-cyberpunk-wallpaper-preview.jpg",
+          "title": "Car 7"
+        },
+        {
+          "id": "car8",
+          "url": "https://c4.wallpaperflare.com/wallpaper/221/116/854/joaquin-phoenix-joker-batman-fire-car-hd-wallpaper-preview.jpg",
+          "title": "Car 8"
+        },
+        {
+          "id": "car9",
+          "url": "https://c4.wallpaperflare.com/wallpaper/383/154/335/car-khyzyl-saleem-mazda-rx-7-simple-background-wallpaper-preview.jpg",
+          "title": "Car 9"
+        },
+        {
+          "id": "car10",
+          "url": "https://c4.wallpaperflare.com/wallpaper/632/790/513/digital-digital-art-artwork-city-lights-hd-wallpaper-preview.jpg",
+          "title": "Car 10"
+        },
+        {
+          "id": "car11",
+          "url": "https://c4.wallpaperflare.com/wallpaper/1017/357/190/3d-render-car-city-wallpaper-preview.jpg",
+          "title": "Car 11"
+        },
+        {
+          "id": "car12",
+          "url": "https://c4.wallpaperflare.com/wallpaper/956/868/1012/car-nissan-race-cars-road-wallpaper-preview.jpg",
+          "title": "Car 12"
+        },
+        {
+          "id": "car13",
+          "url": "https://c4.wallpaperflare.com/wallpaper/157/340/999/car-sports-car-supercar-lamborghini-aventador-wallpaper-preview.jpg",
+          "title": "Car 13"
+        },
+        {
+          "id": "car14",
+          "url": "https://c4.wallpaperflare.com/wallpaper/944/256/891/video-games-cyberpunk-cyberpunk-2077-ultrawide-wallpaper-preview.jpg",
+          "title": "Car 14"
+        },
+        {
+          "id": "car15",
+          "url": "https://c4.wallpaperflare.com/wallpaper/404/19/616/dark-car-vehicle-ford-wallpaper-preview.jpg",
+          "title": "Car 15"
+        },
+        {
+          "id": "car16",
+          "url": "https://c4.wallpaperflare.com/wallpaper/872/505/291/bmw-bmw-m4-car-cyan-wallpaper-preview.jpg",
+          "title": "Car 16"
+        },
+        {
+          "id": "car17",
+          "url": "https://c4.wallpaperflare.com/wallpaper/988/455/665/night-futuristic-city-cyberpunk-cyber-wallpaper-preview.jpg",
+          "title": "Car 17"
+        },
+        {
+          "id": "car18",
+          "url": "https://c4.wallpaperflare.com/wallpaper/193/556/883/car-neon-chevrolet-corvette-race-cars-hd-wallpaper-preview.jpg",
+          "title": "Car 18"
+        },
+        {
+          "id": "car19",
+          "url": "https://c4.wallpaperflare.com/wallpaper/819/755/830/bmw-m5-e39-car-wallpaper-preview.jpg",
+          "title": "Car 19"
+        },
+        {
+          "id": "car20",
+          "url": "https://c4.wallpaperflare.com/wallpaper/440/997/189/uchiha-itachi-naruto-shippuuden-edo-tensei-sharingan-wallpaper-preview.jpg",
+          "title": "Car 20"
+        },
+        {
+          "id": "car21",
+          "url": "https://c4.wallpaperflare.com/wallpaper/214/187/691/video-games-video-game-art-ultrawide-ultra-wide-need-for-speed-heat-hd-wallpaper-preview.jpg",
+          "title": "Car 21"
+        },
+        {
+          "id": "car22",
+          "url": "https://c4.wallpaperflare.com/wallpaper/922/163/628/digital-art-car-neon-porsche-wallpaper-preview.jpg",
+          "title": "Car 22"
+        },
+        {
+          "id": "car23",
+          "url": "https://c4.wallpaperflare.com/wallpaper/323/372/925/lamborghini-car-lamborghini-aventador-vehicle-wallpaper-preview.jpg",
+          "title": "Car 23"
+        },
+        {
+          "id": "car24",
+          "url": "https://c4.wallpaperflare.com/wallpaper/586/507/755/gta-5-gta-v-games-4k-wallpaper-preview.jpg",
+          "title": "Car 24"
+        },
+        {
+          "id": "car25",
+          "url": "https://c4.wallpaperflare.com/wallpaper/825/184/17/car-vehicle-super-car-supercars-wallpaper-preview.jpg",
+          "title": "Car 25"
+        },
+        {
+          "id": "car26",
+          "url": "https://c4.wallpaperflare.com/wallpaper/846/616/937/digital-digital-art-artwork-illustration-drawing-hd-wallpaper-preview.jpg",
+          "title": "Car 26"
+        },
+        {
+          "id": "car27",
+          "url": "https://c4.wallpaperflare.com/wallpaper/410/494/431/racing-f1-car-formula-1-race-car-hd-wallpaper-preview.jpg",
+          "title": "Car 27"
+        },
+        {
+          "id": "car28",
+          "url": "https://c4.wallpaperflare.com/wallpaper/353/459/632/cyberpunk-video-games-pixel-art-the-last-night-wallpaper-preview.jpg",
+          "title": "Car 28"
+        },
+        {
+          "id": "car29",
+          "url": "https://c4.wallpaperflare.com/wallpaper/943/325/116/car-bmw-m3-bmw-race-cars-wallpaper-preview.jpg",
+          "title": "Car 29"
+        },
+        {
+          "id": "car30",
+          "url": "https://c4.wallpaperflare.com/wallpaper/308/488/991/nissan-skyline-gt-r-r34-sports-car-digital-art-need-for-speed-wallpaper-preview.jpg",
+          "title": "Car 30"
+        },
+        {
+          "id": "car31",
+          "url": "https://c4.wallpaperflare.com/wallpaper/786/670/384/night-artwork-futuristic-city-science-fiction-wallpaper-preview.jpg",
+          "title": "Car 31"
+        },
+        {
+          "id": "car32",
+          "url": "https://c4.wallpaperflare.com/wallpaper/29/1013/318/black-car-car-mercedes-benz-mercedes-wallpaper-preview.jpg",
+          "title": "Car 32"
+        },
+        {
+          "id": "car33",
+          "url": "https://c4.wallpaperflare.com/wallpaper/871/374/570/digital-car-concept-art-nissan-gtr-wallpaper-preview.jpg",
+          "title": "Car 33"
+        },
+        {
+          "id": "car34",
+          "url": "https://c4.wallpaperflare.com/wallpaper/553/380/960/5k-8k-4k-lightning-mcqueen-wallpaper-preview.jpg",
+          "title": "Car 34"
+        },
+        {
+          "id": "car35",
+          "url": "https://c4.wallpaperflare.com/wallpaper/29/1019/759/car-sunset-anime-girls-original-characters-wallpaper-preview.jpg",
+          "title": "Car 35"
+        },
+        {
+          "id": "car36",
+          "url": "https://c4.wallpaperflare.com/wallpaper/478/422/462/cyberpunk-2077-games-ps-games-xbox-games-wallpaper-preview.jpg",
+          "title": "Car 36"
+        },
+        {
+          "id": "car37",
+          "url": "https://c4.wallpaperflare.com/wallpaper/666/167/593/dodge-challenger-srt-hellcat-widebody-dodge-challenger-2018-cars-4k-wallpaper-preview.jpg",
+          "title": "Car 37"
+        },
+        {
+          "id": "car38",
+          "url": "https://c4.wallpaperflare.com/wallpaper/399/633/85/khyzyl-saleem-neo-japan-2202-car-science-fiction-wallpaper-preview.jpg",
+          "title": "Car 38"
+        },
+        {
+          "id": "car39",
+          "url": "https://c4.wallpaperflare.com/wallpaper/392/133/116/car-bmw-bmw-m4-wallpaper-preview.jpg",
+          "title": "Car 39"
+        },
+        {
+          "id": "car40",
+          "url": "https://c4.wallpaperflare.com/wallpaper/513/196/980/mercedes-amg-petronas-f1-car-4k-wallpaper-preview.jpg",
+          "title": "Car 40"
+        },
+        {
+          "id": "car41",
+          "url": "https://c4.wallpaperflare.com/wallpaper/755/710/367/speedhunters-car-toyota-toyota-chaser-wallpaper-preview.jpg",
+          "title": "Car 41"
+        },
+        {
+          "id": "car42",
+          "url": "https://c4.wallpaperflare.com/wallpaper/26/399/594/1920x1081-px-1967-mustang-fastback-car-drive-neon-retrowave-synthwave-vehicle-art-skyline-hd-art-wallpaper-preview.jpg",
+          "title": "Car 42"
+        },
+        {
+          "id": "car43",
+          "url": "https://c4.wallpaperflare.com/wallpaper/336/266/412/retrowave-car-vehicle-sports-car-wallpaper-preview.jpg",
+          "title": "Car 43"
+        },
+        {
+          "id": "car44",
+          "url": "https://c4.wallpaperflare.com/wallpaper/134/512/890/back-to-the-future-car-hoverboard-khyzyl-saleem-wallpaper-preview.jpg",
+          "title": "Car 44"
+        },
+        {
+          "id": "car45",
+          "url": "https://c4.wallpaperflare.com/wallpaper/273/755/675/fast-and-furious-dodge-charger-car-muscle-cars-wallpaper-preview.jpg",
+          "title": "Car 45"
+        },
+        {
+          "id": "car46",
+          "url": "https://c4.wallpaperflare.com/wallpaper/529/156/20/lamborghini-aventador-car-wallpaper-preview.jpg",
+          "title": "Car 46"
+        },
+        {
+          "id": "car47",
+          "url": "https://c4.wallpaperflare.com/wallpaper/659/965/95/red-bull-f1-hd-cars-wallpaper-preview.jpg",
+          "title": "Car 47"
+        },
+        {
+          "id": "car48",
+          "url": "https://c4.wallpaperflare.com/wallpaper/8/637/191/digital-digital-art-artwork-futuristic-futuristic-city-hd-wallpaper-preview.jpg",
+          "title": "Car 48"
+        },
+        {
+          "id": "car49",
+          "url": "https://c4.wallpaperflare.com/wallpaper/376/801/202/yacht-vehicle-lamborghini-terzo-millennio-luxury-yacht-wallpaper-preview.jpg",
+          "title": "Car 49"
+        },
+        {
+          "id": "car50",
+          "url": "https://c4.wallpaperflare.com/wallpaper/327/192/923/nissan-skyline-gt-r-nissan-skyline-gt-r-r34-car-vehicle-wallpaper-preview.jpg",
+          "title": "Car 50"
+        },
+        {
+          "id": "car51",
+          "url": "https://c4.wallpaperflare.com/wallpaper/100/12/944/car-ferrari-458-vehicle-ferrari-wallpaper-preview.jpg",
+          "title": "Car 51"
+        },
+        {
+          "id": "car52",
+          "url": "https://c4.wallpaperflare.com/wallpaper/531/72/20/red-bull-formula-1-car-racing-wallpaper-preview.jpg",
+          "title": "Car 52"
+        },
+        {
+          "id": "car53",
+          "url": "https://c4.wallpaperflare.com/wallpaper/355/994/562/car-lamborghini-aventador-supercars-vehicle-wallpaper-preview.jpg",
+          "title": "Car 53"
+        },
+        {
+          "id": "car54",
+          "url": "https://c4.wallpaperflare.com/wallpaper/244/1015/716/4k-lightning-mcqueen-8k-wallpaper-preview.jpg",
+          "title": "Car 54"
+        },
+        {
+          "id": "car55",
+          "url": "https://c4.wallpaperflare.com/wallpaper/582/521/223/ford-mustang-car-muscle-cars-wallpaper-preview.jpg",
+          "title": "Car 55"
+        },
+        {
+          "id": "car56",
+          "url": "https://c4.wallpaperflare.com/wallpaper/25/801/272/ford-mustang-car-street-wallpaper-preview.jpg",
+          "title": "Car 56"
+        },
+        {
+          "id": "car57",
+          "url": "https://c4.wallpaperflare.com/wallpaper/324/828/920/toyota-sprinter-trueno-ae86-gt-apex-toyota-jdm-japanese-cars-sports-car-hd-wallpaper-preview.jpg",
+          "title": "Car 57"
+        },
+        {
+          "id": "car58",
+          "url": "https://c4.wallpaperflare.com/wallpaper/272/37/106/bmw-japan-car-black-wallpaper-preview.jpg",
+          "title": "Car 58"
+        },
+        {
+          "id": "car59",
+          "url": "https://c4.wallpaperflare.com/wallpaper/168/900/28/rick-and-morty-vector-graphics-car-rainbows-wallpaper-preview.jpg",
+          "title": "Car 59"
+        },
+        {
+          "id": "car60",
+          "url": "https://c4.wallpaperflare.com/wallpaper/590/199/595/dark-car-vehicle-nissan-wallpaper-preview.jpg",
+          "title": "Car 60"
+        },
+        {
+          "id": "car61",
+          "url": "https://c4.wallpaperflare.com/wallpaper/324/431/612/street-car-night-street-light-wallpaper-preview.jpg",
+          "title": "Car 61"
+        },
+        {
+          "id": "car62",
+          "url": "https://c4.wallpaperflare.com/wallpaper/518/279/682/khyzyl-saleem-car-render-hd-wallpaper-preview.jpg",
+          "title": "Car 62"
+        },
+        {
+          "id": "car63",
+          "url": "https://c0.wallpaperflare.com/preview/860/756/868/car-city-sign-signage.jpg",
+          "title": "Car 63"
+        },
+        {
+          "id": "car64",
+          "url": "https://c4.wallpaperflare.com/wallpaper/595/739/604/car-vehicle-outdoors-dodge-challenger-wallpaper-preview.jpg",
+          "title": "Car 64"
+        },
+        {
+          "id": "car65",
+          "url": "https://c4.wallpaperflare.com/wallpaper/1022/57/149/sports-car-ferrari-photo-manipulation-engines-wallpaper-preview.jpg",
+          "title": "Car 65"
+        },
+        {
+          "id": "car66",
+          "url": "https://c4.wallpaperflare.com/wallpaper/662/966/394/japan-tokyo-street-building-wallpaper-preview.jpg",
+          "title": "Car 66"
+        },
+        {
+          "id": "car67",
+          "url": "https://c4.wallpaperflare.com/wallpaper/686/7/818/anime-anime-girls-car-ferrari-wallpaper-preview.jpg",
+          "title": "Car 67"
+        },
+        {
+          "id": "car68",
+          "url": "https://c4.wallpaperflare.com/wallpaper/24/526/333/iron-man-marvel-comics-wallpaper-preview.jpg",
+          "title": "Car 68"
+        },
+        {
+          "id": "car69",
+          "url": "https://c4.wallpaperflare.com/wallpaper/687/194/405/digital-digital-art-artwork-illustration-concept-art-hd-wallpaper-preview.jpg",
+          "title": "Car 69"
+        },
+        {
+          "id": "car70",
+          "url": "https://c4.wallpaperflare.com/wallpaper/931/875/651/car-mercedes-benz-mercedes-amg-mercedes-amg-gt-wallpaper-preview.jpg",
+          "title": "Car 70"
+        },
+        {
+          "id": "car71",
+          "url": "https://c4.wallpaperflare.com/wallpaper/386/853/217/car-vehicle-colorful-toyota-wallpaper-preview.jpg",
+          "title": "Car 71"
+        },
+        {
+          "id": "car72",
+          "url": "https://c4.wallpaperflare.com/wallpaper/870/921/133/car-ford-mustang-khyzyl-saleem-wallpaper-preview.jpg",
+          "title": "Car 72"
+        },
+        {
+          "id": "car73",
+          "url": "https://c4.wallpaperflare.com/wallpaper/849/660/940/nissan-skyline-nissan-skyline-r32-nissan-gt-r-r32-wallpaper-preview.jpg",
+          "title": "Car 73"
+        },
+        {
+          "id": "car74",
+          "url": "https://c4.wallpaperflare.com/wallpaper/355/914/539/red-car-red-sky-car-red-wallpaper-preview.jpg",
+          "title": "Car 74"
+        },
+        {
+          "id": "car75",
+          "url": "https://c4.wallpaperflare.com/wallpaper/56/675/607/toyota-supra-mk4-toyota-supra-toyota-mazda-rx-7-fd-mazda-rx-7-hd-wallpaper-preview.jpg",
+          "title": "Car 75"
+        },
+        {
+          "id": "car76",
+          "url": "https://c4.wallpaperflare.com/wallpaper/463/296/851/mclaren-p1-gtr-race-tracks-car-dual-monitors-wallpaper-preview.jpg",
+          "title": "Car 76"
+        },
+        {
+          "id": "car77",
+          "url": "https://c4.wallpaperflare.com/wallpaper/616/403/742/mercedes-benz-amg-gt-s-2016-wallpaper-preview.jpg",
+          "title": "Car 77"
+        },
+        {
+          "id": "car78",
+          "url": "https://c4.wallpaperflare.com/wallpaper/523/161/186/car-stance-mercedes-benz-sls-amg-futuristic-wallpaper-preview.jpg",
+          "title": "Car 78"
+        },
+        {
+          "id": "car79",
+          "url": "https://c4.wallpaperflare.com/wallpaper/531/466/483/crowned-need-for-speed-bmw-m3-car-wallpaper-preview.jpg",
+          "title": "Car 79"
+        },
+        {
+          "id": "car80",
+          "url": "https://c4.wallpaperflare.com/wallpaper/21/406/501/ultra-wide-car-porsche-khyzyl-saleem-wallpaper-preview.jpg",
+          "title": "Car 80"
+        },
+        {
+          "id": "car81",
+          "url": "https://www.wallpaperflare.com/fpublic/css/favicon.ico",
+          "title": "Car 81"
         }
       ]
     }
   ]
-}
+        }
