@@ -4,7 +4,7 @@
   --text-color: #e0e0e0;
   --accent-color: #00ffff;
   --hero-overlay: rgba(0, 0, 0, 0.4);
-  --header-bg: rgba(13, 15, 25, 0.95);
+  --header-bg: rgba(13, 15, 25, 0.9);
 }
 
 body {
@@ -29,50 +29,41 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px; /* Increased padding from edges */
+  padding: 0 25px;
   height: 70px;
-  background: var(--header-bg);
+  background: transparent;
   z-index: 100;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-}
-
-.nav-left, .nav-right {
-    display: flex;
-    align-items: center;
-}
-
-.nav-center {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 100%;
 }
 
 .site-name {
   font-family: 'Pacifico', cursive;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 400;
   color: var(--accent-color);
   text-transform: none;
   letter-spacing: 0;
   text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
-  transition: opacity 0.3s ease;
 }
 
-.search-toggle, .menu-toggle {
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    padding: 10px;
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 101;
 }
 
-.search-toggle:hover, .menu-toggle:hover {
+.menu-toggle, .search-toggle {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover, .search-toggle:hover {
   color: var(--accent-color);
 }
 
@@ -84,7 +75,7 @@ body {
   flex-direction: column;
   position: absolute;
   top: 70px;
-  left: 0;
+  right: 0;
   width: 100%;
   background: var(--header-bg);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
@@ -92,11 +83,11 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   backdrop-filter: blur(10px);
-  z-index: 99;
 }
 
 .nav-links.active {
   display: flex;
+  z-index: 101;
 }
 
 .nav-links li a {
@@ -117,22 +108,23 @@ body {
 /* Search Bar Styling */
 .search-container {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scaleX(0);
-    width: 90%;
+    top: -70px; /* New: Hides it by moving it up by its own height */
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: transparent;
     display: flex;
     align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    height: 100%;
+    padding: 0 25px;
+    box-sizing: border-box;
+    transition: top 0.3s ease-in-out; /* Animates the 'top' property */
+    z-index: 102;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
 }
 
 .search-container.active {
-    transform: translate(-50%, -50%) scaleX(1);
-    opacity: 1;
-    visibility: visible;
+    top: 70px; /* New: Slides it down to appear right below the header */
 }
 
 .search-input {
@@ -143,6 +135,7 @@ body {
     padding: 10px 20px;
     color: #fff;
     font-size: 1rem;
+    margin-right: 15px;
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
@@ -164,7 +157,8 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     transition: color 0.3s ease;
-    margin-left: 10px;
+    z-index: 103;
+    padding: 10px;
 }
 
 .search-close:hover {
@@ -174,7 +168,7 @@ body {
 /* Autocomplete suggestions */
 .autocomplete-results {
     position: absolute;
-    top: 70px;
+    top: 140px;
     left: 0;
     width: 100%;
     max-height: 200px;
@@ -271,11 +265,7 @@ body {
   z-index: 1;
 }
 
-/* Categories page heading styling and Search Results heading */
-.content {
-    margin: 0 20px; /* Added margin to align with header padding */
-}
-
+/* Categories page heading styling */
 .content h2 {
     font-size: clamp(1.8rem, 5vw, 3rem);
     font-weight: 600;
@@ -286,7 +276,6 @@ body {
     letter-spacing: 2px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     position: relative;
-    padding-top: 20px;
 }
 
 .content h2::after {
@@ -537,24 +526,7 @@ body {
   .navbar {
     padding: 0 50px;
   }
-    
-  .nav-center {
-      justify-content: flex-start;
-  }
-    
-  .search-container {
-      position: static;
-      transform: none;
-      width: 100%;
-      height: auto;
-      opacity: 1;
-      visibility: visible;
-  }
 
-  .site-name {
-      display: block !important;
-  }
-  
   .nav-links {
     display: flex;
     flex-direction: row;
@@ -664,4 +636,4 @@ body {
     .popup-content p {
         font-size: 0.9rem;
     }
-  }
+    }
