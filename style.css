@@ -1,353 +1,369 @@
-/* Universal Styles & Futuristic Palette */
+/* Universal Styles & Futuristic Palette - REVISED */
 :root {
---bg-color: #0b0f1a;
---card-bg: rgba(255, 255, 255, 0.05);
---border-color: rgba(255, 255, 255, 0.1);
---text-color: #e0e0e0;
---accent-color: #00eaff;
---hover-color: rgba(0, 234, 255, 0.2);
---glass-bg: rgba(255, 255, 255, 0.08);
+  --bg-color: #0b0f1a;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --text-color: #e0e0e0;
+  --accent-color: #00ffff;
+  --hover-color: rgba(0, 255, 255, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.08);
 }
 
 body {
-margin: 0;
-padding: 0;
-font-family: 'Roboto Mono', monospace;
-background-color: var(--bg-color);
-color: var(--text-color);
-transition: background-image 0.5s ease-in-out;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  color: var(--text-color);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #0d0f19;
+  transition: background-image 0.5s ease-in-out;
 }
 
-/* Floating Header */
+/* Floating Header - REVISED */
 .navbar {
-position: fixed;
-top: 20px;
-left: 20px;
-right: 20px;
-height: 60px;
-background: var(--glass-bg);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: 1px solid var(--border-color);
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-border-radius: 15px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0 25px;
-z-index: 1000;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 70px;
+  background: rgba(13, 15, 25, 0.8);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 .site-name {
-font-size: 1.5rem;
-font-weight: 600;
-color: var(--accent-color);
-text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px var(--accent-color);
 }
 
 .menu-toggle {
-background: none;
-border: none;
-color: var(--text-color);
-font-size: 1.5rem;
-cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: var(--accent-color);
 }
 
 .nav-links {
-list-style: none;
-padding: 0;
-margin: 0;
-display: none;
-flex-direction: column;
-position: absolute;
-top: 100%;
-right: 0;
-width: 100%;
-background: var(--glass-bg);
-border: 1px solid var(--border-color);
-border-top: none;
-border-radius: 0 0 15px 15px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background: rgba(13, 15, 25, 0.9);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
 }
 
 .nav-links.active {
-display: flex;
+  display: flex;
 }
 
 .nav-links li a {
-display: block;
-padding: 15px 20px;
-color: var(--text-color);
-text-decoration: none;
-font-size: 1rem;
-transition: background-color 0.3s ease;
+  display: block;
+  padding: 18px 25px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links li a:hover {
-background-color: var(--hover-color);
-color: #fff;
+  background-color: var(--hover-color);
+  color: var(--accent-color);
 }
 
-/* Main Content Area */
+/* Main Content Area - REVISED */
 .content {
-padding: 100px 20px 40px 20px;
+  padding: 120px 25px 50px 25px;
 }
 
-/* Apple-style Hero Section */
+/* Apple-style Hero Section - REVISED */
 .homepage-header {
-height: 80vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .homepage-title {
-font-size: 4rem;
-font-weight: 700;
-margin-bottom: 10px;
-color: var(--accent-color);
-text-shadow: 0 0 10px var(--accent-color);
-animation: fadeIn 1s ease-out;
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #fff;
+  background: linear-gradient(90deg, #00ffff, #00aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.3);
+  animation: fadeIn 1s ease-out;
 }
 
 .homepage-subtitle {
-font-size: 1.5rem;
-color: var(--text-color);
-opacity: 0.8;
-animation: fadeIn 1s ease-out 0.5s forwards;
-opacity: 0;
+  font-size: clamp(1rem, 4vw, 1.8rem);
+  color: var(--text-color);
+  opacity: 0.8;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+  opacity: 0;
+  max-width: 800px;
+  line-height: 1.6;
 }
 
-/* Category Page Header */
+/* Category Page Header - REVISED */
 .category-page-header {
-background: var(--glass-bg);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-border: 1px solid var(--border-color);
-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-border-radius: 12px;
-padding: 30px 20px;
-margin: 0 20px 40px;
-text-align: center;
+  background: rgba(13, 15, 25, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  padding: 40px 30px;
+  margin: 0 25px 50px;
+  text-align: center;
 }
 
 .category-title {
-font-size: 2rem;
-font-weight: 600;
-color: var(--accent-color);
-text-shadow: 0 0 10px var(--accent-color);
-margin: 0;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--accent-color);
+  text-shadow: 0 0 15px var(--accent-color), 0 0 5px rgba(0, 255, 255, 0.5);
+  margin: 0;
 }
 
-/* Category Grid (Responsive) */
+/* Category Grid (Responsive) - REVISED */
 .category-grid {
-display: grid;
-grid-template-columns: 1fr;
-gap: 25px;
-padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 0 25px;
 }
 
 .category-card {
-position: relative;
-border-radius: 12px;
-overflow: hidden;
-height: 250px;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-animation: fadeInSlideUp 0.6s ease forwards;
-opacity: 0;
-transform: translateY(20px);
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  height: 300px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInSlideUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .category-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
 }
 
 .category-card img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
 .category-info {
-position: absolute;
-bottom: 0;
-left: 0;
-right: 0;
-background: rgba(0, 0, 0, 0.6);
-padding: 15px;
-text-align: center;
-transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.0));
+  padding: 25px 15px 15px;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .category-info h3 {
-margin: 0;
-font-size: 1.5rem;
-color: var(--text-color);
+  margin: 0;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--text-color);
 }
 
-/* Wallpaper Grid (Organized Layout) */
+/* Wallpaper Grid - REVISED */
 .wallpaper-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 20px;
-padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 0 25px;
 }
 
 .wallpaper-card {
-position: relative;
-border-radius: 12px;
-overflow: hidden;
-height: 200px;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-animation: fadeInScaleUp 0.6s ease forwards;
-opacity: 0;
-transform: scale(0.95);
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 250px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInScaleUp 0.8s ease forwards;
+  opacity: 0;
+  transform: scale(0.98);
 }
 
 .wallpaper-card:hover {
-transform: scale(1.02);
-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
 }
 
 .wallpaper-card img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
 .wallpaper-card:hover img {
-transform: scale(1.05);
+  transform: scale(1.1);
 }
 
-/* Download Button */
+/* Download Button - REVISED */
 .download-btn {
-position: absolute;
-bottom: 10px;
-right: 10px;
-background: rgba(0, 0, 0, 0.7);
-backdrop-filter: blur(5px);
-color: #fff;
-border: 1px solid rgba(255, 255, 255, 0.2);
-border-radius: 8px;
-padding: 8px 15px;
-text-decoration: none;
-font-size: 0.9rem;
-opacity: 0;
-transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 50px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
 }
 
 .wallpaper-card:hover .download-btn {
-opacity: 1;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Pagination */
+/* Pagination - REVISED */
 .pagination {
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: 40px;
-gap: 10px;
-padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 15px;
+  padding-bottom: 30px;
 }
 
 .page-btn {
-background: var(--card-bg);
-border: 1px solid var(--border-color);
-color: var(--text-color);
-padding: 10px 15px;
-border-radius: 8px;
-cursor: pointer;
-transition: background-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .page-btn:hover {
-background-color: var(--hover-color);
+  background-color: var(--hover-color);
+  border-color: var(--accent-color);
 }
 
 .page-btn.disabled {
-opacity: 0.5;
-cursor: not-allowed;
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
-/* Animations */
+/* Animations - REVISED */
 @keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 @keyframes fadeInSlideUp {
-from { opacity: 0; transform: translateY(20px); }
-to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 @keyframes fadeInScaleUp {
-from { opacity: 0; transform: scale(0.95); }
-to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-/* Desktop Styles */
+/* Desktop Styles - REVISED */
 @media (min-width: 768px) {
-.navbar {
-width: 80%;
-left: 50%;
-transform: translateX(-50%);
+  .navbar {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background: none;
+    border: none;
+    box-shadow: none;
+    align-items: center;
+  }
+
+  .nav-links li a {
+    padding: 12px 20px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 140px;
+  }
+
+  .homepage-title {
+    font-size: 8rem;
+  }
+
+  .homepage-subtitle {
+    font-size: 2.5rem;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    padding: 0;
+  }
+
+  .wallpaper-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 0;
+  }
+
+  .category-page-header {
+    margin: 0 auto 50px auto;
+    max-width: 900px;
+  }
 }
-
-.nav-links {  
-    display: flex;  
-    flex-direction: row;  
-    position: static;  
-    width: auto;  
-    background: none;  
-    border: none;  
-    box-shadow: none;  
-}  
-
-.nav-links li a {  
-    padding: 10px 15px;  
-}  
-
-.menu-toggle {  
-    display: none;  
-}  
-
-.content {  
-    max-width: 1200px;  
-    margin: 0 auto;  
-    padding-top: 120px;  
-}  
-
-.homepage-title {  
-    font-size: 6rem;  
-}  
-
-.homepage-subtitle {  
-    font-size: 2rem;  
-}  
-
-.category-grid {  
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));  
-    padding: 0;  
-}  
-
-.wallpaper-grid {  
-    padding: 0;  
-}  
-
-.category-page-header {  
-    margin: 0 auto 40px auto;  
-    max-width: 800px;  
-}
-
-} 
-
-I wanna modify this ui to loon much more better and responsive 
-Wanna change the overall background to
-https://files.catbox.moe/fo6k1n.jpg
-
-And I want the color accnt to be cyan or make it match the badground
