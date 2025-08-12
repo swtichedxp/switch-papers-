@@ -1,10 +1,10 @@
 /* Universal Styles & New Palette */
 :root {
-  --bg-color: #0b0f1a;
+  --bg-color: #1a0b1f;
   --text-color: #e0e0e0;
-  --accent-color: #00ffff;
+  --accent-color: #bf40ff;
   --hero-overlay: rgba(0, 0, 0, 0.4);
-  --header-bg: rgba(13, 15, 25, 0.95);
+  --header-bg: rgba(26, 11, 31, 0.95);
   --glass-bg: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
 }
@@ -14,7 +14,7 @@ body {
   padding-top: 70px;
   font-family: 'Inter', sans-serif;
   color: #fff;
-  background-color: #0d0f19;
+  background-color: var(--bg-color);
   background-image: url('https://files.catbox.moe/fo6k1n.jpg'); 
   background-size: cover;
   background-position: center;
@@ -29,7 +29,7 @@ body {
     left: 0;
     width: 100%;
     height: 70px;
-    padding: 0 35px;
+    padding: 0 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,7 +48,7 @@ body {
     font-size: 2rem;
     font-weight: 400;
     color: var(--accent-color);
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 8px rgba(191, 64, 255, 0.5);
 }
 
 .header-icons {
@@ -72,22 +72,34 @@ body {
 
 .main-nav {
     display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--header-bg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.main-nav.active {
+    display: block;
 }
 
 .nav-links {
     list-style: none;
-    padding: 0;
+    padding: 20px;
     margin: 0;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .nav-links li a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 1rem;
-    position: relative;
-    padding: 5px 0;
+    font-size: 1.1rem;
+    display: block;
+    padding: 10px 0;
     transition: color 0.3s ease;
 }
 
@@ -95,9 +107,36 @@ body {
     color: var(--accent-color);
 }
 
+.sign-in-btn-desktop {
+    display: none;
+}
+
+.sign-in-btn-mobile {
+    display: block;
+    margin-top: 10px;
+}
+
+.sign-in-btn-mobile button {
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sign-in-btn-mobile button:hover {
+    background: #a350ff;
+    box-shadow: 0 0 15px rgba(191, 64, 255, 0.5);
+}
+
+
 /* Search Bar Styling (Sliding from Header) */
 .search-container {
-    position: absolute;
+    position: fixed;
     top: -70px;
     left: 0;
     width: 100%;
@@ -182,16 +221,14 @@ body {
 }
 
 .autocomplete-item:hover {
-    background-color: rgba(0, 255, 255, 0.1);
+    background-color: rgba(191, 64, 255, 0.1);
 }
 
 /* Hero Section Layout (New Design) */
 .hero-section {
     position: relative;
     width: 100%;
-    height: 90vh;
-    background-size: cover;
-    background-position: center;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,18 +236,6 @@ body {
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
-    animation: fadeIn 1s ease-out;
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--hero-overlay);
-    z-index: 1;
 }
 
 /* Glassmorphism Hero Panel (New Design) */
@@ -229,6 +254,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: fadeIn 1s ease-out;
 }
 
 .glass-hero-panel h2 {
@@ -247,8 +273,10 @@ body {
 
 .cta-buttons {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 15px;
     margin-top: 1rem;
+    width: 100%;
 }
 
 .cta-btn {
@@ -258,16 +286,17 @@ body {
     cursor: pointer;
     font-weight: 600;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
 }
 
 .cta-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(191, 64, 255, 0.3);
 }
 
 .primary-btn {
     background-color: var(--accent-color);
-    color: #000;
+    color: #fff;
     border: none;
 }
 
@@ -277,8 +306,14 @@ body {
     color: var(--accent-color);
 }
 
+/* Dynamic Content Container */
+#dynamic-content-container {
+    padding-top: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
-/* Categories page heading styling and Search Results heading */
+/* Category heading styling and Search Results heading */
 .content h2 {
     font-size: clamp(1.8rem, 5vw, 3rem);
     font-weight: 600;
@@ -422,7 +457,7 @@ body {
 
 .preview-btn:hover, .download-btn:hover {
     background-color: var(--accent-color);
-    color: #000;
+    color: #fff;
 }
 
 /* Pagination */
@@ -437,7 +472,7 @@ body {
 
 .page-btn {
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--text-color);
   padding: 12px 20px;
   border-radius: 10px;
@@ -446,7 +481,7 @@ body {
 }
 
 .page-btn:hover {
-  background-color: var(--hover-color);
+  background-color: rgba(191, 64, 255, 0.1);
   border-color: var(--accent-color);
 }
 
@@ -469,37 +504,53 @@ body {
 
     .main-nav {
         display: block;
-    }
-    
-    .header-icons {
-        display: none;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
         position: static;
         width: auto;
         background: none;
         box-shadow: none;
+        z-index: auto;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        padding: 0;
         align-items: center;
-        backdrop-filter: none;
-        margin-left: 20px;
     }
 
     .nav-links li a {
         padding: 0;
     }
     
-    .content {
-        padding-top: 50px;
-        max-width: 1400px;
-        margin: 0 auto;
+    .header-icons {
+        display: none;
     }
 
-    .hero-section {
-        height: 60vh;
+    .sign-in-btn-desktop {
+        display: block;
+        background: var(--accent-color);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .sign-in-btn-desktop:hover {
+        background: #a350ff;
+        box-shadow: 0 0 15px rgba(191, 64, 255, 0.5);
+    }
+    
+    .sign-in-btn-mobile {
+        display: none;
+    }
+
+    .cta-buttons {
+        flex-direction: row;
+        width: auto;
     }
 
     .search-container {
@@ -512,4 +563,4 @@ body {
         background: var(--header-bg);
         transition: top 0.3s ease-in-out;
     }
-                                  }
+      }
