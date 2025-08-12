@@ -23,32 +23,31 @@ body {
 
 /* Floating Header - REVISED */
 .navbar {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  right: 20px;
+  /* No longer fixed or floating */
+  position: static;
   height: 70px;
   background: rgba(13, 15, 25, 0.8);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
-  border-radius: 20px;
+  /* Removed border and shadow */
+  border-radius: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 25px; /* Adjusted padding to touch edges */
   z-index: 1000;
   transition: all 0.3s ease;
 }
 
 .site-name {
+  font-family: 'Poppins', sans-serif; /* New font */
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--accent-color);
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 0 0 8px var(--accent-color);
+  margin-right: auto; /* Pushes menu to the right */
 }
 
 .menu-toggle {
@@ -71,7 +70,7 @@ body {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 100%;
+  top: 70px; /* Positioned below the non-fixed header */
   right: 0;
   width: 100%;
   background: rgba(13, 15, 25, 0.9);
@@ -103,7 +102,7 @@ body {
 
 /* Main Content Area - REVISED */
 .content {
-  padding: 120px 25px 50px 25px;
+  padding: 25px; /* Removed top padding as header is no longer fixed */
 }
 
 /* Apple-style Hero Section - REVISED */
@@ -314,9 +313,8 @@ body {
 /* Desktop Styles - REVISED */
 @media (min-width: 768px) {
   .navbar {
-    width: 90%;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    padding: 0 50px; /* More padding on desktop */
   }
 
   .nav-links {
@@ -341,7 +339,7 @@ body {
   .content {
     max-width: 1400px;
     margin: 0 auto;
-    padding-top: 140px;
+    padding-top: 50px; /* Reduced padding as header is not fixed */
   }
 
   .homepage-title {
@@ -366,4 +364,4 @@ body {
     margin: 0 auto 50px auto;
     max-width: 900px;
   }
-}
+                              }
