@@ -8,10 +8,11 @@ const mainContent = document.querySelector('.content');
 const searchInput = document.getElementById('search-input');
 const autocompleteResults = document.getElementById('autocomplete-results');
 
-// New Header & Navigation Toggles (Correctly referencing new HTML)
+// Corrected Header & Navigation DOM elements
 const header = document.querySelector('.header');
 const menuToggle = document.getElementById('menu-toggle');
-const navLinksContainer = document.querySelector('.main-nav');
+// Correctly targeting the UL element with the active class
+const navLinksContainer = document.getElementById('nav-links-container'); 
 const searchToggle = document.getElementById('search-toggle');
 const searchContainer = document.getElementById('search-container');
 const searchClose = document.getElementById('search-close');
@@ -62,10 +63,7 @@ const fetchDataAndRender = async () => {
             });
         });
 
-        // The navigation links are now part of the HTML structure,
-        // so we don't need to dynamically render them unless you want to.
-        // I've kept the function here in case you need to modify them later.
-        // renderNavLinks(wallpaperData.categories); 
+        // The navigation links are now part of the HTML structure
         renderHomePage();
     } catch (error) {
         console.error('Could not fetch wallpaper data:', error);
@@ -73,18 +71,14 @@ const fetchDataAndRender = async () => {
     }
 };
 
-// Function to render navigation links
-const renderNavLinks = (categories) => {
-    // This is now handled primarily by the HTML, but this function can
-    // be used to add dynamic links if needed.
-};
-
-// Function to render the new home page
+// Function to render the new home page (simplified to avoid conflicts)
 const renderHomePage = () => {
     window.location.hash = '#home';
     
     // The hero section is now hardcoded in the HTML, so we only need to
-    // append the category grid.
+    // create and append the category grid to the content area.
+    
+    const heroSection = document.querySelector('.hero-section');
     
     // Create the glassmorphic category cards
     const categoryGrid = document.createElement('div');
@@ -102,9 +96,6 @@ const renderHomePage = () => {
     
     // Clear the main content and append only the category grid
     mainContent.innerHTML = ''; 
-    
-    // We append the hardcoded hero section from the HTML
-    const heroSection = document.querySelector('.hero-section');
     mainContent.appendChild(heroSection);
     mainContent.appendChild(categoryGrid);
 };
@@ -265,9 +256,9 @@ document.body.addEventListener('click', (e) => {
     }
     
     // Handling category hero links
-    if (e.target.matches('.category-hero')) {
+    if (e.target.matches('.glass-card')) {
         e.preventDefault();
-        const categoryId = e.target.dataset.id;
+        const categoryId = e.target.getAttribute('href').substring(10);
         renderCategoryPage(categoryId);
     }
 
@@ -376,6 +367,7 @@ searchInput.addEventListener('keydown', (e) => {
 // Search bar toggle (for the sliding animation)
 searchToggle.addEventListener('click', () => {
     searchContainer.classList.toggle('active');
+    // We now toggle the .main-nav directly as that is the parent of the nav links
     navLinksContainer.classList.remove('active'); // Close mobile menu if open
     if (searchContainer.classList.contains('active')) {
         searchInput.focus();
@@ -389,6 +381,7 @@ searchClose.addEventListener('click', () => {
 
 // Mobile menu toggle
 menuToggle.addEventListener('click', () => {
+    // Toggling the .active class on the nav-links container (the ul)
     navLinksContainer.classList.toggle('active');
     searchContainer.classList.remove('active'); // Close search bar if open
 });
@@ -417,3 +410,4 @@ window.addEventListener('scroll', () => {
 
 // Initialize app
 fetchDataAndRender();
+OK
