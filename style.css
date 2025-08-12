@@ -108,7 +108,7 @@ body {
 /* Search Bar Styling */
 .search-container {
     position: absolute;
-    top: 70px; /* New: Places the search bar right below the header */
+    top: -70px; /* New: Hides it by moving it up by its own height */
     left: 0;
     width: 100%;
     height: 70px;
@@ -117,15 +117,14 @@ body {
     align-items: center;
     padding: 0 25px;
     box-sizing: border-box;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
+    transition: top 0.3s ease-in-out; /* Animates the 'top' property */
     z-index: 102;
     justify-content: space-between;
     backdrop-filter: blur(10px);
 }
 
 .search-container.active {
-    transform: translateY(0);
+    top: 70px; /* New: Slides it down to appear right below the header */
 }
 
 .search-input {
