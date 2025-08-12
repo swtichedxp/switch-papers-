@@ -3,7 +3,7 @@
     {
       "id": "windows",
       "name": "Windows",
-      "category_image_url": "images/windows_cover.jpg",
+      "category_image_url": "https://c4.wallpaperflare.com/wallpaper/212/944/939/windows-10-windows-11-minimalism-abstract-gradient-hd-wallpaper-preview.jpg",
       "wallpapers": [
         {
           "id": "win1",
@@ -410,7 +410,7 @@
     {
       "id": "anime",
       "name": "Anime",
-      "category_image_url": "images/anime_cover.jpg",
+      "category_image_url": "https://c4.wallpaperflare.com/wallpaper/66/993/107/anime-scars-face-mask-hatake-kakashi-wallpaper-preview.jpg",
       "wallpapers": [
         {
           "id": "anm1",
@@ -827,7 +827,7 @@
     {
       "id": "cyberpunk",
       "name": "Cyberpunk",
-      "category_image_url": "images/cyberpunk_cover.jpg",
+      "category_image_url": "https://c4.wallpaperflare.com/wallpaper/66/993/107/anime-scars-face-mask-hatake-kakashi-wallpaper-preview.jpg",
       "wallpapers": [
         {
           "id": "cyb1",
@@ -1239,7 +1239,7 @@
     {
       "id": "cars",
       "name": "Cars",
-      "category_image_url": "images/cars_cover.jpg",
+      "category_image_url": "https://c4.wallpaperflare.com/wallpaper/666/167/593/dodge-challenger-srt-hellcat-widebody-dodge-challenger-2018-cars-4k-wallpaper-preview.jpg",
       "wallpapers": [
         {
           "id": "car1",
