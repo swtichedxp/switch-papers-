@@ -98,7 +98,6 @@ body {
 
 /* Search Bar Styling */
 .search-container {
-    /* This positions the search bar relative to the header, not the viewport. */
     position: absolute;
     top: 0;
     left: 0;
@@ -297,11 +296,9 @@ body {
   position: absolute;
   z-index: 2;
   bottom: 20px;
-  /* Adjusting positioning for centering on mobile */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  /* Original styles */
   font-size: clamp(2rem, 5vw, 3rem);
   color: #fff;
   margin: 0;
@@ -363,4 +360,169 @@ body {
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(8px);
   color: var(--accent-color);
-  border:
+  border: 1px solid var(--accent-color);
+  border-radius: 50px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.preview-btn:hover, .download-btn:hover {
+    background-color: var(--accent-color);
+    color: #000;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  gap: 15px;
+  padding-bottom: 30px;
+}
+
+.page-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.page-btn:hover {
+  background-color: var(--hover-color);
+  border-color: var(--accent-color);
+}
+
+.page-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .navbar {
+    width: 100%;
+    padding: 0 50px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background: none;
+    border: none;
+    box-shadow: none;
+    align-items: center;
+  }
+
+  .nav-links li a {
+    padding: 12px 20px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+
+  .hero-section {
+    height: 60vh;
+  }
+}
+
+/* --- Download Popup Styling (New) --- */
+.download-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    font-family: 'Inter', sans-serif;
+}
+
+.popup-content h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    margin-top: 0;
+    color: #f0f0f0;
+}
+
+.popup-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.popup-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border: 2px solid #333;
+}
+
+.popup-close-btn {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s;
+}
+
+.popup-close-btn:hover {
+    background-color: #e60000;
+}
+
+/* Responsive adjustments for popup */
+@media (max-width: 768px) {
+    .popup-content {
+        padding: 1.5rem;
+    }
+    
+    .popup-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .popup-content p {
+        font-size: 0.9rem;
+    }
+  }
