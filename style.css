@@ -56,14 +56,14 @@ body {
     color: var(--text-color);
     font-size: 1.5rem;
     cursor: pointer;
-    display: block; /* Show on mobile */
+    display: block;
 }
 
 .nav-links {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: none; /* Hidden by default on mobile */
+    display: none;
     position: absolute;
     top: 60px;
     left: 0;
@@ -93,13 +93,21 @@ body {
 
 /* Main Content Area */
 .content {
-    padding-top: 80px; /* Space for the fixed navbar */
+    padding-top: 80px;
     padding: 20px;
 }
 
-.homepage-header {
+/* New Floating Header Design */
+.homepage-header, .category-page-header {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 12px;
+    padding: 30px 20px;
+    margin-bottom: 40px;
     text-align: center;
-    margin-bottom: 50px;
 }
 
 .homepage-title {
@@ -115,10 +123,18 @@ body {
     color: var(--text-color);
 }
 
-/* Category Grid */
+.category-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-shadow: 0 0 10px var(--accent-color);
+    margin: 0;
+}
+
+/* Category Grid (Responsive) */
 .category-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Single column for mobile */
+    grid-template-columns: 1fr;
     gap: 25px;
 }
 
@@ -146,10 +162,6 @@ body {
     transition: transform 0.4s ease;
 }
 
-.category-card:hover img {
-    transform: scale(1.05);
-}
-
 .category-info {
     position: absolute;
     bottom: 0;
@@ -161,26 +173,78 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.category-card:hover .category-info {
-    background: rgba(0, 0, 0, 0.8);
-}
-
 .category-info h3 {
     margin: 0;
     font-size: 1.5rem;
     color: var(--text-color);
 }
 
-/* Sick Animations */
+/* Wallpaper Grid (Organized Layout) */
+.wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.wallpaper-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Animation */
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScaleUp 0.6s ease forwards;
+}
+
+.wallpaper-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.wallpaper-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.wallpaper-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Download Button */
+.download-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.wallpaper-card:hover .download-btn {
+    opacity: 1;
+}
+
+/* Animations */
 @keyframes fadeInSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScaleUp {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 /* --- Media Queries for Desktop Layout --- */
@@ -207,11 +271,11 @@ body {
     }
 
     .menu-toggle {
-        display: none; /* Hide on desktop */
+        display: none;
     }
 
     .nav-links {
-        display: flex; /* Always show on desktop */
+        display: flex;
         position: static;
         flex-direction: column;
     }
@@ -224,5 +288,9 @@ body {
     
     .category-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .homepage-header, .category-page-header {
+        margin: 0 40px 40px;
     }
 }
