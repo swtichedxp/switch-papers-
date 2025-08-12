@@ -8,14 +8,18 @@ const mainContent = document.getElementById('dynamic-content-container');
 const searchInput = document.getElementById('search-input');
 const autocompleteResults = document.getElementById('autocomplete-results');
 
-// Correctly selected Header & Navigation DOM elements
+// Header & Navigation DOM elements
 const header = document.querySelector('.header');
 const menuToggle = document.getElementById('menu-toggle');
-const navLinksContainer = document.getElementById('nav-links-container'); 
 const searchToggle = document.getElementById('search-toggle');
 const searchContainer = document.getElementById('search-container');
 const searchClose = document.getElementById('search-close');
 const heroSection = document.querySelector('.hero-section');
+
+// New sidebar elements
+const sidebar = document.getElementById('sidebar');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+const sidebarClose = document.getElementById('sidebar-close');
 
 // Setup modal element
 const modal = document.createElement('div');
@@ -63,7 +67,6 @@ const fetchDataAndRender = async () => {
             });
         });
 
-        // The navigation links are now part of the HTML structure
         renderHomePage();
     } catch (error) {
         console.error('Could not fetch wallpaper data:', error);
@@ -71,14 +74,9 @@ const fetchDataAndRender = async () => {
     }
 };
 
-// Function to render the new home page (simplified to avoid conflicts)
 const renderHomePage = () => {
     window.location.hash = '#home';
-    
-    // Clear dynamic content container
     mainContent.innerHTML = '';
-    
-    // Create the glassmorphic category cards
     const categoryGrid = document.createElement('div');
     categoryGrid.className = 'glass-card-grid';
     wallpaperData.categories.forEach(category => {
@@ -91,11 +89,9 @@ const renderHomePage = () => {
         `;
         categoryGrid.appendChild(categoryCard);
     });
-    
     mainContent.appendChild(categoryGrid);
 };
 
-// Function to render a single category's wallpapers
 const renderCategoryPage = (categoryId, page = 1) => {
     const category = wallpaperData.categories.find(cat => cat.id === categoryId);
     if (!category) {
@@ -127,14 +123,12 @@ const renderCategoryPage = (categoryId, page = 1) => {
     renderPagination(categoryId, page, totalPages);
 };
 
-// Function to render search results
 const renderSearchResults = (query, page = 1) => {
     const results = [];
     if (query) {
         const lowerCaseQuery = query.toLowerCase();
         wallpaperData.categories.forEach(category => {
             category.wallpapers.forEach(wallpaper => {
-                // Check if the query matches the title or any of the keywords
                 if (
                     wallpaper.title.toLowerCase().includes(lowerCaseQuery) ||
                     (wallpaper.keywords && wallpaper.keywords.some(kw => kw.includes(lowerCaseQuery)))
@@ -173,7 +167,6 @@ const renderSearchResults = (query, page = 1) => {
     renderPagination('search', page, totalPages, query);
 };
 
-// Function to render pagination controls
 const renderPagination = (viewId, currentPage, totalPages, query = '') => {
     if (totalPages <= 1) {
         return;
@@ -219,10 +212,8 @@ const renderPagination = (viewId, currentPage, totalPages, query = '') => {
     mainContent.appendChild(paginationContainer);
 };
 
-// Event listeners for navigation, search, and downloads
 window.addEventListener('hashchange', () => {
     const hash = window.location.hash;
-    // Hide the hero section on category and search pages
     if (hash === '#home' || !hash) {
         heroSection.style.display = 'flex';
         renderHomePage();
@@ -236,25 +227,28 @@ window.addEventListener('hashchange', () => {
         const query = params.get('q');
         renderSearchResults(query);
     }
+    // Close sidebar and search bar on navigation
+    closeSidebar();
+    closeSearchBar();
 });
 
 document.body.addEventListener('click', (e) => {
-    // Handling navigation links
-    if (e.target.matches('.nav-links a')) {
+    if (e.target.matches('.nav-link-item, .nav-link-item *')) {
         e.preventDefault();
-        const categoryId = e.target.dataset.id;
-        if (categoryId === 'home') {
+        const navLink = e.target.closest('.nav-link-item');
+        const linkId = navLink.dataset.id;
+        if (linkId === 'home') {
+            window.location.hash = '#home';
+        } else if (linkId === 'categories') {
+             // 'Explore' CTA button now also triggers this
+            // We need to render the category grid
             window.location.hash = '#home';
         } else {
-            window.location.hash = `#category-${categoryId}`;
+            // These are simple anchor links in this version, so no hash change needed
         }
-        // Close menu on mobile
-        if (window.innerWidth < 768) {
-            navLinksContainer.parentNode.classList.remove('active');
-        }
+        closeSidebar();
     }
     
-    // Handling category hero links
     if (e.target.matches('.glass-card, .glass-card *')) {
         e.preventDefault();
         const cardLink = e.target.closest('.glass-card');
@@ -262,20 +256,17 @@ document.body.addEventListener('click', (e) => {
         window.location.hash = `#category-${categoryId}`;
     }
 
-    // Handling preview buttons
     if (e.target.matches('.preview-btn')) {
         const url = e.target.dataset.url;
         modal.querySelector('.modal-image').src = url;
         modal.classList.add('active');
     }
 
-    // Handling download buttons
     if (e.target.matches('.download-btn')) {
-        e.preventDefault(); // Prevent the default link behavior
+        e.preventDefault();
         const imageUrl = e.target.href;
         const fileName = e.target.download;
         
-        // --- POPUP LOGIC ---
         const popup = document.createElement('div');
         popup.className = 'download-popup';
         popup.innerHTML = `
@@ -291,12 +282,10 @@ document.body.addEventListener('click', (e) => {
         `;
         document.body.appendChild(popup);
 
-        // Add a handler to close the popup
         popup.querySelector('.popup-close-btn').addEventListener('click', () => {
             document.body.removeChild(popup);
         });
 
-        // Add a handler to close the popup when clicking outside it
         popup.addEventListener('click', (event) => {
             if (event.target === popup) {
                 document.body.removeChild(popup);
@@ -304,14 +293,13 @@ document.body.addEventListener('click', (e) => {
         });
     }
 
-    // Handling modal close button
     if (e.target.matches('.modal-close') || e.target.matches('.modal-close i') || e.target === modal) {
         modal.classList.remove('active');
     }
 
-    // Handling hero CTA buttons
-    if (e.target.matches('.primary-btn')) {
-        window.location.hash = '#categories'; // Assuming 'Explore' goes to categories
+    if (e.target.matches('.hero-section .primary-btn')) {
+        window.location.hash = '#home';
+        window.scrollTo({ top: heroSection.offsetHeight, behavior: 'smooth' });
     }
     if (e.target.matches('.secondary-btn')) {
         // Implement logic for a 'Random' wallpaper if needed
@@ -319,7 +307,6 @@ document.body.addEventListener('click', (e) => {
     }
 });
 
-// Autocomplete and search functionality
 searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase();
     autocompleteResults.innerHTML = '';
@@ -371,41 +358,37 @@ searchInput.addEventListener('keydown', (e) => {
     }
 });
 
-// Search bar toggle
+// Sidebar & Search bar toggle
+const openSidebar = () => {
+    sidebar.classList.add('active');
+    sidebarOverlay.classList.add('active');
+    searchContainer.classList.remove('active');
+};
+
+const closeSidebar = () => {
+    sidebar.classList.remove('active');
+    sidebarOverlay.classList.remove('active');
+};
+
+const closeSearchBar = () => {
+    searchContainer.classList.remove('active');
+    autocompleteResults.classList.remove('active');
+};
+
+menuToggle.addEventListener('click', openSidebar);
+sidebarClose.addEventListener('click', closeSidebar);
+sidebarOverlay.addEventListener('click', closeSidebar);
+
 searchToggle.addEventListener('click', () => {
     searchContainer.classList.toggle('active');
-    // Close mobile menu if open
-    navLinksContainer.closest('.main-nav').classList.remove('active');
+    closeSidebar();
     if (searchContainer.classList.contains('active')) {
         searchInput.focus();
     }
 });
 
-// Close search bar
-searchClose.addEventListener('click', () => {
-    searchContainer.classList.remove('active');
-});
+searchClose.addEventListener('click', closeSearchBar);
 
-// Mobile menu toggle
-menuToggle.addEventListener('click', () => {
-    // Toggling the .active class on the main-nav container
-    navLinksContainer.closest('.main-nav').classList.toggle('active');
-    searchContainer.classList.remove('active'); // Close search bar if open
-});
-
-// Close menu and search bar when clicking outside
-document.addEventListener('click', (event) => {
-    const isClickInsideHeader = header.contains(event.target);
-    const isClickInsideSearchContainer = searchContainer.contains(event.target);
-    
-    // Check if the click is outside both the header and search container
-    if (!isClickInsideHeader && !isClickInsideSearchContainer) {
-        navLinksContainer.closest('.main-nav').classList.remove('active');
-        searchContainer.classList.remove('active');
-    }
-});
-
-// Header scroll effect
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
