@@ -16,10 +16,11 @@
         <h1 class="site-name">switchpaper</h1>
         <nav class="main-nav">
             <ul class="nav-links" id="nav-links-container">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home" data-id="home">Home</a></li>
+                <li><a href="#categories" data-id="categories">Categories</a></li>
+                <li><a href="#about" data-id="about">About</a></li>
+                <li><a href="#contact" data-id="contact">Contact</a></li>
+                <li class="sign-in-btn-mobile"><button>Sign in</button></li>
             </ul>
         </nav>
         <div class="header-icons">
@@ -30,8 +31,15 @@
                 <i class="fas fa-bars"></i>
             </button>
         </div>
+        <button class="sign-in-btn-desktop">Sign in</button>
     </header>
 
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input">
+        <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
+        <div class="autocomplete-results" id="autocomplete-results"></div>
+    </div>
+    
     <main class="content">
         <div class="hero-section">
             <div class="glass-hero-panel">
@@ -43,14 +51,9 @@
                 </div>
             </div>
         </div>
-        
-        <div class="search-container" id="search-container">
-            <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input">
-            <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
-            <div class="autocomplete-results" id="autocomplete-results"></div>
-        </div>
-        
-        </main>
+        <div id="dynamic-content-container">
+            </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
