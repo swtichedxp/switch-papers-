@@ -72,6 +72,7 @@ body {
 
 .nav-links.active {
   display: flex;
+  z-index: 101; /* This ensures the menu is always on top */
 }
 
 .nav-links li a {
@@ -302,4 +303,4 @@ body {
   .hero-section {
     height: 60vh;
   }
-  }
+}
