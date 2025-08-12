@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchDataAndRender();
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+        document.getElementById('nav-links-container').classList.toggle('active');
+    });
 });
 
-let wallpaperData; // Store the fetched data globally
+let wallpaperData;
 
 const fetchDataAndRender = async () => {
     try {
@@ -12,7 +15,6 @@ const fetchDataAndRender = async () => {
         }
         wallpaperData = await response.json();
         renderCategories(wallpaperData.categories);
-        // Load a default page, e.g., the homepage
         renderHomePage();
     } catch (error) {
         console.error('There was a problem fetching the data:', error);
@@ -21,21 +23,29 @@ const fetchDataAndRender = async () => {
 
 const renderCategories = (categories) => {
     const navLinksContainer = document.getElementById('nav-links-container');
-    navLinksContainer.innerHTML = ''; // Clear previous links
+    navLinksContainer.innerHTML = '';
+
+    const homeLink = document.createElement('li');
+    homeLink.innerHTML = `<a href="#" data-page="home">Home</a>`;
+    navLinksContainer.appendChild(homeLink);
 
     categories.forEach((category) => {
         const navLinkItem = document.createElement('li');
-        navLinkItem.innerHTML = `<a href="#" data-category-id="${category.id}">${category.name}</a>`;
+        navLinkItem.innerHTML = `<a href="#" data-page="category" data-category-id="${category.id}">${category.name}</a>`;
         navLinksContainer.appendChild(navLinkItem);
     });
 
-    // Add event listeners for the new links
-    navLinksContainer.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', (e) => {
+    navLinksContainer.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
             e.preventDefault();
-            const categoryId = e.target.dataset.categoryId;
-            renderCategoryPage(categoryId);
-        });
+            const pageType = e.target.dataset.page;
+            if (pageType === 'home') {
+                renderHomePage();
+            } else if (pageType === 'category') {
+                const categoryId = e.target.dataset.categoryId;
+                renderCategoryPage(categoryId);
+            }
+        }
     });
 };
 
@@ -46,9 +56,9 @@ const renderHomePage = () => {
             <h2 class="homepage-title">Eclectic Collection</h2>
             <p class="homepage-subtitle">Discover the perfect wallpaper for your screen.</p>
         </header>
-
         <section class="category-grid" id="category-grid-container"></section>
     `;
+    document.body.style.backgroundImage = 'none';
 
     const categoryGridContainer = document.getElementById('category-grid-container');
     const categories = wallpaperData.categories;
@@ -58,7 +68,7 @@ const renderHomePage = () => {
         categoryCard.className = 'category-card';
         categoryCard.style.animationDelay = `${index * 0.1}s`;
         categoryCard.innerHTML = `
-            <a href="#" data-category-id="${category.id}">
+            <a href="#" data-page="category" data-category-id="${category.id}">
                 <img src="${category.category_image_url}" alt="${category.name}">
                 <div class="category-info">
                     <h3>${category.name}</h3>
@@ -66,11 +76,15 @@ const renderHomePage = () => {
             </a>
         `;
         categoryGridContainer.appendChild(categoryCard);
+    });
 
-        categoryCard.querySelector('a').addEventListener('click', (e) => {
-            e.preventDefault();
-            const categoryId = e.target.dataset.categoryId;
-            renderCategoryPage(categoryId);
+    categoryGridContainer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (e.target.closest('.category-card')) {
+                e.preventDefault();
+                const categoryId = e.target.closest('a').dataset.categoryId;
+                renderCategoryPage(categoryId);
+            }
         });
     });
 };
@@ -84,15 +98,12 @@ const renderCategoryPage = (categoryId) => {
 
     const mainContent = document.querySelector('.content');
     mainContent.innerHTML = `
-        <header class="category-page-header" style="background-image: url(${category.category_image_url});">
+        <header class="category-page-header">
             <h2 class="category-title">${category.name} Wallpapers</h2>
         </header>
-
-        <section class="wallpaper-grid" id="wallpaper-grid-container">
-            </section>
+        <section class="wallpaper-grid" id="wallpaper-grid-container"></section>
     `;
-
-    // Update body background for the specific category
+    
     document.body.style.backgroundImage = `url(${category.category_image_url})`;
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundPosition = 'center';
@@ -102,7 +113,10 @@ const renderCategoryPage = (categoryId) => {
         const wallpaperCard = document.createElement('div');
         wallpaperCard.className = 'wallpaper-card';
         wallpaperCard.style.animationDelay = `${index * 0.1}s`;
-        wallpaperCard.innerHTML = `<img src="${wallpaper.url}" alt="${wallpaper.title}">`;
+        wallpaperCard.innerHTML = `
+            <img src="${wallpaper.url}" alt="${wallpaper.title}">
+            <a href="${wallpaper.url}" download="${wallpaper.id}.jpg" class="download-btn">Download</a>
+        `;
         wallpaperGridContainer.appendChild(wallpaperCard);
     });
 };
