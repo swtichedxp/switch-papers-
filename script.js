@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+Document.addEventListener('DOMContentLoaded', () => {
     fetchDataAndRender();
     
     const menuToggle = document.getElementById('menu-toggle');
@@ -69,6 +69,9 @@ const KEYWORD_MAPPING = {
     'windows': 'windows', 'laptops': 'windows', 'computer': 'windows', 'pc': 'windows'
 };
 
+// ====================================================================================
+// =================== UPDATED fetchDataAndRender FUNCTION ============================
+// ====================================================================================
 const fetchDataAndRender = async () => {
     try {
         const response = await fetch('wallpapers.json');
@@ -76,6 +79,19 @@ const fetchDataAndRender = async () => {
             throw new Error('Network response was not ok');
         }
         wallpaperData = await response.json();
+        
+        // Loop through all wallpapers and add filename-based keywords
+        wallpaperData.categories.forEach(category => {
+            category.wallpapers.forEach(wallpaper => {
+                const fileName = wallpaper.url.split('/').pop().split('.')[0];
+                const fileKeywords = fileName.split('-').map(kw => kw.toLowerCase());
+                if (!wallpaper.keywords) {
+                    wallpaper.keywords = [];
+                }
+                wallpaper.keywords.push(...fileKeywords);
+            });
+        });
+
         renderCategories(wallpaperData.categories);
         renderHomePage();
     } catch (error) {
@@ -200,9 +216,10 @@ const renderCategoryPage = (categoryId, page = 1) => {
         });
 
         downloadBtn.addEventListener('click', () => {
+            const proxyUrl = `https://switchimage-proxy.onrender.com/download-image?url=${encodeURIComponent(wallpaper.url)}`;
             const a = document.createElement('a');
             a.style.display = 'none';
-            a.href = wallpaper.url;
+            a.href = proxyUrl;
             a.download = fileName;
             document.body.appendChild(a);
             a.click();
@@ -245,6 +262,9 @@ const renderPagination = (categoryId, currentPage, totalWallpapers) => {
     }
 };
 
+// ====================================================================================
+// ===================== UPDATED performSearch FUNCTION ===============================
+// ====================================================================================
 const performSearch = (query) => {
     const normalizedQuery = query.toLowerCase().trim();
     if (normalizedQuery === 'all') {
@@ -261,7 +281,12 @@ const performSearch = (query) => {
     const results = [];
     wallpaperData.categories.forEach(category => {
         category.wallpapers.forEach(wallpaper => {
-            if (wallpaper.title.toLowerCase().includes(normalizedQuery)) {
+            const combinedKeywords = [
+                ...wallpaper.keywords, // Now includes filename keywords
+                wallpaper.title.toLowerCase()
+            ];
+
+            if (combinedKeywords.some(keyword => keyword.includes(normalizedQuery))) {
                 results.push(wallpaper);
             }
         });
@@ -314,9 +339,10 @@ const renderSearchResults = (wallpapers, title) => {
         });
 
         downloadBtn.addEventListener('click', () => {
+            const proxyUrl = `https://switchimage-proxy.onrender.com/download-image?url=${encodeURIComponent(wallpaper.url)}`;
             const a = document.createElement('a');
             a.style.display = 'none';
-            a.href = wallpaper.url;
+            a.href = proxyUrl;
             a.download = fileName;
             document.body.appendChild(a);
             a.click();
@@ -333,11 +359,15 @@ const getAllWallpapers = () => {
     return allWallpapers;
 };
 
+// ====================================================================================
+// ============= UPDATED getAutocompleteSuggestions FUNCTION ==========================
+// ====================================================================================
 const getAutocompleteSuggestions = (query) => {
     const normalizedQuery = query.toLowerCase().trim();
     const suggestions = new Set();
     const maxSuggestions = 5;
-
+    
+    // First, add all the hardcoded keywords
     for (const keyword in KEYWORD_MAPPING) {
         if (keyword.startsWith(normalizedQuery)) {
             suggestions.add(keyword);
@@ -345,11 +375,16 @@ const getAutocompleteSuggestions = (query) => {
         if (suggestions.size >= maxSuggestions) break;
     }
 
+    // Now, loop through the wallpapers and add their keywords
     wallpaperData.categories.forEach(category => {
         category.wallpapers.forEach(wallpaper => {
-            if (wallpaper.title.toLowerCase().startsWith(normalizedQuery)) {
-                suggestions.add(wallpaper.title);
-            }
+            // Check the combined keywords and the title
+            const allKeywords = [...(wallpaper.keywords || []), wallpaper.title.toLowerCase()];
+            allKeywords.forEach(keyword => {
+                if (keyword.startsWith(normalizedQuery)) {
+                    suggestions.add(keyword);
+                }
+            });
             if (suggestions.size >= maxSuggestions) return;
         });
         if (suggestions.size >= maxSuggestions) return;
