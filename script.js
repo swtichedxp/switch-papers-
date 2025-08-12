@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchClose = document.getElementById('search-close');
     const searchInput = document.getElementById('search-input');
     const autocompleteResults = document.getElementById('autocomplete-results');
+    const previewModal = document.getElementById('preview-modal');
+    const modalClose = document.getElementById('modal-close');
+    const modalImage = document.querySelector('.modal-image');
 
     menuToggle.addEventListener('click', () => {
         navLinksContainer.classList.toggle('active');
@@ -21,6 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     searchClose.addEventListener('click', () => {
         searchContainer.classList.remove('active');
+    });
+    
+    modalClose.addEventListener('click', () => {
+        previewModal.classList.remove('active');
     });
 
     searchInput.addEventListener('input', (e) => {
@@ -49,6 +56,31 @@ document.addEventListener('DOMContentLoaded', () => {
             performSearch(selectedQuery);
             autocompleteResults.classList.remove('active');
             searchContainer.classList.remove('active');
+        }
+    });
+
+    document.querySelector('.content').addEventListener('click', (e) => {
+        if (e.target.classList.contains('preview-btn')) {
+            const imageUrl = e.target.dataset.url;
+            modalImage.src = imageUrl;
+            previewModal.classList.add('active');
+        } else if (e.target.classList.contains('download-btn')) {
+            const imageUrl = e.target.dataset.url;
+            const filename = e.target.dataset.filename;
+
+            try {
+                // This is the re-implemented download logic
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = imageUrl;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            } catch (error) {
+                console.error('Download failed:', error);
+                alert('Could not download the image. Please try again.');
+            }
         }
     });
 });
@@ -175,33 +207,12 @@ const renderCategoryPage = (categoryId, page = 1) => {
         const fileName = wallpaper.url.split('/').pop();
         wallpaperCard.innerHTML = `
             <img src="${wallpaper.url}" alt="${wallpaper.title}">
-            <button class="download-btn" data-url="${wallpaper.url}" data-filename="${fileName}">Download</button>
+            <div class="button-container">
+                <button class="preview-btn" data-url="${wallpaper.url}">Preview</button>
+                <button class="download-btn" data-url="${wallpaper.url}" data-filename="${fileName}">Download</button>
+            </div>
         `;
         wallpaperGridContainer.appendChild(wallpaperCard);
-    });
-
-    mainContent.querySelectorAll('.download-btn').forEach(button => {
-        button.addEventListener('click', async (e) => {
-            const imageUrl = e.target.dataset.url;
-            const filename = e.target.dataset.filename;
-
-            try {
-                const response = await fetch(imageUrl);
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.download = filename;
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                a.remove();
-            } catch (error) {
-                console.error('Download failed:', error);
-                alert('Could not download the image. Please try again.');
-            }
-        });
     });
 
     const paginationContainer = document.createElement('div');
@@ -246,14 +257,12 @@ const performSearch = (query) => {
         return;
     }
 
-    // Check for category keyword mapping
     const mappedCategory = KEYWORD_MAPPING[normalizedQuery];
     if (mappedCategory) {
         renderCategoryPage(mappedCategory, 1);
         return;
     }
 
-    // Search by wallpaper title
     const results = [];
     wallpaperData.categories.forEach(category => {
         category.wallpapers.forEach(wallpaper => {
@@ -292,34 +301,12 @@ const renderSearchResults = (wallpapers, title) => {
         const fileName = wallpaper.url.split('/').pop();
         wallpaperCard.innerHTML = `
             <img src="${wallpaper.url}" alt="${wallpaper.title}">
-            <button class="download-btn" data-url="${wallpaper.url}" data-filename="${fileName}">Download</button>
+            <div class="button-container">
+                <button class="preview-btn" data-url="${wallpaper.url}">Preview</button>
+                <button class="download-btn" data-url="${wallpaper.url}" data-filename="${fileName}">Download</button>
+            </div>
         `;
         wallpaperGridContainer.appendChild(wallpaperCard);
-    });
-    
-    // Add event listeners for new download buttons
-    mainContent.querySelectorAll('.download-btn').forEach(button => {
-        button.addEventListener('click', async (e) => {
-            const imageUrl = e.target.dataset.url;
-            const filename = e.target.dataset.filename;
-
-            try {
-                const response = await fetch(imageUrl);
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.download = filename;
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                a.remove();
-            } catch (error) {
-                console.error('Download failed:', error);
-                alert('Could not download the image. Please try again.');
-            }
-        });
     });
 };
 
@@ -336,7 +323,6 @@ const getAutocompleteSuggestions = (query) => {
     const suggestions = new Set();
     const maxSuggestions = 5;
 
-    // Add category keywords
     for (const keyword in KEYWORD_MAPPING) {
         if (keyword.startsWith(normalizedQuery)) {
             suggestions.add(keyword);
@@ -344,7 +330,6 @@ const getAutocompleteSuggestions = (query) => {
         if (suggestions.size >= maxSuggestions) break;
     }
 
-    // Add wallpaper titles
     wallpaperData.categories.forEach(category => {
         category.wallpapers.forEach(wallpaper => {
             if (wallpaper.title.toLowerCase().startsWith(normalizedQuery)) {
