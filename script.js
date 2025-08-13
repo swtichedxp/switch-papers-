@@ -227,7 +227,6 @@ window.addEventListener('hashchange', () => {
         const query = params.get('q');
         renderSearchResults(query);
     }
-    // Close sidebar and search bar on navigation
     closeSidebar();
     closeSearchBar();
 });
@@ -240,11 +239,9 @@ document.body.addEventListener('click', (e) => {
         if (linkId === 'home') {
             window.location.hash = '#home';
         } else if (linkId === 'categories') {
-             // 'Explore' CTA button now also triggers this
-            // We need to render the category grid
             window.location.hash = '#home';
         } else {
-            // These are simple anchor links in this version, so no hash change needed
+            // These are simple anchor links
         }
         closeSidebar();
     }
@@ -302,7 +299,6 @@ document.body.addEventListener('click', (e) => {
         window.scrollTo({ top: heroSection.offsetHeight, behavior: 'smooth' });
     }
     if (e.target.matches('.secondary-btn')) {
-        // Implement logic for a 'Random' wallpaper if needed
         console.log('Random button clicked');
     }
 });
@@ -358,7 +354,6 @@ searchInput.addEventListener('keydown', (e) => {
     }
 });
 
-// Sidebar & Search bar toggle
 const openSidebar = () => {
     sidebar.classList.add('active');
     sidebarOverlay.classList.add('active');
@@ -397,5 +392,4 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Initialize app
 fetchDataAndRender();
