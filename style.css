@@ -33,7 +33,8 @@ body {
     height: 70px;
     padding: 0 25px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stacked layout for mobile */
+    justify-content: center;
     align-items: center;
     background: transparent;
     z-index: 100;
@@ -45,18 +46,27 @@ body {
     background: var(--header-bg);
 }
 
+.header-top-mobile {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.header-bottom-mobile {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
 .site-name {
     font-family: 'Pacifico', cursive;
     font-size: 2rem;
     font-weight: 400;
     color: var(--accent-color);
     text-shadow: 0 0 8px rgba(191, 64, 255, 0.5);
-}
-
-.header-icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    margin: 0;
 }
 
 .menu-toggle, .search-toggle {
@@ -72,11 +82,7 @@ body {
     color: var(--accent-color);
 }
 
-.main-nav-desktop {
-    display: none;
-}
-
-.sign-in-btn-desktop {
+.header-desktop {
     display: none;
 }
 
@@ -174,9 +180,7 @@ body {
 }
 
 .sidebar-footer {
-    margin-top: auto;
-    padding: 20px;
-    border-top: 1px solid var(--glass-border);
+    display: none;
 }
 
 /* Modern Glassmorphic Search Bar */
@@ -330,7 +334,7 @@ body {
     font-weight: 600;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: 100%;
-    border: none; /* Resetting button border */
+    border: none;
 }
 
 .cta-btn:hover {
@@ -654,7 +658,22 @@ body {
 /* Desktop Styles */
 @media (min-width: 768px) {
     .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
         padding: 0 50px;
+    }
+
+    .header-top-mobile, .header-bottom-mobile {
+        display: none;
+    }
+    
+    .header-desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
 
     .main-nav-desktop {
@@ -681,10 +700,6 @@ body {
         color: var(--accent-color);
     }
 
-    .header-icons {
-        display: none;
-    }
-
     .sign-in-btn-desktop {
         display: block;
     }
@@ -705,4 +720,4 @@ body {
         flex-direction: row;
         width: auto;
     }
-}
+    }
