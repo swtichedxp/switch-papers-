@@ -13,7 +13,7 @@
 
 body {
     margin: 0;
-    padding-top: 70px;
+    padding-top: 100px; /* Adjusted to match new header height */
     font-family: 'Inter', sans-serif;
     color: #fff;
     background-color: var(--bg-color);
@@ -30,12 +30,12 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
+    height: 100px; /* Increased height for the new layout */
     padding: 0 25px;
+    box-sizing: border-box; /* Ensures padding is included in the height */
     display: flex;
-    flex-direction: column; /* Stacked layout for mobile */
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-around; /* Distributes space between the two rows */
     background: transparent;
     z-index: 100;
     transition: background 0.3s ease;
@@ -48,16 +48,16 @@ body {
 
 .header-top-mobile {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centered the site logo */
     width: 100%;
-    padding-bottom: 5px;
 }
 
 .header-bottom-mobile {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: space-between; /* Pushed icons to the edges */
     align-items: center;
+    width: 100%;
+    padding: 0 10px; /* Added padding to prevent icons from being clipped */
 }
 
 .site-name {
@@ -202,7 +202,7 @@ body {
 }
 
 .search-container.active {
-    top: 70px;
+    top: 100px; /* Adjusted to slide down from the new header height */
 }
 
 .search-input {
@@ -276,7 +276,7 @@ body {
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: 90vh;
+    min-height: calc(100vh - 100px); /* Adjusted to account for new header height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -655,6 +655,65 @@ body {
     to { opacity: 1; }
 }
 
+/* New CSS for Contact Page */
+.contact-container {
+    padding: 50px 25px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    width: 40px;
+    text-align: center;
+}
+
+.contact-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+
+.contact-arrow {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
 /* Desktop Styles */
 @media (min-width: 768px) {
     .header {
@@ -720,66 +779,4 @@ body {
         flex-direction: row;
         width: auto;
     }
-    }
-/* ... (existing CSS remains the same) ... */
-
-/* New CSS for Contact Page */
-.contact-container {
-    padding: 50px 25px;
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
-
-.contact-card {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 15px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-    text-decoration: none;
-    color: var(--text-color);
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.contact-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.contact-icon {
-    font-size: 2rem;
-    color: var(--accent-color);
-    width: 40px;
-    text-align: center;
-}
-
-.contact-info {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-info h3 {
-    margin: 0;
-    font-size: 1.2rem;
-}
-
-.contact-info p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #a0a0a0;
-}
-
-.contact-arrow {
-    font-size: 1.5rem;
-    color: var(--text-color);
-}
-
-/* ... (the rest of the CSS for other elements) ... */
