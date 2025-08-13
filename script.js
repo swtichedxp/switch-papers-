@@ -67,11 +67,67 @@ const fetchDataAndRender = async () => {
             });
         });
 
-        renderHomePage();
+        if (window.location.hash) {
+            handleHashChange();
+        } else {
+            renderHomePage();
+        }
+
     } catch (error) {
         console.error('Could not fetch wallpaper data:', error);
         mainContent.innerHTML = '<div style="text-align: center; padding: 50px;">Failed to load wallpapers. Please check your internet connection and try again.</div>';
     }
+};
+
+// New function to render the contact page
+const renderContactPage = () => {
+    window.location.hash = '#contact';
+    mainContent.innerHTML = `
+        <h2>Contact</h2>
+        <div class="contact-container">
+            <a href="https://zed-hlac.onrender.com/" class="contact-card" target="_blank">
+                <i class="fas fa-link contact-icon"></i>
+                <div class="contact-info">
+                    <h3>My Portfolio</h3>
+                    <p>zed-hlac.onrender.com</p>
+                </div>
+                <i class="fas fa-chevron-right contact-arrow"></i>
+            </a>
+            <a href="https://github.com/swtichedxp" class="contact-card" target="_blank">
+                <i class="fab fa-github contact-icon"></i>
+                <div class="contact-info">
+                    <h3>GitHub Repo</h3>
+                    <p>github.com/swtichedxp</p>
+                </div>
+                <i class="fas fa-chevron-right contact-arrow"></i>
+            </a>
+            <a href="https://t.me/zedside" class="contact-card" target="_blank">
+                <i class="fab fa-telegram-plane contact-icon"></i>
+                <div class="contact-info">
+                    <h3>Telegram</h3>
+                    <p>t.me/zedside</p>
+                </div>
+                <i class="fas fa-chevron-right contact-arrow"></i>
+            </a>
+            <a href="https://twitter.com/switchedxp" class="contact-card" target="_blank">
+                <i class="fab fa-twitter contact-icon"></i>
+                <div class="contact-info">
+                    <h3>Twitter</h3>
+                    <p>@switchedxp</p>
+                </div>
+                <i class="fas fa-chevron-right contact-arrow"></i>
+            </a>
+            <a href="https://wa.me/212684255286" class="contact-card" target="_blank">
+                <i class="fab fa-whatsapp contact-icon"></i>
+                <div class="contact-info">
+                    <h3>WhatsApp</h3>
+                    <p>Chat with me</p>
+                </div>
+                <i class="fas fa-chevron-right contact-arrow"></i>
+            </a>
+        </div>
+    `;
+    heroSection.style.display = 'none';
 };
 
 const renderHomePage = () => {
@@ -212,8 +268,17 @@ const renderPagination = (viewId, currentPage, totalPages, query = '') => {
     mainContent.appendChild(paginationContainer);
 };
 
-window.addEventListener('hashchange', () => {
+const handleHashChange = () => {
     const hash = window.location.hash;
+    closeSidebar();
+    closeSearchBar();
+    
+    // Check for contact page first
+    if (hash === '#contact') {
+        renderContactPage();
+        return;
+    }
+    
     if (hash === '#home' || !hash) {
         heroSection.style.display = 'flex';
         renderHomePage();
@@ -226,24 +291,35 @@ window.addEventListener('hashchange', () => {
         const params = new URLSearchParams(hash.substring(hash.indexOf('?')));
         const query = params.get('q');
         renderSearchResults(query);
+    } else {
+        // Default to home page if hash is invalid
+        renderHomePage();
     }
-    closeSidebar();
-    closeSearchBar();
-});
+};
+
+window.addEventListener('hashchange', handleHashChange);
 
 document.body.addEventListener('click', (e) => {
+    // Handle navigation links, including the new 'Contact' link
     if (e.target.matches('.nav-link-item, .nav-link-item *')) {
         e.preventDefault();
         const navLink = e.target.closest('.nav-link-item');
         const linkId = navLink.dataset.id;
-        if (linkId === 'home') {
+        
+        if (linkId === 'home' || linkId === 'categories') {
             window.location.hash = '#home';
-        } else if (linkId === 'categories') {
-            window.location.hash = '#home';
-        } else {
-            // These are simple anchor links
+        } else if (linkId === 'contact') {
+            window.location.hash = '#contact';
         }
+        
         closeSidebar();
+    } else if (e.target.matches('.nav-links-desktop a')) {
+        const linkId = e.target.dataset.id;
+        if (linkId === 'home' || linkId === 'categories') {
+            window.location.hash = '#home';
+        } else if (linkId === 'contact') {
+            window.location.hash = '#contact';
+        }
     }
     
     if (e.target.matches('.glass-card, .glass-card *')) {
