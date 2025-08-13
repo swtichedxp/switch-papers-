@@ -721,3 +721,65 @@ body {
         width: auto;
     }
     }
+/* ... (existing CSS remains the same) ... */
+
+/* New CSS for Contact Page */
+.contact-container {
+    padding: 50px 25px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-icon {
+    font-size: 2rem;
+    color: var(--accent-color);
+    width: 40px;
+    text-align: center;
+}
+
+.contact-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+
+.contact-arrow {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+/* ... (the rest of the CSS for other elements) ... */
