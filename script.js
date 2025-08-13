@@ -271,11 +271,18 @@ const renderPagination = (viewId, currentPage, totalPages, query = '') => {
 const handleHashChange = () => {
     const hash = window.location.hash;
     closeSidebar();
-    closeSearchBar();
     
     // Check for contact page first
     if (hash === '#contact') {
         renderContactPage();
+        heroSection.style.display = 'none';
+        return;
+    }
+
+    // New check for search hash
+    if (hash === '#search') {
+        openSearchBar();
+        heroSection.style.display = 'none';
         return;
     }
     
@@ -286,7 +293,7 @@ const handleHashChange = () => {
         heroSection.style.display = 'none';
         const categoryId = hash.substring(10);
         renderCategoryPage(categoryId);
-    } else if (hash.startsWith('#search')) {
+    } else if (hash.startsWith('#search?')) {
         heroSection.style.display = 'none';
         const params = new URLSearchParams(hash.substring(hash.indexOf('?')));
         const query = params.get('q');
@@ -300,7 +307,7 @@ const handleHashChange = () => {
 window.addEventListener('hashchange', handleHashChange);
 
 document.body.addEventListener('click', (e) => {
-    // Handle navigation links, including the new 'Contact' link
+    // Handle navigation links, including the new 'Search' link
     if (e.target.matches('.nav-link-item, .nav-link-item *')) {
         e.preventDefault();
         const navLink = e.target.closest('.nav-link-item');
@@ -308,8 +315,13 @@ document.body.addEventListener('click', (e) => {
         
         if (linkId === 'home' || linkId === 'categories') {
             window.location.hash = '#home';
+            closeSearchBar();
         } else if (linkId === 'contact') {
             window.location.hash = '#contact';
+            closeSearchBar();
+        } else if (linkId === 'search') {
+            openSearchBar();
+            window.location.hash = '#search';
         }
         
         closeSidebar();
@@ -317,8 +329,13 @@ document.body.addEventListener('click', (e) => {
         const linkId = e.target.dataset.id;
         if (linkId === 'home' || linkId === 'categories') {
             window.location.hash = '#home';
+            closeSearchBar();
         } else if (linkId === 'contact') {
             window.location.hash = '#contact';
+            closeSearchBar();
+        } else if (linkId === 'search') {
+            openSearchBar();
+            window.location.hash = '#search';
         }
     }
     
@@ -433,12 +450,17 @@ searchInput.addEventListener('keydown', (e) => {
 const openSidebar = () => {
     sidebar.classList.add('active');
     sidebarOverlay.classList.add('active');
-    searchContainer.classList.remove('active');
+    closeSearchBar();
 };
 
 const closeSidebar = () => {
     sidebar.classList.remove('active');
     sidebarOverlay.classList.remove('active');
+};
+
+const openSearchBar = () => {
+    searchContainer.classList.add('active');
+    searchInput.focus();
 };
 
 const closeSearchBar = () => {
