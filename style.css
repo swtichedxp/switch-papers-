@@ -29,6 +29,7 @@ body {
     --sidebar-bg: rgba(11, 26, 38, 0.8);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
+
 .cyan-theme body {
     background: linear-gradient(to top right, #0b1a26, #112d3b);
 }
@@ -43,6 +44,7 @@ body {
     --sidebar-bg: rgba(26, 11, 15, 0.8);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
+
 .crimson-theme body {
     background: linear-gradient(to top right, #1a0b0f, #33151f);
 }
@@ -56,6 +58,7 @@ body {
     --sidebar-bg: rgba(26, 11, 38, 0.8);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
+
 .purple-theme body {
     background: linear-gradient(to top right, #1a0b26, #2d153b);
 }
@@ -69,6 +72,7 @@ body {
     --sidebar-bg: rgba(26, 11, 33, 0.8);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
+
 .instagram-theme body {
     background: linear-gradient(to top right, #1a0b21, #2d163d);
 }
@@ -837,72 +841,6 @@ body {
     color: #a0a0a0;
 }
 
-
-/* Desktop Styles */
-@media (min-width: 768px) {
-    .menu-toggle {
-        display: none;
-    }
-    
-    .header .search-container-main {
-        display: flex;
-    }
-
-    .header .site-name {
-        order: 1;
-        margin-right: auto;
-    }
-
-    .main-nav-desktop {
-        display: block;
-        order: 2;
-        margin: 0 20px;
-    }
-
-    .nav-links-desktop {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 30px;
-        align-items: center;
-    }
-
-    .nav-links-desktop a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-size: 1.1rem;
-        transition: color 0.3s ease;
-    }
-
-    .nav-links-desktop a:hover {
-        color: var(--accent-color);
-    }
-
-    .sign-in-btn-desktop {
-        display: block;
-        order: 3;
-    }
-    
-    .sidebar, .sidebar-overlay {
-        display: none;
-    }
-
-    .cta-buttons {
-        flex-direction: row;
-        width: auto;
-    }
-
-    .mobile-hero-section {
-        display: none;
-    }
-
-    .hero-section {
-        display: flex;
-    }
-}
-/* Add these new styles to your existing style.css file */
-
 /* Search Toggle Button */
 .search-toggle {
     background: none;
@@ -964,21 +902,71 @@ body {
     color: #a0a0a0;
 }
 
-.header .search-container-main,
-.header .search-toggle {
-    display: none;
-}
-
-/* Updated desktop styles */
+/* Desktop Styles */
 @media (min-width: 768px) {
     .menu-toggle,
     .search-toggle {
-        display: none;
+        display: none !important;
     }
+
     .header .search-container-main {
         display: flex;
     }
+
+    .header .site-name {
+        order: 1;
+        margin-right: auto;
+    }
+
+    .main-nav-desktop {
+        display: block;
+        order: 2;
+        margin: 0 20px;
+    }
+
+    .nav-links-desktop {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .nav-links-desktop a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links-desktop a:hover {
+        color: var(--accent-color);
+    }
+
+    .sign-in-btn-desktop {
+        display: block;
+        order: 3;
+    }
+    
+    .sidebar, .sidebar-overlay {
+        display: none;
+    }
+
+    .cta-buttons {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .mobile-hero-section {
+        display: none;
+    }
+
+    .hero-section {
+        display: flex;
+    }
+
     .search-bar-container {
-        display: none !important;
+        display: none; /* Make sure mobile search is hidden on desktop */
     }
 }
