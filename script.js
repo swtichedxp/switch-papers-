@@ -21,9 +21,14 @@ const autocompleteResults = document.getElementById('autocomplete-results');
 // Header & Navigation DOM elements
 const header = document.querySelector('.header');
 const menuToggle = document.getElementById('menu-toggle');
-const searchToggle = document.getElementById('search-toggle');
-const searchContainer = document.getElementById('search-container');
-const searchClose = document.getElementById('search-close');
+// The old search toggle button is removed from the new HTML, so we don't need this line.
+// const searchToggle = document.getElementById('search-toggle');
+
+// The old search container is now gone, replaced by search-container-main inside the header
+// const searchContainer = document.getElementById('search-container');
+// The old search close button is also gone
+// const searchClose = document.getElementById('search-close');
+
 const heroSection = document.querySelector('.hero-section');
 
 // New sidebar elements
@@ -282,19 +287,18 @@ const handleHashChange = () => {
     const hash = window.location.hash;
     closeSidebar();
     
-    // Check for contact page first
     if (hash === '#contact') {
         renderContactPage();
         heroSection.style.display = 'none';
         return;
     }
 
-    // New check for search hash
-    if (hash === '#search') {
-        openSearchBar();
-        heroSection.style.display = 'none';
-        return;
-    }
+    // This is no longer needed as the search bar is always visible
+    // if (hash === '#search') {
+    //     openSearchBar();
+    //     heroSection.style.display = 'none';
+    //     return;
+    // }
     
     if (hash === '#home' || !hash) {
         heroSection.style.display = 'flex';
@@ -325,28 +329,30 @@ document.body.addEventListener('click', (e) => {
         
         if (linkId === 'home' || linkId === 'categories') {
             window.location.hash = '#home';
-            closeSearchBar();
+            // closeSearchBar() is no longer needed
         } else if (linkId === 'contact') {
             window.location.hash = '#contact';
-            closeSearchBar();
-        } else if (linkId === 'search') {
-            openSearchBar();
-            window.location.hash = '#search';
+            // closeSearchBar() is no longer needed
         }
+        // The search link is removed from the sidebar so this is no longer needed
+        // else if (linkId === 'search') {
+        //     openSearchBar();
+        //     window.location.hash = '#search';
+        // }
         
         closeSidebar();
     } else if (e.target.matches('.nav-links-desktop a')) {
         const linkId = e.target.dataset.id;
         if (linkId === 'home' || linkId === 'categories') {
             window.location.hash = '#home';
-            closeSearchBar();
         } else if (linkId === 'contact') {
             window.location.hash = '#contact';
-            closeSearchBar();
-        } else if (linkId === 'search') {
-            openSearchBar();
-            window.location.hash = '#search';
         }
+        // The search link is removed from the desktop nav, so this is no longer needed
+        // else if (linkId === 'search') {
+        //     openSearchBar();
+        //     window.location.hash = '#search';
+        // }
     }
     
     if (e.target.matches('.glass-card, .glass-card *')) {
@@ -402,6 +408,7 @@ searchInput.addEventListener('input', () => {
             .slice(0, 5);
 
         if (matchingKeywords.length > 0) {
+            // Note: autocomplete results should appear directly below the search bar
             autocompleteResults.classList.add('active');
             matchingKeywords.forEach(kw => {
                 const item = document.createElement('div');
@@ -428,7 +435,7 @@ searchInput.addEventListener('keydown', (e) => {
         if (query) {
             window.location.hash = `#search?q=${encodeURIComponent(query)}`;
             autocompleteResults.classList.remove('active');
-            searchContainer.classList.remove('active');
+            // searchContainer.classList.remove('active'); // This is no longer needed
         }
     }
 });
@@ -436,7 +443,7 @@ searchInput.addEventListener('keydown', (e) => {
 const openSidebar = () => {
     sidebar.classList.add('active');
     sidebarOverlay.classList.add('active');
-    closeSearchBar();
+    // closeSearchBar() is no longer needed
 };
 
 const closeSidebar = () => {
@@ -444,36 +451,37 @@ const closeSidebar = () => {
     sidebarOverlay.classList.remove('active');
 };
 
-const openSearchBar = () => {
-    searchContainer.classList.add('active');
-    searchInput.focus();
-};
-
-const closeSearchBar = () => {
-    searchContainer.classList.remove('active');
-    autocompleteResults.classList.remove('active');
-};
+// The following functions are no longer needed because the search bar is always visible
+// const openSearchBar = () => {
+//     searchContainer.classList.add('active');
+//     searchInput.focus();
+// };
+// const closeSearchBar = () => {
+//     searchContainer.classList.remove('active');
+//     autocompleteResults.classList.remove('active');
+// };
 
 menuToggle.addEventListener('click', openSidebar);
 sidebarClose.addEventListener('click', closeSidebar);
 sidebarOverlay.addEventListener('click', closeSidebar);
 
-searchToggle.addEventListener('click', () => {
-    searchContainer.classList.toggle('active');
-    closeSidebar();
-    if (searchContainer.classList.contains('active')) {
-        searchInput.focus();
-    }
-});
+// The old search toggle button and its listener are no longer needed
+// searchToggle.addEventListener('click', () => {
+//     searchContainer.classList.toggle('active');
+//     closeSidebar();
+//     if (searchContainer.classList.contains('active')) {
+//         searchInput.focus();
+//     }
+// });
+// searchClose.addEventListener('click', closeSearchBar);
 
-searchClose.addEventListener('click', closeSearchBar);
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
+// This scroll event listener is also no longer needed as the header is already glassy and sticky
+// window.addEventListener('scroll', () => {
+//     if (window.scrollY > 50) {
+//         header.classList.add('scrolled');
+//     } else {
+//         header.classList.remove('scrolled');
+//     }
+// });
 
 fetchDataAndRender();
