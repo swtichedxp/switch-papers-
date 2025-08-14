@@ -18,7 +18,10 @@ body {
     color: #fff;
     background-size: cover;
     background-attachment: fixed;
+    transition: background 0.5s ease-in-out; /* Smooth transition for background change */
 }
+
+/* --- Theme-specific styles --- */
 
 /* Cyan Color Scheme */
 .cyan-theme {
@@ -27,13 +30,10 @@ body {
     --accent-color: #00bcd4;
     --header-bg: rgba(11, 26, 38, 0.95);
     --sidebar-bg: rgba(11, 26, 38, 0.8);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
-
 .cyan-theme body {
     background: linear-gradient(to top right, #0b1a26, #112d3b);
 }
-
 
 /* Crimson Color Scheme */
 .crimson-theme {
@@ -42,9 +42,7 @@ body {
     --accent-color: #d81b60;
     --header-bg: rgba(26, 11, 15, 0.95);
     --sidebar-bg: rgba(26, 11, 15, 0.8);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
-
 .crimson-theme body {
     background: linear-gradient(to top right, #1a0b0f, #33151f);
 }
@@ -56,9 +54,7 @@ body {
     --accent-color: #8e24aa;
     --header-bg: rgba(26, 11, 38, 0.95);
     --sidebar-bg: rgba(26, 11, 38, 0.8);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
-
 .purple-theme body {
     background: linear-gradient(to top right, #1a0b26, #2d153b);
 }
@@ -70,14 +66,12 @@ body {
     --accent-color: #d11267;
     --header-bg: rgba(26, 11, 33, 0.95);
     --sidebar-bg: rgba(26, 11, 33, 0.8);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
-
 .instagram-theme body {
     background: linear-gradient(to top right, #1a0b21, #2d163d);
 }
 
-/* -------------------- New Header & Navigation -------------------- */
+/* -------------------- Header & Navigation -------------------- */
 .header {
     position: fixed;
     top: 0;
@@ -107,6 +101,7 @@ body {
     white-space: nowrap;
 }
 
+/* Search bar in header (desktop) */
 .header .search-container-main {
     flex-grow: 1;
     max-width: 600px;
@@ -151,9 +146,25 @@ body {
     color: var(--accent-color);
 }
 
+/* Desktop-only elements */
 .main-nav-desktop,
 .sign-in-btn-desktop {
     display: none;
+}
+
+/* Search Toggle Button for Mobile */
+.search-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    /* This rule ensures it's always visible on mobile */
+    display: block; 
+}
+.search-toggle:hover {
+    color: var(--accent-color);
 }
 
 /* Sidebar for Mobile */
@@ -253,6 +264,54 @@ body {
     display: none;
 }
 
+/* Mobile Search Bar Container */
+.search-bar-container {
+    position: fixed;
+    top: 75px; /* height of header */
+    left: 0;
+    width: 100%;
+    background: var(--header-bg);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 99;
+    padding: 10px 25px;
+    box-sizing: border-box;
+    display: none;
+    animation: slideDown 0.3s ease-in-out;
+}
+
+.search-bar-container.active {
+    display: block;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+.search-bar-container .search-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 12px 25px;
+    color: var(--text-color);
+    font-size: 1rem;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.search-bar-container .search-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-color);
+}
+
+.search-bar-container .search-input::placeholder {
+    color: #a0a0a0;
+}
+
+/* Autocomplete results */
 .autocomplete-results {
     position: absolute;
     top: 75px;
@@ -841,72 +900,11 @@ body {
     color: #a0a0a0;
 }
 
-/* Search Toggle Button */
-.search-toggle {
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    margin-left: auto;
-}
-
-.search-toggle:hover {
-    color: var(--accent-color);
-}
-
-.search-bar-container {
-    position: fixed;
-    top: 75px; /* height of header */
-    left: 0;
-    width: 100%;
-    background: var(--header-bg);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid var(--glass-border);
-    z-index: 99;
-    padding: 10px 25px;
-    box-sizing: border-box;
-    display: none; /* Hidden by default */
-    animation: slideDown 0.3s ease-in-out;
-}
-
-.search-bar-container.active {
-    display: block;
-}
-
-@keyframes slideDown {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
-}
-
-.search-bar-container .search-input {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
-    border-radius: 50px;
-    padding: 12px 25px;
-    color: var(--text-color);
-    font-size: 1rem;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-
-.search-bar-container .search-input:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
-    border-color: var(--accent-color);
-}
-
-.search-bar-container .search-input::placeholder {
-    color: #a0a0a0;
-}
-
 /* Desktop Styles */
 @media (min-width: 768px) {
     .menu-toggle,
     .search-toggle {
-        display: none !important;
+        display: none;
     }
 
     .header .search-container-main {
@@ -967,6 +965,6 @@ body {
     }
 
     .search-bar-container {
-        display: none; /* Make sure mobile search is hidden on desktop */
+        display: none;
     }
-}
+    }
