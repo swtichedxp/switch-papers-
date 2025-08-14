@@ -1,3 +1,4 @@
+/* Universal Styles & New Palette */
 :root {
     /* New Cyan Color Scheme */
     --bg-color: #0b1a26; /* Dark Blue-Cyan Background */
@@ -24,6 +25,7 @@ body {
     transition: background-image 0.5s ease-in-out;
 }
 
+/* -------------------- New Header & Navigation -------------------- */
 .header {
     position: fixed;
     top: 0;
@@ -231,12 +233,12 @@ body {
     background-color: rgba(0, 188, 212, 0.1);
 }
 
-/* Hero Section */
+/* Hero Section (Original Desktop Version) */
 .hero-section {
     position: relative;
     width: 100%;
     min-height: calc(100vh - 100px);
-    display: flex;
+    display: none; /* Hidden by default for mobile */
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -673,6 +675,76 @@ body {
     color: var(--text-color);
 }
 
+/* New Mobile Hero Section */
+.mobile-hero-section {
+    position: relative;
+    width: calc(100% - 40px); /* Leave some margin on the sides */
+    margin: 20px auto; /* Center the section */
+    height: 250px;
+    background-image: url('https://files.catbox.moe/fo6k1n.jpg'); /* Or a featured wallpaper image */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    color: var(--text-color);
+}
+
+.mobile-hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.mobile-hero-title {
+    font-size: 1.5rem;
+    margin: 0 0 5px 0;
+}
+
+.mobile-hero-subtitle {
+    font-size: 0.9rem;
+    margin: 0 0 15px 0;
+}
+
+/* This is a modification of your existing cta-buttons to fit the new hero section */
+.mobile-hero-content .cta-buttons {
+    flex-direction: row;
+}
+
+.mobile-hero-content .cta-btn {
+    flex-grow: 1; /* Make buttons fill available space */
+}
+
+/* New Tabbed Navigation */
+.content-tabs-section {
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.content-tabs {
+    display: flex;
+    gap: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.content-tab {
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.content-tab.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
 /* Desktop Styles */
 @media (min-width: 768px) {
     .menu-toggle {
@@ -727,4 +799,12 @@ body {
         flex-direction: row;
         width: auto;
     }
-        }
+
+    .mobile-hero-section {
+        display: none; /* Hide the mobile hero on desktop */
+    }
+
+    .hero-section {
+        display: flex; /* Show the desktop hero we had before */
+    }
+}
