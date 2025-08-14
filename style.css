@@ -24,41 +24,42 @@ body {
     transition: background-image 0.5s ease-in-out;
 }
 
-/* Header & Navigation */
+/* -------------------- New Header & Navigation -------------------- */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px; /* Increased height for the new layout */
+    height: 75px; /* A slightly reduced height for a cleaner look */
     padding: 0 25px;
-    box-sizing: border-box; /* Ensures padding is included in the height */
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around; /* Distributes space between the two rows */
-    background: transparent;
+    align-items: center; /* Vertically aligns all children */
+    justify-content: space-between; /* Spreads items evenly */
+    background: var(--glass-bg); /* Use glass variable for the header background */
+    backdrop-filter: blur(15px); /* Stronger blur for a better glass effect */
+    border-bottom: 1px solid var(--glass-border); /* Subtle bottom border */
+    box-shadow: var(--glass-shadow); /* Glassy shadow */
     z-index: 100;
-    transition: background 0.3s ease;
-    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
-.header.scrolled {
-    background: var(--header-bg);
-}
-
+/* This is no longer needed with the new header design */
+/*
 .header-top-mobile {
     display: flex;
-    justify-content: center; /* Centered the site logo */
+    justify-content: center;
     width: 100%;
 }
 
 .header-bottom-mobile {
     display: flex;
-    justify-content: space-between; /* Pushed icons to the edges */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 10px; /* Added padding to prevent icons from being clipped */
+    padding: 0 10px;
 }
+*/
 
 .site-name {
     font-family: 'Pacifico', cursive;
@@ -67,9 +68,42 @@ body {
     color: var(--accent-color);
     text-shadow: 0 0 8px rgba(191, 64, 255, 0.5);
     margin: 0;
+    white-space: nowrap; /* Prevents the name from wrapping */
 }
 
-.menu-toggle, .search-toggle {
+/* New Search Bar within the Header */
+.header .search-container-main {
+    flex-grow: 1; /* Allows the search bar to take up available space */
+    max-width: 600px;
+    margin: 0 20px; /* Add some space around the search bar */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-container-main .search-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05); /* Lighter glass background for the input */
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 12px 25px;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.search-container-main .search-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-color);
+}
+
+.search-container-main .search-input::placeholder {
+    color: #a0a0a0;
+}
+
+.menu-toggle {
     background: none;
     border: none;
     color: var(--text-color);
@@ -78,13 +112,29 @@ body {
     transition: color 0.3s ease;
 }
 
-.menu-toggle:hover, .search-toggle:hover {
+.menu-toggle:hover {
     color: var(--accent-color);
 }
 
 .header-desktop {
     display: none;
 }
+
+/*
+.search-toggle and the old .search-container are no longer needed, as search is always visible in the new design.
+.search-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.search-toggle:hover {
+    color: var(--accent-color);
+}
+*/
 
 /* Sidebar for Mobile */
 .sidebar-overlay {
@@ -183,10 +233,11 @@ body {
     display: none;
 }
 
-/* Modern Glassmorphic Search Bar */
+/* This whole section is obsolete now that the search bar is in the main header */
+/*
 .search-container {
     position: fixed;
-    top: -100px; /* Hide by default */
+    top: -100px;
     left: 0;
     width: 100%;
     padding: 15px 25px;
@@ -202,7 +253,7 @@ body {
 }
 
 .search-container.active {
-    top: 100px; /* Adjusted to slide down from the new header height */
+    top: 100px;
 }
 
 .search-input {
@@ -239,10 +290,11 @@ body {
 .search-close:hover {
     color: var(--accent-color);
 }
+*/
 
 .autocomplete-results {
     position: absolute;
-    top: calc(100% + 5px);
+    top: 75px; /* Position it right below the new header height */
     left: 25px;
     right: 25px;
     max-height: 200px;
