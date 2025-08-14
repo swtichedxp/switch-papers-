@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentTabs = document.querySelector('.content-tabs');
     const heroSection = document.querySelector('.hero-section');
     const mobileHeroSection = document.querySelector('.mobile-hero-section');
-
+    
     let allCategories = [];
     let currentPage = 1;
     const wallpapersPerPage = 10;
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebarClose.addEventListener('click', closeSidebar);
         sidebarOverlay.addEventListener('click', closeSidebar);
     }
-
+    
     // Fetch wallpapers data
     const fetchWallpapers = async () => {
         try {
@@ -165,13 +165,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Main content rendering logic based on hash or clicks
     const renderContent = (type) => {
-        if (type === 'categories') {
+        if (!dynamicContentContainer) return;
+        
+        // Hide mobile hero section if not on home
+        if (mobileHeroSection && type !== 'home' && type !== 'categories') {
+            mobileHeroSection.style.display = 'none';
+        }
+
+        if (type === 'categories' || type === 'home') {
             renderCategories();
-        } else if (type === 'home' || type === 'search' || type === 'contact') {
-            // Handle other pages here if needed, or clear the container
-            if (dynamicContentContainer) {
-                dynamicContentContainer.innerHTML = '';
-            }
+        } else if (type === 'search') {
+            dynamicContentContainer.innerHTML = `
+                <section class="search-page-section">
+                    <h2 class="section-title">Search Wallpapers</h2>
+                    <p class="search-intro">Find the perfect wallpaper for your device.</p>
+                    <div class="search-container-desktop">
+                        <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input-page">
+                    </div>
+                    <div id="search-results-container">
+                        <p class="no-results">Search is not yet functional. Please check back later.</p>
+                    </div>
+                </section>
+            `;
+        } else if (type === 'contact') {
+            dynamicContentContainer.innerHTML = `
+                <section class="contact-container">
+                    <h2 class="section-title">Contact Dev</h2>
+                    <a href="https://wa.me/212684255286" class="contact-card">
+                        <i class="fab fa-whatsapp contact-icon"></i>
+                        <div class="contact-info">
+                            <h3>WhatsApp</h3>
+                            <p>wa.me/212684255286</p>
+                        </div>
+                        <i class="fas fa-arrow-right contact-arrow"></i>
+                    </a>
+                    <a href="https://t.me/zedside" class="contact-card">
+                        <i class="fab fa-telegram-plane contact-icon"></i>
+                        <div class="contact-info">
+                            <h3>Telegram</h3>
+                            <p>t.me/zedside</p>
+                        </div>
+                        <i class="fas fa-arrow-right contact-arrow"></i>
+                    </a>
+                    <a href="https://whatsapp.com/channel/0029VbB6Xu9CXC3FaGdkpZ3s" class="contact-card">
+                        <i class="fab fa-whatsapp contact-icon"></i>
+                        <div class="contact-info">
+                            <h3>WhatsApp Channel</h3>
+                            <p>For updates</p>
+                        </div>
+                        <i class="fas fa-arrow-right contact-arrow"></i>
+                    </a>
+                </section>
+            `;
         }
     };
     
@@ -186,8 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (tab.textContent === 'Categories') {
                     renderContent('categories');
                 } else if (tab.textContent === 'New' || tab.textContent === 'Popular') {
-                    // Your logic for 'New' and 'Popular' can go here
-                    // For now, let's just render the first category's wallpapers
                     if (allCategories.length > 0) {
                         currentCategory = allCategories[0].id;
                         renderWallpapers(currentCategory);
@@ -218,6 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Toggle hero section visibility based on screen size
         if (window.innerWidth <= 768) {
             if (mobileHeroSection) mobileHeroSection.style.display = 'flex';
             if (heroSection) heroSection.style.display = 'none';
@@ -229,9 +273,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (hash === 'categories' || hash === 'home' || hash === '') {
             renderContent('categories');
         } else if (hash === 'search') {
-            dynamicContentContainer.innerHTML = `<h2 class="section-title">Search Page</h2>`;
+            renderContent('search');
         } else if (hash === 'contact') {
-            dynamicContentContainer.innerHTML = `<h2 class="section-title">Contact Page</h2>`;
+            renderContent('contact');
         }
     };
 
