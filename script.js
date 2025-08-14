@@ -5,12 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebarClose = document.getElementById('sidebar-close');
     const sidebarOverlay = document.getElementById('sidebar-overlay');
     const dynamicContentContainer = document.getElementById('dynamic-content-container');
-    const contentTabsSection = document.querySelector('.content-tabs-section');
-    const contactSection = document.getElementById('contact'); // This will be dynamic content
+    const searchToggle = document.getElementById('search-toggle');
+    const searchBarContainer = document.getElementById('search-bar-container');
     const contentTabs = document.querySelector('.content-tabs');
-    const heroSection = document.querySelector('.hero-section');
-    const mobileHeroSection = document.querySelector('.mobile-hero-section');
-    
+    const desktopSearchInput = document.getElementById('search-input');
+    const sidebarNavLinks = document.getElementById('nav-links-container');
+    const desktopNavLinks = document.querySelector('.main-nav-desktop .nav-links-desktop');
+
     let allCategories = [];
     let currentPage = 1;
     const wallpapersPerPage = 10;
@@ -32,7 +33,44 @@ document.addEventListener('DOMContentLoaded', () => {
         
         sidebarClose.addEventListener('click', closeSidebar);
         sidebarOverlay.addEventListener('click', closeSidebar);
+        
+        // Hide sidebar on nav link click for mobile
+        if(sidebarNavLinks) {
+            sidebarNavLinks.addEventListener('click', (e) => {
+                if(e.target.closest('a')) {
+                    closeSidebar();
+                }
+            });
+        }
     }
+
+    // Search bar toggle functionality for mobile
+    if (searchToggle && searchBarContainer) {
+        searchToggle.addEventListener('click', () => {
+            searchBarContainer.classList.toggle('active');
+        });
+    }
+
+    // Set active link based on URL
+    const setActiveLink = () => {
+        const path = window.location.pathname.split('/').pop();
+        const hash = window.location.hash.substring(1);
+        
+        document.querySelectorAll('.nav-link-item, .nav-links-desktop a').forEach(link => {
+            link.classList.remove('active');
+        });
+
+        if (path === 'contact.html') {
+            document.querySelectorAll('[data-id="contact"]').forEach(link => link.classList.add('active'));
+        } else {
+            if (hash === 'categories' || hash === '' || hash === 'home') {
+                 document.querySelectorAll('[data-id="home"]').forEach(link => link.classList.add('active'));
+                 document.querySelectorAll('[data-id="categories"]').forEach(link => link.classList.add('active'));
+            } else if (hash === 'search') {
+                // Not needed anymore with the new search bar
+            }
+        }
+    };
     
     // Fetch wallpapers data
     const fetchWallpapers = async () => {
@@ -43,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const data = await response.json();
             allCategories = data.categories;
-            renderContent('categories');
+            renderCategories();
         } catch (error) {
             console.error('Failed to fetch wallpapers:', error);
             if (dynamicContentContainer) {
@@ -55,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render Categories
     const renderCategories = () => {
         if (!dynamicContentContainer) return;
-
+        
         const categoryGrid = document.createElement('div');
         categoryGrid.className = 'glass-card-grid';
 
@@ -162,150 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
         paginationContainer.appendChild(nextBtn);
         dynamicContentContainer.appendChild(paginationContainer);
     };
-
-    // --- NEW SEARCH FUNCTIONALITY ---
-    const setupSearchFunctionality = () => {
-        const searchInput = document.getElementById('search-input-page');
-        const searchResultsContainer = document.getElementById('search-results-container');
-        
-        const performSearch = (query) => {
-            searchResultsContainer.innerHTML = '';
-            const lowerCaseQuery = query.toLowerCase();
-            const allWallpapers = [];
-            
-            // Flatten all wallpapers into a single array
-            allCategories.forEach(category => {
-                category.wallpapers.forEach(wallpaper => {
-                    allWallpapers.push(wallpaper);
-                });
-            });
-
-            // Filter wallpapers based on title
-            const filteredWallpapers = allWallpapers.filter(wallpaper => 
-                wallpaper.title.toLowerCase().includes(lowerCaseQuery)
-            );
-
-            if (filteredWallpapers.length === 0) {
-                searchResultsContainer.innerHTML = '<p class="no-results">No wallpapers found matching your search.</p>';
-                return;
-            }
-
-            // Render the results in a grid
-            const searchGrid = document.createElement('div');
-            searchGrid.className = 'wallpaper-grid';
-
-            filteredWallpapers.forEach(wallpaper => {
-                const wallpaperCard = document.createElement('div');
-                wallpaperCard.className = 'wallpaper-card';
-                wallpaperCard.dataset.id = wallpaper.id;
-    
-                const wallpaperImage = document.createElement('img');
-                wallpaperImage.src = wallpaper.url;
-                wallpaperImage.alt = wallpaper.title;
-    
-                const buttonContainer = document.createElement('div');
-                buttonContainer.className = 'button-container';
-    
-                const previewBtn = document.createElement('button');
-                previewBtn.className = 'preview-btn';
-                previewBtn.textContent = 'Preview';
-                previewBtn.dataset.url = wallpaper.url;
-    
-                const downloadBtn = document.createElement('a');
-                downloadBtn.href = wallpaper.url;
-                downloadBtn.className = 'download-btn';
-                downloadBtn.download = `${wallpaper.title}.jpg`;
-                downloadBtn.textContent = 'Download';
-    
-                buttonContainer.appendChild(previewBtn);
-                buttonContainer.appendChild(downloadBtn);
-                wallpaperCard.appendChild(wallpaperImage);
-                wallpaperCard.appendChild(buttonContainer);
-                searchGrid.appendChild(wallpaperCard);
-            });
-
-            searchResultsContainer.appendChild(searchGrid);
-        };
-
-        if (searchInput) {
-            searchInput.addEventListener('input', (e) => {
-                const query = e.target.value;
-                if (query.length > 2) {
-                    performSearch(query);
-                } else {
-                    searchResultsContainer.innerHTML = '<p class="no-results">Type at least 3 characters to search.</p>';
-                }
-            });
-        }
-    };
-    // --- END NEW SEARCH FUNCTIONALITY ---
-
-    // Main content rendering logic based on hash or clicks
-    const renderContent = (type) => {
-        if (!dynamicContentContainer) return;
-        
-        // Clear previous content
-        dynamicContentContainer.innerHTML = '';
-        contentTabsSection.style.display = 'none';
-        
-        // Set hero section visibility
-        const isHomePage = (type === 'categories' || type === 'home' || type === '');
-        if (window.innerWidth <= 768) {
-            mobileHeroSection.style.display = isHomePage ? 'flex' : 'none';
-            if (heroSection) heroSection.style.display = 'none';
-        } else {
-            mobileHeroSection.style.display = 'none';
-            heroSection.style.display = isHomePage ? 'flex' : 'none';
-        }
-
-        if (type === 'categories' || type === 'home' || type === '') {
-            contentTabsSection.style.display = 'block';
-            renderCategories();
-        } else if (type === 'search') {
-            dynamicContentContainer.innerHTML = `
-                <section class="search-page-section">
-                    <h2 class="section-title">Search Wallpapers</h2>
-                    <p class="search-intro">Find the perfect wallpaper for your device.</p>
-                    <div class="search-container-desktop">
-                        <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input-page">
-                    </div>
-                    <div id="search-results-container">
-                        </div>
-                </section>
-            `;
-            setupSearchFunctionality();
-        } else if (type === 'contact') {
-            dynamicContentContainer.innerHTML = `
-                <section class="contact-container">
-                    <h2 class="section-title">Contact Dev</h2>
-                    <a href="https://wa.me/212684255286" target="_blank" class="contact-card">
-                        <i class="fab fa-whatsapp contact-icon"></i>
-                        <div class="contact-info">
-                            <h3>WhatsApp</h3>
-                            <p>wa.me/212684255286</p>
-                        </div>
-                        <i class="fas fa-arrow-right contact-arrow"></i>
-                    </a>
-                    <a href="https://t.me/zedside" target="_blank" class="contact-card">
-                        <i class="fab fa-telegram-plane contact-icon"></i>
-                        <div class="contact-info">
-                            <h3>Telegram</h3>
-                            <p>t.me/zedside</p>
-                        </div>
-                        <i class="fas fa-arrow-right contact-arrow"></i>
-                    </a>
-                    <a href="https://whatsapp.com/channel/0029VbB6Xu9CXC3FaGdkpZ3s" target="_blank" class="contact-card">
-                        <i class="fab fa-whatsapp contact-icon"></i>
-                        <div class="contact-info">
-                            <h3>WhatsApp Channel</h3>
-                            <p>For updates</p>
-                        </div>
-                        <i class="fas fa-arrow-right contact-arrow"></i>
-                    </a>
-                </section>
-            `;
-        }
-    };
     
     // Event listeners for category navigation and tabs
     if (contentTabs) {
@@ -316,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('.content-tab').forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
                 if (tab.textContent === 'Categories') {
-                    renderContent('categories');
+                    renderCategories();
                 } else if (tab.textContent === 'New' || tab.textContent === 'Popular') {
                     if (allCategories.length > 0) {
                         currentCategory = allCategories[0].id;
@@ -338,29 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initial render based on URL hash
-    const handleHashChange = () => {
-        const hash = window.location.hash.substring(1);
-        document.querySelectorAll('.nav-link-item').forEach(link => {
-            link.classList.remove('active');
-            if (link.dataset.id === hash) {
-                link.classList.add('active');
-            }
-        });
-
-        if (hash === 'categories' || hash === 'home' || hash === '') {
-            renderContent('categories');
-        } else if (hash === 'search') {
-            renderContent('search');
-        } else if (hash === 'contact') {
-            renderContent('contact');
-        }
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    window.addEventListener('resize', handleHashChange);
-
     // Initial calls
-    fetchWallpapers();
-    handleHashChange();
+    if (dynamicContentContainer) { // Only fetch wallpapers if on the index page
+        fetchWallpapers();
+    }
+    setActiveLink();
 });
