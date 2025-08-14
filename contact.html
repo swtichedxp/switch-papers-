@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switchpaper - Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2 class="site-name">switchpaper</h2>
+            <button class="sidebar-close" id="sidebar-close"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-links" id="nav-links-container">
+                <li><a href="index.html#home" data-id="home" class="nav-link-item"><i class="fas fa-home icon"></i> Home</a></li>
+                <li><a href="index.html#categories" data-id="categories" class="nav-link-item"><i class="fas fa-th-large icon"></i> Categories</a></li>
+                <li><a href="#search" data-id="search" class="nav-link-item"><i class="fas fa-search icon"></i> Search</a></li>
+                <li><a href="contact.html" data-id="contact" class="nav-link-item active"><i class="fas fa-envelope icon"></i> Contact</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+        </div>
+    </div>
+
+    <header class="header">
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <h1 class="site-name">switchpaper</h1>
+
+        <div class="search-container-main" id="search-container-main">
+            <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input">
+            <div class="autocomplete-results" id="autocomplete-results"></div>
+        </div>
+
+        <nav class="main-nav-desktop">
+            <ul class="nav-links-desktop">
+                <li><a href="index.html#home" data-id="home">Home</a></li>
+                <li><a href="index.html#categories" data-id="categories">Categories</a></li>
+                <li><a href="contact.html" data-id="contact" class="active">Contact</a></li>
+            </ul>
+        </nav>
+
+        <button class="cta-btn primary-btn sign-in-btn-desktop">Sign in</button>
+    </header>
+
+    <main class="content">
+        <section class="contact-container">
+            <h2 class="section-title">Contact Dev</h2>
+            <a href="https://wa.me/212684255286" target="_blank" class="contact-card">
+                <i class="fab fa-whatsapp contact-icon"></i>
+                <div class="contact-info">
+                    <h3>WhatsApp</h3>
+                    <p>wa.me/212684255286</p>
+                </div>
+                <i class="fas fa-arrow-right contact-arrow"></i>
+            </a>
+            <a href="https://t.me/zedside" target="_blank" class="contact-card">
+                <i class="fab fa-telegram-plane contact-icon"></i>
+                <div class="contact-info">
+                    <h3>Telegram</h3>
+                    <p>t.me/zedside</p>
+                </div>
+                <i class="fas fa-arrow-right contact-arrow"></i>
+            </a>
+            <a href="https://whatsapp.com/channel/0029VbB6Xu9CXC3FaGdkpZ3s" target="_blank" class="contact-card">
+                <i class="fab fa-whatsapp contact-icon"></i>
+                <div class="contact-info">
+                    <h3>WhatsApp Channel</h3>
+                    <p>For updates</p>
+                </div>
+                <i class="fas fa-arrow-right contact-arrow"></i>
+            </a>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
