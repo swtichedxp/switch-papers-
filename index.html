@@ -27,41 +27,32 @@
             </ul>
         </nav>
         <div class="sidebar-footer">
-            </div>
+        </div>
     </div>
 
     <header class="header">
-        <div class="header-top-mobile">
-            <h1 class="site-name">switchpaper</h1>
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <h1 class="site-name">switchpaper</h1>
+
+        <div class="search-container-main" id="search-container-main">
+            <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input">
+            <div class="autocomplete-results" id="autocomplete-results"></div>
         </div>
-        <div class="header-bottom-mobile">
-            <button class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <button class="search-toggle" id="search-toggle">
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
-        <div class="header-desktop">
-            <h1 class="site-name">switchpaper</h1>
-            <nav class="main-nav-desktop">
-                <ul class="nav-links-desktop">
-                    <li><a href="#home" data-id="home">Home</a></li>
-                    <li><a href="#categories" data-id="categories">Categories</a></li>
-                    <li><a href="#search" data-id="search">Search</a></li>
-                    <li><a href="#contact" data-id="contact">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="cta-btn primary-btn sign-in-btn-desktop">Sign in</button>
-        </div>
+
+        <nav class="main-nav-desktop">
+            <ul class="nav-links-desktop">
+                <li><a href="#home" data-id="home">Home</a></li>
+                <li><a href="#categories" data-id="categories">Categories</a></li>
+                <li><a href="#contact" data-id="contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <button class="cta-btn primary-btn sign-in-btn-desktop">Sign in</button>
     </header>
 
-    <div class="search-container" id="search-container">
-        <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input">
-        <div class="autocomplete-results" id="autocomplete-results"></div>
-        <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
-    </div>
-    
     <main class="content">
         <div class="hero-section">
             <div class="glass-hero-panel">
@@ -74,7 +65,7 @@
             </div>
         </div>
         <div id="dynamic-content-container" class="main-content-container">
-            </div>
+        </div>
     </main>
 
     <script src="script.js"></script>
