@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const dynamicContentContainer = document.getElementById('dynamic-content-container');
     const searchToggle = document.getElementById('search-toggle');
     const searchBarContainer = document.getElementById('search-bar-container');
+    const mobileSearchInput = document.querySelector('.search-bar-container .search-input');
+    const desktopSearchInput = document.querySelector('.header .search-input');
     const contentTabs = document.querySelector('.content-tabs');
-    const desktopSearchInput = document.getElementById('search-input');
-    const sidebarNavLinks = document.getElementById('nav-links-container');
-    const desktopNavLinks = document.querySelector('.main-nav-desktop .nav-links-desktop');
+    const heroSection = document.querySelector('.hero-section');
+    const mobileHeroSection = document.querySelector('.mobile-hero-section');
 
     let allCategories = [];
     let currentPage = 1;
@@ -30,18 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
             sidebarOverlay.classList.remove('active');
             body.style.overflow = '';
         };
-        
+
         sidebarClose.addEventListener('click', closeSidebar);
         sidebarOverlay.addEventListener('click', closeSidebar);
-        
-        // Hide sidebar on nav link click for mobile
-        if(sidebarNavLinks) {
-            sidebarNavLinks.addEventListener('click', (e) => {
-                if(e.target.closest('a')) {
-                    closeSidebar();
-                }
-            });
-        }
+
+        const navLinks = document.querySelectorAll('#nav-links-container a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeSidebar);
+        });
     }
 
     // Search bar toggle functionality for mobile
@@ -55,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const setActiveLink = () => {
         const path = window.location.pathname.split('/').pop();
         const hash = window.location.hash.substring(1);
-        
+
         document.querySelectorAll('.nav-link-item, .nav-links-desktop a').forEach(link => {
             link.classList.remove('active');
         });
@@ -63,15 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (path === 'contact.html') {
             document.querySelectorAll('[data-id="contact"]').forEach(link => link.classList.add('active'));
         } else {
-            if (hash === 'categories' || hash === '' || hash === 'home') {
-                 document.querySelectorAll('[data-id="home"]').forEach(link => link.classList.add('active'));
-                 document.querySelectorAll('[data-id="categories"]').forEach(link => link.classList.add('active'));
-            } else if (hash === 'search') {
-                // Not needed anymore with the new search bar
+            if (hash === '' || hash === 'home' || hash === 'categories') {
+                document.querySelectorAll('[data-id="home"]').forEach(link => link.classList.add('active'));
+                document.querySelectorAll('[data-id="categories"]').forEach(link => link.classList.add('active'));
             }
         }
     };
-    
+
     // Fetch wallpapers data
     const fetchWallpapers = async () => {
         try {
@@ -81,7 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const data = await response.json();
             allCategories = data.categories;
-            renderCategories();
+            if (dynamicContentContainer) {
+                renderCategories();
+            }
         } catch (error) {
             console.error('Failed to fetch wallpapers:', error);
             if (dynamicContentContainer) {
@@ -93,13 +90,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render Categories
     const renderCategories = () => {
         if (!dynamicContentContainer) return;
-        
+
         const categoryGrid = document.createElement('div');
         categoryGrid.className = 'glass-card-grid';
 
         allCategories.forEach(category => {
             const categoryCard = document.createElement('a');
-            categoryCard.href = '#';
+            categoryCard.href = `#category-${category.id}`;
             categoryCard.className = 'glass-card';
             categoryCard.dataset.category = category.id;
 
@@ -122,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render Wallpapers
     const renderWallpapers = (categoryId, page = 1) => {
         if (!dynamicContentContainer) return;
-    
+
         const selectedCategory = allCategories.find(cat => cat.id === categoryId);
         const wallpapersToRender = selectedCategory ? selectedCategory.wallpapers : [];
 
@@ -200,7 +197,83 @@ document.addEventListener('DOMContentLoaded', () => {
         paginationContainer.appendChild(nextBtn);
         dynamicContentContainer.appendChild(paginationContainer);
     };
-    
+
+    // --- NEW SEARCH FUNCTIONALITY ---
+    const performSearch = (query) => {
+        if (!dynamicContentContainer) return;
+
+        const lowerCaseQuery = query.toLowerCase();
+        const allWallpapers = allCategories.flatMap(category => category.wallpapers);
+        const filteredWallpapers = allWallpapers.filter(wallpaper =>
+            wallpaper.title.toLowerCase().includes(lowerCaseQuery)
+        );
+
+        if (filteredWallpapers.length === 0) {
+            dynamicContentContainer.innerHTML = '<p class="no-results">No wallpapers found matching your search.</p>';
+            return;
+        }
+
+        const searchGrid = document.createElement('div');
+        searchGrid.className = 'wallpaper-grid';
+
+        filteredWallpapers.forEach(wallpaper => {
+            const wallpaperCard = document.createElement('div');
+            wallpaperCard.className = 'wallpaper-card';
+            wallpaperCard.dataset.id = wallpaper.id;
+
+            const wallpaperImage = document.createElement('img');
+            wallpaperImage.src = wallpaper.url;
+            wallpaperImage.alt = wallpaper.title;
+
+            const buttonContainer = document.createElement('div');
+            buttonContainer.className = 'button-container';
+
+            const previewBtn = document.createElement('button');
+            previewBtn.className = 'preview-btn';
+            previewBtn.textContent = 'Preview';
+            previewBtn.dataset.url = wallpaper.url;
+
+            const downloadBtn = document.createElement('a');
+            downloadBtn.href = wallpaper.url;
+            downloadBtn.className = 'download-btn';
+            downloadBtn.download = `${wallpaper.title}.jpg`;
+            downloadBtn.textContent = 'Download';
+
+            buttonContainer.appendChild(previewBtn);
+            buttonContainer.appendChild(downloadBtn);
+            wallpaperCard.appendChild(wallpaperImage);
+            wallpaperCard.appendChild(buttonContainer);
+            searchGrid.appendChild(wallpaperCard);
+        });
+
+        dynamicContentContainer.innerHTML = '';
+        dynamicContentContainer.appendChild(searchGrid);
+    };
+
+    if (mobileSearchInput) {
+        mobileSearchInput.addEventListener('input', (e) => {
+            const query = e.target.value;
+            if (query.length > 2) {
+                performSearch(query);
+            } else {
+                renderCategories();
+            }
+        });
+    }
+
+    if (desktopSearchInput) {
+        desktopSearchInput.addEventListener('input', (e) => {
+            const query = e.target.value;
+            if (query.length > 2) {
+                performSearch(query);
+            } else {
+                renderCategories();
+            }
+        });
+    }
+    // --- END NEW SEARCH FUNCTIONALITY ---
+
+
     // Event listeners for category navigation and tabs
     if (contentTabs) {
         contentTabs.addEventListener('click', (e) => {
@@ -233,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initial calls
-    if (dynamicContentContainer) { // Only fetch wallpapers if on the index page
+    if (document.querySelector('.mobile-hero-section') || document.querySelector('.content-tabs-section')) {
         fetchWallpapers();
     }
     setActiveLink();
