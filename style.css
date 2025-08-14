@@ -1,9 +1,9 @@
 /* Universal Styles & New Palette */
 :root {
-    /* New Cyan Color Scheme */
-    --bg-color: #0b1a26; /* Dark Blue-Cyan Background */
-    --text-color: #e0f2f1; /* Light Cyan Text */
-    --accent-color: #00bcd4; /* Vibrant Cyan */
+    /* Define a default theme. It will be overwritten by JS */
+    --bg-color: #0b1a26;
+    --text-color: #e0f2f1;
+    --accent-color: #00bcd4;
     --hero-overlay: rgba(0, 0, 0, 0.4);
     --header-bg: rgba(11, 26, 38, 0.95);
     --glass-bg: rgba(255, 255, 255, 0.08);
@@ -16,13 +16,61 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     color: #fff;
-    background: linear-gradient(to top right, #0b1a26, #112d3b);
     background-size: cover;
     background-attachment: fixed;
 }
 
-.content {
-    padding-top: 100px;
+/* Cyan Color Scheme */
+.cyan-theme {
+    --bg-color: #0b1a26;
+    --text-color: #e0f2f1;
+    --accent-color: #00bcd4;
+    --header-bg: rgba(11, 26, 38, 0.95);
+    --sidebar-bg: rgba(11, 26, 38, 0.8);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+.cyan-theme body {
+    background: linear-gradient(to top right, #0b1a26, #112d3b);
+}
+
+
+/* Crimson Color Scheme */
+.crimson-theme {
+    --bg-color: #1a0b0f;
+    --text-color: #fce4ec;
+    --accent-color: #d81b60;
+    --header-bg: rgba(26, 11, 15, 0.95);
+    --sidebar-bg: rgba(26, 11, 15, 0.8);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+.crimson-theme body {
+    background: linear-gradient(to top right, #1a0b0f, #33151f);
+}
+
+/* Purple Color Scheme */
+.purple-theme {
+    --bg-color: #1a0b26;
+    --text-color: #f3e5f5;
+    --accent-color: #8e24aa;
+    --header-bg: rgba(26, 11, 38, 0.95);
+    --sidebar-bg: rgba(26, 11, 38, 0.8);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+.purple-theme body {
+    background: linear-gradient(to top right, #1a0b26, #2d153b);
+}
+
+/* Instagram Gradient Color Scheme */
+.instagram-theme {
+    --bg-color: #1a0b21;
+    --text-color: #f7eafc;
+    --accent-color: #d11267;
+    --header-bg: rgba(26, 11, 33, 0.95);
+    --sidebar-bg: rgba(26, 11, 33, 0.8);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+.instagram-theme body {
+    background: linear-gradient(to top right, #1a0b21, #2d163d);
 }
 
 /* -------------------- New Header & Navigation -------------------- */
@@ -933,54 +981,4 @@ body {
     .search-bar-container {
         display: none !important;
     }
-    }
-/* Crimson Color Scheme */
-.crimson-theme {
-    /* Red-Pink Background */
-    --bg-color: #1a0b0f;
-    /* Light Pink Text */
-    --text-color: #fce4ec;
-    /* Vibrant Crimson */
-    --accent-color: #d81b60;
-    --header-bg: rgba(26, 11, 15, 0.95);
-    --sidebar-bg: rgba(26, 11, 15, 0.8);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-}
-
-.crimson-theme body {
-    background: linear-gradient(to top right, #1a0b0f, #33151f);
-}
-
-/* Purple Color Scheme */
-.purple-theme {
-    /* Dark Purple Background */
-    --bg-color: #1a0b26;
-    /* Light Lavender Text */
-    --text-color: #f3e5f5;
-    /* Vibrant Purple */
-    --accent-color: #8e24aa;
-    --header-bg: rgba(26, 11, 38, 0.95);
-    --sidebar-bg: rgba(26, 11, 38, 0.8);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-}
-
-.purple-theme body {
-    background: linear-gradient(to top right, #1a0b26, #2d153b);
-}
-
-/* Instagram Gradient Color Scheme */
-.instagram-theme {
-    /* Dark Blue-Purple Background */
-    --bg-color: #1a0b21;
-    /* Light Text */
-    --text-color: #f7eafc;
-    /* Main Accent - Pinkish-Purple */
-    --accent-color: #d11267;
-    --header-bg: rgba(26, 11, 33, 0.95);
-    --sidebar-bg: rgba(26, 11, 33, 0.8);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-}
-
-.instagram-theme body {
-    background: linear-gradient(to top right, #1a0b21, #2d163d);
 }
