@@ -14,15 +14,15 @@
 
 body {
     margin: 0;
-    padding-top: 100px;
     font-family: 'Inter', sans-serif;
     color: #fff;
-    background-color: var(--bg-color);
-    background-image: url('https://files.catbox.moe/fo6k1n.jpg'); 
+    background: linear-gradient(to top right, #0b1a26, #112d3b);
     background-size: cover;
-    background-position: center;
     background-attachment: fixed;
-    transition: background-image 0.5s ease-in-out;
+}
+
+.content {
+    padding-top: 100px; /* Adjusted padding to prevent content from going under the header */
 }
 
 /* -------------------- New Header & Navigation -------------------- */
@@ -807,4 +807,4 @@ body {
     .hero-section {
         display: flex; /* Show the desktop hero we had before */
     }
-}
+    }
