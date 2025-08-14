@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.querySelector('.hero-section');
     const mobileHeroSection = document.querySelector('.mobile-hero-section');
 
-    let wallpapers = [];
+    let allCategories = [];
+    let allWallpapers = [];
     let currentPage = 1;
     const wallpapersPerPage = 10;
     let currentCategory = 'all';
@@ -32,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         body.style.backgroundImage = `url('${randomBg}')`;
     };
 
-    // Initial background set
     toggleRandomBackground();
 
     // Sidebar functionality
@@ -65,9 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            wallpapers = data.wallpapers;
+            allCategories = data.categories;
+            allWallpapers = allCategories.flatMap(cat => cat.wallpapers);
             renderCategories();
-            renderWallpapers(currentCategory);
         } catch (error) {
             console.error('Failed to fetch wallpapers:', error);
             dynamicContentContainer.innerHTML = '<p>Failed to load wallpapers. Please try again later.</p>';
@@ -78,22 +78,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderCategories = () => {
         if (!dynamicContentContainer) return;
 
-        const categories = [...new Set(wallpapers.map(w => w.category))];
         const categoryGrid = document.createElement('div');
         categoryGrid.className = 'glass-card-grid';
 
-        categories.forEach(category => {
+        allCategories.forEach(category => {
             const categoryCard = document.createElement('a');
             categoryCard.href = '#';
             categoryCard.className = 'glass-card';
-            categoryCard.dataset.category = category;
+            categoryCard.dataset.category = category.id;
 
             const categoryImage = document.createElement('img');
-            categoryImage.src = wallpapers.find(w => w.category === category)?.thumbnail || '';
-            categoryImage.alt = `${category} wallpapers`;
+            categoryImage.src = category.category_image_url;
+            categoryImage.alt = `${category.name} wallpapers`;
 
             const categoryTitle = document.createElement('h3');
-            categoryTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+            categoryTitle.textContent = category.name;
 
             categoryCard.appendChild(categoryImage);
             categoryCard.appendChild(categoryTitle);
@@ -105,14 +104,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Render Wallpapers
-    const renderWallpapers = (category = 'all', page = 1) => {
+    const renderWallpapers = (categoryId, page = 1) => {
         if (!dynamicContentContainer) return;
 
-        let filteredWallpapers = category === 'all' ? wallpapers : wallpapers.filter(w => w.category === category);
+        let selectedCategory = allCategories.find(cat => cat.id === categoryId);
+        let wallpapersToRender = selectedCategory ? selectedCategory.wallpapers : allWallpapers;
 
         const startIndex = (page - 1) * wallpapersPerPage;
         const endIndex = startIndex + wallpapersPerPage;
-        const wallpapersToDisplay = filteredWallpapers.slice(startIndex, endIndex);
+        const wallpapersToDisplay = wallpapersToRender.slice(startIndex, endIndex);
 
         const wallpaperGrid = document.createElement('div');
         wallpaperGrid.className = 'wallpaper-grid';
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             wallpaperCard.dataset.id = wallpaper.id;
 
             const wallpaperImage = document.createElement('img');
-            wallpaperImage.src = wallpaper.thumbnail;
+            wallpaperImage.src = wallpaper.url;
             wallpaperImage.alt = wallpaper.title;
 
             const buttonContainer = document.createElement('div');
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dynamicContentContainer.innerHTML = '';
         dynamicContentContainer.appendChild(wallpaperGrid);
-        renderPagination(filteredWallpapers.length, page);
+        renderPagination(wallpapersToRender.length, page);
     };
 
     // Pagination
@@ -196,12 +196,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (tab.textContent === 'Categories') {
                     renderCategories();
                 } else if (tab.textContent === 'New') {
-                    // Assuming 'New' and 'Popular' are not separate categories in the JSON for now.
-                    // Let's just render all wallpapers for this example.
+                    // Placeholder for 'New' tab logic
                     currentCategory = 'all';
                     renderWallpapers(currentCategory);
                 } else if (tab.textContent === 'Popular') {
-                    // Same as 'New' for now.
+                    // Placeholder for 'Popular' tab logic
                     currentCategory = 'all';
                     renderWallpapers(currentCategory);
                 }
@@ -211,9 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (dynamicContentContainer) {
         dynamicContentContainer.addEventListener('click', (e) => {
-            if (e.target.closest('.glass-card')) {
+            const card = e.target.closest('.glass-card');
+            if (card) {
                 e.preventDefault();
-                const card = e.target.closest('.glass-card');
                 currentCategory = card.dataset.category;
                 renderWallpapers(currentCategory);
             }
@@ -230,25 +229,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Hide desktop hero and show mobile hero
         if (heroSection) heroSection.style.display = 'none';
         if (mobileHeroSection) mobileHeroSection.style.display = 'none';
 
-        if (hash === 'categories' || hash === 'home' || hash === 'search' || hash === '') {
-            if (dynamicContentContainer) {
-                if (window.innerWidth <= 768) {
-                    if (mobileHeroSection) mobileHeroSection.style.display = 'flex';
-                } else {
-                    if (heroSection) heroSection.style.display = 'flex';
-                }
-                renderCategories();
+        if (hash === 'categories' || hash === 'home' || hash === '') {
+            if (window.innerWidth <= 768) {
+                if (mobileHeroSection) mobileHeroSection.style.display = 'flex';
+            } else {
+                if (heroSection) heroSection.style.display = 'flex';
             }
-        } else {
-            dynamicContentContainer.innerHTML = `<h2 class="section-title">${hash.charAt(0).toUpperCase() + hash.slice(1)} Page</h2>`;
+            renderCategories();
+        } else if (hash === 'search') {
+            dynamicContentContainer.innerHTML = `<h2 class="section-title">Search Page</h2>`;
+        } else if (hash === 'contact') {
+            dynamicContentContainer.innerHTML = `<h2 class="section-title">Contact Page</h2>`;
         }
     };
 
     window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('resize', handleHashChange);
 
     // Initial calls
     fetchWallpapers();
