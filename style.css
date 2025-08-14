@@ -44,23 +44,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* This is no longer needed with the new header design */
-/*
-.header-top-mobile {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.header-bottom-mobile {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 10px;
-}
-*/
-
 .site-name {
     font-family: 'Pacifico', cursive;
     font-size: 2rem;
@@ -76,7 +59,7 @@ body {
     flex-grow: 1; /* Allows the search bar to take up available space */
     max-width: 600px;
     margin: 0 20px; /* Add some space around the search bar */
-    display: flex;
+    display: none; /* Hide on mobile by default */
     align-items: center;
     gap: 10px;
 }
@@ -116,25 +99,10 @@ body {
     color: var(--accent-color);
 }
 
-.header-desktop {
+.main-nav-desktop,
+.sign-in-btn-desktop {
     display: none;
 }
-
-/*
-.search-toggle and the old .search-container are no longer needed, as search is always visible in the new design.
-.search-toggle {
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.search-toggle:hover {
-    color: var(--accent-color);
-}
-*/
 
 /* Sidebar for Mobile */
 .sidebar-overlay {
@@ -232,65 +200,6 @@ body {
 .sidebar-footer {
     display: none;
 }
-
-/* This whole section is obsolete now that the search bar is in the main header */
-/*
-.search-container {
-    position: fixed;
-    top: -100px;
-    left: 0;
-    width: 100%;
-    padding: 15px 25px;
-    box-sizing: border-box;
-    transition: top 0.3s ease-in-out;
-    z-index: 101;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--header-bg);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid var(--glass-border);
-}
-
-.search-container.active {
-    top: 100px;
-}
-
-.search-input {
-    flex-grow: 1;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 50px;
-    padding: 12px 25px;
-    color: #fff;
-    font-size: 1rem;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-
-.search-input:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
-    border-color: var(--accent-color);
-}
-
-.search-input::placeholder {
-    color: #a0a0a0;
-}
-
-.search-close {
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.search-close:hover {
-    color: var(--accent-color);
-}
-*/
 
 .autocomplete-results {
     position: absolute;
@@ -768,27 +677,23 @@ body {
 
 /* Desktop Styles */
 @media (min-width: 768px) {
-    .header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        height: 70px;
-        padding: 0 50px;
-    }
-
-    .header-top-mobile, .header-bottom-mobile {
+    .menu-toggle {
         display: none;
     }
     
-    .header-desktop {
+    .header .search-container-main {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
+    }
+
+    .header .site-name {
+        order: 1;
+        margin-right: auto;
     }
 
     .main-nav-desktop {
         display: block;
+        order: 2;
+        margin: 0 20px;
     }
 
     .nav-links-desktop {
@@ -813,18 +718,11 @@ body {
 
     .sign-in-btn-desktop {
         display: block;
+        order: 3;
     }
-
+    
     .sidebar, .sidebar-overlay {
         display: none;
-    }
-
-    .search-container {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        padding: 15px 50px;
     }
 
     .cta-buttons {
