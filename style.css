@@ -1,6 +1,6 @@
 /* Universal Styles & New Palette */
 :root {
-    /* Define a default theme. It will be overwritten by JS */
+    /* Define a default theme's color variables */
     --bg-color: #0b1a26;
     --text-color: #e0f2f1;
     --accent-color: #00bcd4;
@@ -16,59 +16,52 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     color: #fff;
+    background-color: var(--bg-color); /* Set a default background color */
     background-size: cover;
     background-attachment: fixed;
     transition: background 0.5s ease-in-out; /* Smooth transition for background change */
 }
 
-/* --- Theme-specific styles --- */
+/* --- Theme-specific styles (with increased specificity) --- */
 
 /* Cyan Color Scheme */
-.cyan-theme {
+.cyan-theme body {
     --bg-color: #0b1a26;
     --text-color: #e0f2f1;
     --accent-color: #00bcd4;
     --header-bg: rgba(11, 26, 38, 0.95);
     --sidebar-bg: rgba(11, 26, 38, 0.8);
-}
-.cyan-theme body {
-    background: linear-gradient(to top right, #0b1a26, #112d3b);
+    background: linear-gradient(to top right, #0b1a26, #112d3b) !important; /* !important to try and override */
 }
 
 /* Crimson Color Scheme */
-.crimson-theme {
+.crimson-theme body {
     --bg-color: #1a0b0f;
     --text-color: #fce4ec;
     --accent-color: #d81b60;
     --header-bg: rgba(26, 11, 15, 0.95);
     --sidebar-bg: rgba(26, 11, 15, 0.8);
-}
-.crimson-theme body {
-    background: linear-gradient(to top right, #1a0b0f, #33151f);
+    background: linear-gradient(to top right, #1a0b0f, #33151f) !important;
 }
 
 /* Purple Color Scheme */
-.purple-theme {
+.purple-theme body {
     --bg-color: #1a0b26;
     --text-color: #f3e5f5;
     --accent-color: #8e24aa;
     --header-bg: rgba(26, 11, 38, 0.95);
     --sidebar-bg: rgba(26, 11, 38, 0.8);
-}
-.purple-theme body {
-    background: linear-gradient(to top right, #1a0b26, #2d153b);
+    background: linear-gradient(to top right, #1a0b26, #2d153b) !important;
 }
 
 /* Instagram Gradient Color Scheme */
-.instagram-theme {
+.instagram-theme body {
     --bg-color: #1a0b21;
     --text-color: #f7eafc;
     --accent-color: #d11267;
     --header-bg: rgba(26, 11, 33, 0.95);
     --sidebar-bg: rgba(26, 11, 33, 0.8);
-}
-.instagram-theme body {
-    background: linear-gradient(to top right, #1a0b21, #2d163d);
+    background: linear-gradient(to top right, #1a0b21, #2d163d) !important;
 }
 
 /* -------------------- Header & Navigation -------------------- */
@@ -160,8 +153,7 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     transition: color 0.3s ease;
-    /* This rule ensures it's always visible on mobile */
-    display: block; 
+    display: block;
 }
 .search-toggle:hover {
     color: var(--accent-color);
@@ -946,7 +938,7 @@ body {
         display: block;
         order: 3;
     }
-    
+
     .sidebar, .sidebar-overlay {
         display: none;
     }
@@ -967,4 +959,4 @@ body {
     .search-bar-container {
         display: none;
     }
-    }
+}
