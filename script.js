@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
+    
+    // --- Random theme functionality ---
+    const themes = ['cyan-theme', 'crimson-theme', 'purple-theme', 'instagram-theme'];
+    const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+    body.classList.add(randomTheme);
+    // --- End random theme functionality ---
+
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('sidebar');
     const sidebarClose = document.getElementById('sidebar-close');
@@ -45,6 +52,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchToggle && searchBarContainer) {
         searchToggle.addEventListener('click', () => {
             searchBarContainer.classList.toggle('active');
+            // Hide the hero section and tabs when search is active
+            if (searchBarContainer.classList.contains('active')) {
+                if (heroSection) heroSection.style.display = 'none';
+                if (mobileHeroSection) mobileHeroSection.style.display = 'none';
+                if (contentTabs) contentTabs.style.display = 'none';
+            } else {
+                // Restore sections on closing
+                if (window.innerWidth <= 768 && mobileHeroSection) {
+                    mobileHeroSection.style.display = 'flex';
+                } else if (heroSection) {
+                    heroSection.style.display = 'flex';
+                }
+                if (contentTabs) contentTabs.style.display = 'flex';
+                renderCategories();
+            }
         });
     }
 
@@ -198,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dynamicContentContainer.appendChild(paginationContainer);
     };
 
-    // --- NEW SEARCH FUNCTIONALITY ---
+    // --- Search functionality ---
     const performSearch = (query) => {
         if (!dynamicContentContainer) return;
 
@@ -207,6 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const filteredWallpapers = allWallpapers.filter(wallpaper =>
             wallpaper.title.toLowerCase().includes(lowerCaseQuery)
         );
+        
+        dynamicContentContainer.innerHTML = '';
+        if (contentTabs) contentTabs.style.display = 'none';
 
         if (filteredWallpapers.length === 0) {
             dynamicContentContainer.innerHTML = '<p class="no-results">No wallpapers found matching your search.</p>';
@@ -246,7 +271,6 @@ document.addEventListener('DOMContentLoaded', () => {
             searchGrid.appendChild(wallpaperCard);
         });
 
-        dynamicContentContainer.innerHTML = '';
         dynamicContentContainer.appendChild(searchGrid);
     };
 
@@ -256,6 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (query.length > 2) {
                 performSearch(query);
             } else {
+                if (contentTabs) contentTabs.style.display = 'flex';
                 renderCategories();
             }
         });
@@ -267,11 +292,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (query.length > 2) {
                 performSearch(query);
             } else {
+                if (contentTabs) contentTabs.style.display = 'flex';
                 renderCategories();
             }
         });
     }
-    // --- END NEW SEARCH FUNCTIONALITY ---
+    // --- End search functionality ---
 
 
     // Event listeners for category navigation and tabs
