@@ -22,7 +22,7 @@ body {
 }
 
 .content {
-    padding-top: 100px; /* Adjusted padding to prevent content from going under the header */
+    padding-top: 100px;
 }
 
 /* -------------------- New Header & Navigation -------------------- */
@@ -238,7 +238,7 @@ body {
     position: relative;
     width: 100%;
     min-height: calc(100vh - 100px);
-    display: none; /* Hidden by default for mobile */
+    display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -678,10 +678,10 @@ body {
 /* New Mobile Hero Section */
 .mobile-hero-section {
     position: relative;
-    width: calc(100% - 40px); /* Leave some margin on the sides */
-    margin: 20px auto; /* Center the section */
+    width: calc(100% - 40px);
+    margin: 20px auto;
     height: 250px;
-    background-image: url('https://files.catbox.moe/fo6k1n.jpg'); /* Or a featured wallpaper image */
+    background-image: url('https://files.catbox.moe/fo6k1n.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -709,13 +709,12 @@ body {
     margin: 0 0 15px 0;
 }
 
-/* This is a modification of your existing cta-buttons to fit the new hero section */
 .mobile-hero-content .cta-buttons {
     flex-direction: row;
 }
 
 .mobile-hero-content .cta-btn {
-    flex-grow: 1; /* Make buttons fill available space */
+    flex-grow: 1;
 }
 
 /* New Tabbed Navigation */
@@ -744,6 +743,52 @@ body {
     color: var(--accent-color);
     border-bottom-color: var(--accent-color);
 }
+
+/* Search Page Section */
+.search-page-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 25px;
+    text-align: center;
+}
+
+.search-page-section .search-container-desktop {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#search-input-page {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 15px 30px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#search-input-page:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-color);
+}
+
+.search-intro {
+    font-size: 1rem;
+    color: #a0a0a0;
+    margin: 10px 0 20px;
+}
+
+.no-results {
+    margin-top: 40px;
+    font-size: 1.1rem;
+    color: #a0a0a0;
+}
+
 
 /* Desktop Styles */
 @media (min-width: 768px) {
@@ -801,10 +846,10 @@ body {
     }
 
     .mobile-hero-section {
-        display: none; /* Hide the mobile hero on desktop */
+        display: none;
     }
 
     .hero-section {
-        display: flex; /* Show the desktop hero we had before */
+        display: flex;
     }
-    }
+}
