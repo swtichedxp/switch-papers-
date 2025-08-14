@@ -1,19 +1,19 @@
-/* Universal Styles & New Palette */
 :root {
-    --bg-color: #0d0611; /* Darker background */
-    --text-color: #e0e0e0;
-    --accent-color: #bf40ff;
+    /* New Cyan Color Scheme */
+    --bg-color: #0b1a26; /* Dark Blue-Cyan Background */
+    --text-color: #e0f2f1; /* Light Cyan Text */
+    --accent-color: #00bcd4; /* Vibrant Cyan */
     --hero-overlay: rgba(0, 0, 0, 0.4);
-    --header-bg: rgba(26, 11, 31, 0.95);
-    --glass-bg: rgba(255, 255, 255, 0.08); /* More transparent glass */
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --sidebar-bg: rgba(13, 6, 17, 0.8);
+    --header-bg: rgba(11, 26, 38, 0.95);
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --sidebar-bg: rgba(11, 26, 38, 0.8);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
 body {
     margin: 0;
-    padding-top: 100px; /* Adjusted to match new header height */
+    padding-top: 100px;
     font-family: 'Inter', sans-serif;
     color: #fff;
     background-color: var(--bg-color);
@@ -24,22 +24,21 @@ body {
     transition: background-image 0.5s ease-in-out;
 }
 
-/* -------------------- New Header & Navigation -------------------- */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 75px; /* A slightly reduced height for a cleaner look */
+    height: 75px;
     padding: 0 25px;
     box-sizing: border-box;
     display: flex;
-    align-items: center; /* Vertically aligns all children */
-    justify-content: space-between; /* Spreads items evenly */
-    background: var(--glass-bg); /* Use glass variable for the header background */
-    backdrop-filter: blur(15px); /* Stronger blur for a better glass effect */
-    border-bottom: 1px solid var(--glass-border); /* Subtle bottom border */
-    box-shadow: var(--glass-shadow); /* Glassy shadow */
+    align-items: center;
+    justify-content: space-between;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
     z-index: 100;
     transition: all 0.3s ease;
 }
@@ -49,28 +48,27 @@ body {
     font-size: 2rem;
     font-weight: 400;
     color: var(--accent-color);
-    text-shadow: 0 0 8px rgba(191, 64, 255, 0.5);
+    text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
     margin: 0;
-    white-space: nowrap; /* Prevents the name from wrapping */
+    white-space: nowrap;
 }
 
-/* New Search Bar within the Header */
 .header .search-container-main {
-    flex-grow: 1; /* Allows the search bar to take up available space */
+    flex-grow: 1;
     max-width: 600px;
-    margin: 0 20px; /* Add some space around the search bar */
-    display: none; /* Hide on mobile by default */
+    margin: 0 20px;
+    display: none;
     align-items: center;
     gap: 10px;
 }
 
 .search-container-main .search-input {
     width: 100%;
-    background: rgba(255, 255, 255, 0.05); /* Lighter glass background for the input */
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--glass-border);
     border-radius: 50px;
     padding: 12px 25px;
-    color: #fff;
+    color: var(--text-color);
     font-size: 1rem;
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
@@ -186,7 +184,7 @@ body {
 }
 
 .nav-link-item:hover, .nav-link-item.active {
-    background-color: rgba(191, 64, 255, 0.1);
+    background-color: rgba(0, 188, 212, 0.1);
     color: var(--accent-color);
     border-left-color: var(--accent-color);
 }
@@ -203,7 +201,7 @@ body {
 
 .autocomplete-results {
     position: absolute;
-    top: 75px; /* Position it right below the new header height */
+    top: 75px;
     left: 25px;
     right: 25px;
     max-height: 200px;
@@ -230,14 +228,14 @@ body {
 }
 
 .autocomplete-item:hover {
-    background-color: rgba(191, 64, 255, 0.1);
+    background-color: rgba(0, 188, 212, 0.1);
 }
 
 /* Hero Section */
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: calc(100vh - 100px); /* Adjusted to account for new header height */
+    min-height: calc(100vh - 100px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -276,7 +274,7 @@ body {
 .glass-hero-panel p {
     font-size: clamp(1rem, 2vw, 1.2rem);
     margin: 0 0 2rem;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .cta-buttons {
@@ -300,12 +298,12 @@ body {
 
 .cta-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(191, 64, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
 }
 
 .primary-btn {
     background-color: var(--accent-color);
-    color: #fff;
+    color: var(--bg-color);
 }
 
 .secondary-btn {
@@ -396,7 +394,7 @@ body {
     backdrop-filter: blur(5px);
     font-size: 1.2rem;
     text-align: center;
-    color: #fff;
+    color: var(--text-color);
 }
 
 /* Wallpaper Grid */
@@ -466,7 +464,7 @@ body {
 
 .preview-btn:hover, .download-btn:hover {
     background-color: var(--accent-color);
-    color: #fff;
+    color: var(--bg-color);
 }
 
 /* Pagination */
@@ -491,7 +489,7 @@ body {
 }
 
 .page-btn:hover {
-    background-color: rgba(191, 64, 255, 0.1);
+    background-color: rgba(0, 188, 212, 0.1);
     border-color: var(--accent-color);
 }
 
@@ -607,7 +605,7 @@ body {
 }
 
 .popup-close-btn:hover {
-    background: #a350ff;
+    background: #008ba3;
 }
 
 /* Animations */
@@ -729,4 +727,4 @@ body {
         flex-direction: row;
         width: auto;
     }
-}
+        }
