@@ -808,3 +808,37 @@ body {
         display: flex; /* Show the desktop hero we had before */
     }
     }
+
+/* Add this to your style.css file */
+
+.search-page-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 25px;
+    text-align: center;
+}
+
+.search-page-section .search-container-desktop {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#search-input-page {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 15px 30px; /* Increased padding for better feel */
+    color: var(--text-color);
+    font-size: 1.1rem; /* Slightly larger font */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#search-input-page:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-color);
+}
