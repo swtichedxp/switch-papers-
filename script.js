@@ -8,52 +8,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const autocompleteResults = document.getElementById('autocomplete-results');
     const dynamicContentContainer = document.getElementById('dynamic-content-container');
     const contentTabs = document.querySelector('.content-tabs');
-    const modal = document.getElementById('preview-modal');
-    const modalImage = document.getElementById('modal-image');
-    const modalClose = document.getElementById('modal-close');
     const heroSection = document.querySelector('.hero-section');
     const mobileHeroSection = document.querySelector('.mobile-hero-section');
 
     let allCategories = [];
-    let allWallpapers = [];
     let currentPage = 1;
     const wallpapersPerPage = 10;
     let currentCategory = 'all';
 
-    // Theme and Background Logic
-    const toggleRandomBackground = () => {
-        const backgrounds = [
-            'https://files.catbox.moe/fo6k1n.jpg',
-            'https://files.catbox.moe/v64q6f.jpg',
-            'https://files.catbox.moe/q9j2a6.jpg',
-            'https://files.catbox.moe/s9p10c.jpg',
-            'https://files.catbox.moe/p9t9c9.jpg'
-        ];
-        const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
-        body.style.backgroundImage = `url('${randomBg}')`;
-    };
-
-    toggleRandomBackground();
-
     // Sidebar functionality
-    if (menuToggle) {
+    if (menuToggle && sidebar && sidebarOverlay) {
         menuToggle.addEventListener('click', () => {
             sidebar.classList.add('active');
             sidebarOverlay.classList.add('active');
             body.style.overflow = 'hidden';
         });
-    }
 
-    const closeSidebar = () => {
-        sidebar.classList.remove('active');
-        sidebarOverlay.classList.remove('active');
-        body.style.overflow = '';
-    };
-
-    if (sidebarClose) {
+        const closeSidebar = () => {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            body.style.overflow = '';
+        };
+        
         sidebarClose.addEventListener('click', closeSidebar);
-    }
-    if (sidebarOverlay) {
         sidebarOverlay.addEventListener('click', closeSidebar);
     }
 
@@ -66,11 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const data = await response.json();
             allCategories = data.categories;
-            allWallpapers = allCategories.flatMap(cat => cat.wallpapers);
-            renderCategories();
+            renderContent('categories');
         } catch (error) {
             console.error('Failed to fetch wallpapers:', error);
-            dynamicContentContainer.innerHTML = '<p>Failed to load wallpapers. Please try again later.</p>';
+            if (dynamicContentContainer) {
+                dynamicContentContainer.innerHTML = '<p>Failed to load wallpapers. Please try again later.</p>';
+            }
         }
     };
 
@@ -106,9 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render Wallpapers
     const renderWallpapers = (categoryId, page = 1) => {
         if (!dynamicContentContainer) return;
-
-        let selectedCategory = allCategories.find(cat => cat.id === categoryId);
-        let wallpapersToRender = selectedCategory ? selectedCategory.wallpapers : allWallpapers;
+    
+        const selectedCategory = allCategories.find(cat => cat.id === categoryId);
+        const wallpapersToRender = selectedCategory ? selectedCategory.wallpapers : [];
 
         const startIndex = (page - 1) * wallpapersPerPage;
         const endIndex = startIndex + wallpapersPerPage;
@@ -185,6 +163,18 @@ document.addEventListener('DOMContentLoaded', () => {
         dynamicContentContainer.appendChild(paginationContainer);
     };
 
+    // Main content rendering logic based on hash or clicks
+    const renderContent = (type) => {
+        if (type === 'categories') {
+            renderCategories();
+        } else if (type === 'home' || type === 'search' || type === 'contact') {
+            // Handle other pages here if needed, or clear the container
+            if (dynamicContentContainer) {
+                dynamicContentContainer.innerHTML = '';
+            }
+        }
+    };
+    
     // Event listeners for new layout
     if (contentTabs) {
         contentTabs.addEventListener('click', (e) => {
@@ -194,15 +184,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('.content-tab').forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
                 if (tab.textContent === 'Categories') {
-                    renderCategories();
-                } else if (tab.textContent === 'New') {
-                    // Placeholder for 'New' tab logic
-                    currentCategory = 'all';
-                    renderWallpapers(currentCategory);
-                } else if (tab.textContent === 'Popular') {
-                    // Placeholder for 'Popular' tab logic
-                    currentCategory = 'all';
-                    renderWallpapers(currentCategory);
+                    renderContent('categories');
+                } else if (tab.textContent === 'New' || tab.textContent === 'Popular') {
+                    // Your logic for 'New' and 'Popular' can go here
+                    // For now, let's just render the first category's wallpapers
+                    if (allCategories.length > 0) {
+                        currentCategory = allCategories[0].id;
+                        renderWallpapers(currentCategory);
+                    }
                 }
             }
         });
@@ -229,16 +218,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        if (heroSection) heroSection.style.display = 'none';
-        if (mobileHeroSection) mobileHeroSection.style.display = 'none';
+        if (window.innerWidth <= 768) {
+            if (mobileHeroSection) mobileHeroSection.style.display = 'flex';
+            if (heroSection) heroSection.style.display = 'none';
+        } else {
+            if (mobileHeroSection) mobileHeroSection.style.display = 'none';
+            if (heroSection) heroSection.style.display = 'flex';
+        }
 
         if (hash === 'categories' || hash === 'home' || hash === '') {
-            if (window.innerWidth <= 768) {
-                if (mobileHeroSection) mobileHeroSection.style.display = 'flex';
-            } else {
-                if (heroSection) heroSection.style.display = 'flex';
-            }
-            renderCategories();
+            renderContent('categories');
         } else if (hash === 'search') {
             dynamicContentContainer.innerHTML = `<h2 class="section-title">Search Page</h2>`;
         } else if (hash === 'contact') {
