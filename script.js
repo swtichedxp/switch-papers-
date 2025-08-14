@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+Document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('sidebar');
@@ -193,10 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input-page">
                     </div>
                     <div id="search-results-container">
-                        <p class="no-results">Search is not yet functional. Please check back later.</p>
-                    </div>
+                        </div>
                 </section>
             `;
+            setupSearchFunctionality();
         } else if (type === 'contact') {
             dynamicContentContainer.innerHTML = `
                 <section class="contact-container">
@@ -229,7 +229,84 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         }
     };
+
+    // --- NEW SEARCH FUNCTIONALITY ---
+    const setupSearchFunctionality = () => {
+        const searchInput = document.getElementById('search-input-page');
+        const searchResultsContainer = document.getElementById('search-results-container');
+        
+        const performSearch = (query) => {
+            searchResultsContainer.innerHTML = '';
+            const lowerCaseQuery = query.toLowerCase();
+            const allWallpapers = [];
+            
+            // Flatten all wallpapers into a single array
+            allCategories.forEach(category => {
+                category.wallpapers.forEach(wallpaper => {
+                    allWallpapers.push(wallpaper);
+                });
+            });
+
+            // Filter wallpapers based on title
+            const filteredWallpapers = allWallpapers.filter(wallpaper => 
+                wallpaper.title.toLowerCase().includes(lowerCaseQuery)
+            );
+
+            if (filteredWallpapers.length === 0) {
+                searchResultsContainer.innerHTML = '<p class="no-results">No wallpapers found matching your search.</p>';
+                return;
+            }
+
+            // Render the results in a grid
+            const searchGrid = document.createElement('div');
+            searchGrid.className = 'wallpaper-grid';
+
+            filteredWallpapers.forEach(wallpaper => {
+                const wallpaperCard = document.createElement('div');
+                wallpaperCard.className = 'wallpaper-card';
+                wallpaperCard.dataset.id = wallpaper.id;
     
+                const wallpaperImage = document.createElement('img');
+                wallpaperImage.src = wallpaper.url;
+                wallpaperImage.alt = wallpaper.title;
+    
+                const buttonContainer = document.createElement('div');
+                buttonContainer.className = 'button-container';
+    
+                const previewBtn = document.createElement('button');
+                previewBtn.className = 'preview-btn';
+                previewBtn.textContent = 'Preview';
+                previewBtn.dataset.url = wallpaper.url;
+    
+                const downloadBtn = document.createElement('a');
+                downloadBtn.href = wallpaper.url;
+                downloadBtn.className = 'download-btn';
+                downloadBtn.download = `${wallpaper.title}.jpg`;
+                downloadBtn.textContent = 'Download';
+    
+                buttonContainer.appendChild(previewBtn);
+                buttonContainer.appendChild(downloadBtn);
+                wallpaperCard.appendChild(wallpaperImage);
+                wallpaperCard.appendChild(buttonContainer);
+                searchGrid.appendChild(wallpaperCard);
+            });
+
+            searchResultsContainer.appendChild(searchGrid);
+        };
+
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value;
+                if (query.length > 2) {
+                    performSearch(query);
+                } else {
+                    searchResultsContainer.innerHTML = '<p class="no-results">Type at least 3 characters to search.</p>';
+                }
+            });
+        }
+    };
+    // --- END NEW SEARCH FUNCTIONALITY ---
+
     // Event listeners for new layout
     if (contentTabs) {
         contentTabs.addEventListener('click', (e) => {
