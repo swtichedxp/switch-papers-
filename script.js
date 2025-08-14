@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (heroSection) heroSection.style.display = 'none';
                 if (mobileHeroSection) mobileHeroSection.style.display = 'none';
                 if (contentTabs) contentTabs.style.display = 'none';
+                if (dynamicContentContainer) dynamicContentContainer.innerHTML = '';
             } else {
                 // Restore sections on closing
                 if (window.innerWidth <= 768 && mobileHeroSection) {
@@ -232,6 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         dynamicContentContainer.innerHTML = '';
         if (contentTabs) contentTabs.style.display = 'none';
+        if (heroSection) heroSection.style.display = 'none';
+        if (mobileHeroSection) mobileHeroSection.style.display = 'none';
+
 
         if (filteredWallpapers.length === 0) {
             dynamicContentContainer.innerHTML = '<p class="no-results">No wallpapers found matching your search.</p>';
@@ -281,6 +285,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 performSearch(query);
             } else {
                 if (contentTabs) contentTabs.style.display = 'flex';
+                if (window.innerWidth <= 768 && mobileHeroSection) {
+                    mobileHeroSection.style.display = 'flex';
+                } else if (heroSection) {
+                    heroSection.style.display = 'flex';
+                }
                 renderCategories();
             }
         });
@@ -293,6 +302,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 performSearch(query);
             } else {
                 if (contentTabs) contentTabs.style.display = 'flex';
+                if (window.innerWidth <= 768 && mobileHeroSection) {
+                    mobileHeroSection.style.display = 'flex';
+                } else if (heroSection) {
+                    heroSection.style.display = 'flex';
+                }
                 renderCategories();
             }
         });
