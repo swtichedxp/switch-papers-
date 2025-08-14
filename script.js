@@ -6,6 +6,7 @@ Document.addEventListener('DOMContentLoaded', () => {
     const sidebarOverlay = document.getElementById('sidebar-overlay');
     const dynamicContentContainer = document.getElementById('dynamic-content-container');
     const contentTabsSection = document.querySelector('.content-tabs-section');
+    const contactSection = document.getElementById('contact');
     const contentTabs = document.querySelector('.content-tabs');
     const heroSection = document.querySelector('.hero-section');
     const mobileHeroSection = document.querySelector('.mobile-hero-section');
@@ -54,35 +55,36 @@ Document.addEventListener('DOMContentLoaded', () => {
     // Render Categories
     const renderCategories = () => {
         if (!dynamicContentContainer) return;
-
+        dynamicContentContainer.innerHTML = '';
+    
         const categoryGrid = document.createElement('div');
         categoryGrid.className = 'glass-card-grid';
-
+    
         allCategories.forEach(category => {
             const categoryCard = document.createElement('a');
             categoryCard.href = '#';
             categoryCard.className = 'glass-card';
             categoryCard.dataset.category = category.id;
-
+    
             const categoryImage = document.createElement('img');
             categoryImage.src = category.category_image_url;
             categoryImage.alt = `${category.name} wallpapers`;
-
+    
             const categoryTitle = document.createElement('h3');
             categoryTitle.textContent = category.name;
-
+    
             categoryCard.appendChild(categoryImage);
             categoryCard.appendChild(categoryTitle);
             categoryGrid.appendChild(categoryCard);
         });
-
-        dynamicContentContainer.innerHTML = '';
+    
         dynamicContentContainer.appendChild(categoryGrid);
     };
 
     // Render Wallpapers
     const renderWallpapers = (categoryId, page = 1) => {
         if (!dynamicContentContainer) return;
+        dynamicContentContainer.innerHTML = '';
     
         const selectedCategory = allCategories.find(cat => cat.id === categoryId);
         const wallpapersToRender = selectedCategory ? selectedCategory.wallpapers : [];
@@ -124,7 +126,6 @@ Document.addEventListener('DOMContentLoaded', () => {
             wallpaperGrid.appendChild(wallpaperCard);
         });
 
-        dynamicContentContainer.innerHTML = '';
         dynamicContentContainer.appendChild(wallpaperGrid);
         renderPagination(wallpapersToRender.length, page);
     };
@@ -166,25 +167,18 @@ Document.addEventListener('DOMContentLoaded', () => {
     const renderContent = (type) => {
         if (!dynamicContentContainer || !contentTabsSection) return;
         
-        // Hide mobile hero section if not on home
+        // Hide all sections first
+        contentTabsSection.style.display = 'none';
+        dynamicContentContainer.style.display = 'none';
+        if (contactSection) contactSection.style.display = 'none';
+        
+        // Show the relevant section
         if (type === 'categories' || type === 'home' || type === '') {
             contentTabsSection.style.display = 'block';
-        } else {
-            contentTabsSection.style.display = 'none';
-        }
-
-        // Handle hero section visibility
-        if (window.innerWidth <= 768) {
-            mobileHeroSection.style.display = (type === 'categories' || type === 'home' || type === '') ? 'flex' : 'none';
-            if (heroSection) heroSection.style.display = 'none';
-        } else {
-            mobileHeroSection.style.display = 'none';
-            heroSection.style.display = (type === 'categories' || type === 'home' || type === '') ? 'flex' : 'none';
-        }
-
-        if (type === 'categories' || type === 'home' || type === '') {
+            dynamicContentContainer.style.display = 'block';
             renderCategories();
         } else if (type === 'search') {
+            dynamicContentContainer.style.display = 'block';
             dynamicContentContainer.innerHTML = `
                 <section class="search-page-section">
                     <h2 class="section-title">Search Wallpapers</h2>
@@ -198,35 +192,16 @@ Document.addEventListener('DOMContentLoaded', () => {
             `;
             setupSearchFunctionality();
         } else if (type === 'contact') {
-            dynamicContentContainer.innerHTML = `
-                <section class="contact-container">
-                    <h2 class="section-title">Contact Dev</h2>
-                    <a href="https://wa.me/212684255286" target="_blank" class="contact-card">
-                        <i class="fab fa-whatsapp contact-icon"></i>
-                        <div class="contact-info">
-                            <h3>WhatsApp</h3>
-                            <p>wa.me/212684255286</p>
-                        </div>
-                        <i class="fas fa-arrow-right contact-arrow"></i>
-                    </a>
-                    <a href="https://t.me/zedside" target="_blank" class="contact-card">
-                        <i class="fab fa-telegram-plane contact-icon"></i>
-                        <div class="contact-info">
-                            <h3>Telegram</h3>
-                            <p>t.me/zedside</p>
-                        </div>
-                        <i class="fas fa-arrow-right contact-arrow"></i>
-                    </a>
-                    <a href="https://whatsapp.com/channel/0029VbB6Xu9CXC3FaGdkpZ3s" target="_blank" class="contact-card">
-                        <i class="fab fa-whatsapp contact-icon"></i>
-                        <div class="contact-info">
-                            <h3>WhatsApp Channel</h3>
-                            <p>For updates</p>
-                        </div>
-                        <i class="fas fa-arrow-right contact-arrow"></i>
-                    </a>
-                </section>
-            `;
+            if (contactSection) contactSection.style.display = 'block';
+        }
+
+        // Handle hero section visibility
+        if (window.innerWidth <= 768) {
+            mobileHeroSection.style.display = (type === 'categories' || type === 'home' || type === '') ? 'flex' : 'none';
+            if (heroSection) heroSection.style.display = 'none';
+        } else {
+            mobileHeroSection.style.display = 'none';
+            heroSection.style.display = (type === 'categories' || type === 'home' || type === '') ? 'flex' : 'none';
         }
     };
 
