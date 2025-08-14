@@ -10,6 +10,8 @@ on:
 jobs:
   download-and-commit:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Add this line to grant write permissions
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
