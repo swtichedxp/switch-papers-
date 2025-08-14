@@ -1,0 +1,69 @@
+name: Sync Wallpapers
+
+on:
+  push:
+    branches:
+      - main  # Or master, depending on your main branch name
+    paths:
+      - 'wallpapers.json'
+
+jobs:
+  download-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Create wallpapers directory
+        run: mkdir -p wallpapers
+
+      - name: Run download and update script
+        run: python scripts/download_and_update.py
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Auto: Downloaded new wallpapers and updated JSON"
+          file_pattern: "wallpapers.json wallpapers/*" name: Sync Wallpapers
+
+on:
+  push:
+    branches:
+      - main  # Or master, depending on your main branch name
+    paths:
+      - 'wallpapers.json'
+
+jobs:
+  download-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Create wallpapers directory
+        run: mkdir -p wallpapers
+
+      - name: Run download and update script
+        run: python scripts/download_and_update.py
+
+      - name: Commit and Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Auto: Downloaded new wallpapers and updated JSON"
+          file_pattern: "wallpapers.json wallpapers/*"
