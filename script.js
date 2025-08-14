@@ -1,3 +1,13 @@
+// Function to handle the image download
+function downloadImage(imageUrl, fileName) {
+    const link = document.createElement('a');
+    link.href = imageUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
 // Global variables
 let wallpaperData = { categories: [] };
 let currentPage = 1;
@@ -356,31 +366,7 @@ document.body.addEventListener('click', (e) => {
         e.preventDefault();
         const imageUrl = e.target.href;
         const fileName = e.target.download;
-        
-        const popup = document.createElement('div');
-        popup.className = 'download-popup';
-        popup.innerHTML = `
-            <div class="popup-content">
-                <h3>Download Image</h3>
-                <p>Sorry for the inconvenience. Our automatic download is temporarily unavailable.</p>
-                <p>To save the image:</p>
-                <p>1. On a mobile device, **press and hold** the image below.</p>
-                <p>2. Select **"Download image"** from the menu that appears.</p>
-                <img src="${imageUrl}" alt="${fileName}" class="popup-image">
-                <button class="popup-close-btn">Close</button>
-            </div>
-        `;
-        document.body.appendChild(popup);
-
-        popup.querySelector('.popup-close-btn').addEventListener('click', () => {
-            document.body.removeChild(popup);
-        });
-
-        popup.addEventListener('click', (event) => {
-            if (event.target === popup) {
-                document.body.removeChild(popup);
-            }
-        });
+        downloadImage(imageUrl, fileName);
     }
 
     if (e.target.matches('.modal-close') || e.target.matches('.modal-close i') || e.target === modal) {
