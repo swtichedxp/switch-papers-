@@ -1,4 +1,4 @@
-Document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('sidebar');
@@ -6,7 +6,6 @@ Document.addEventListener('DOMContentLoaded', () => {
     const sidebarOverlay = document.getElementById('sidebar-overlay');
     const dynamicContentContainer = document.getElementById('dynamic-content-container');
     const contentTabsSection = document.querySelector('.content-tabs-section');
-    const contactSection = document.getElementById('contact');
     const contentTabs = document.querySelector('.content-tabs');
     const heroSection = document.querySelector('.hero-section');
     const mobileHeroSection = document.querySelector('.mobile-hero-section');
@@ -55,36 +54,35 @@ Document.addEventListener('DOMContentLoaded', () => {
     // Render Categories
     const renderCategories = () => {
         if (!dynamicContentContainer) return;
-        dynamicContentContainer.innerHTML = '';
-    
+
         const categoryGrid = document.createElement('div');
         categoryGrid.className = 'glass-card-grid';
-    
+
         allCategories.forEach(category => {
             const categoryCard = document.createElement('a');
             categoryCard.href = '#';
             categoryCard.className = 'glass-card';
             categoryCard.dataset.category = category.id;
-    
+
             const categoryImage = document.createElement('img');
             categoryImage.src = category.category_image_url;
             categoryImage.alt = `${category.name} wallpapers`;
-    
+
             const categoryTitle = document.createElement('h3');
             categoryTitle.textContent = category.name;
-    
+
             categoryCard.appendChild(categoryImage);
             categoryCard.appendChild(categoryTitle);
             categoryGrid.appendChild(categoryCard);
         });
-    
+
+        dynamicContentContainer.innerHTML = '';
         dynamicContentContainer.appendChild(categoryGrid);
     };
 
     // Render Wallpapers
     const renderWallpapers = (categoryId, page = 1) => {
         if (!dynamicContentContainer) return;
-        dynamicContentContainer.innerHTML = '';
     
         const selectedCategory = allCategories.find(cat => cat.id === categoryId);
         const wallpapersToRender = selectedCategory ? selectedCategory.wallpapers : [];
@@ -126,6 +124,7 @@ Document.addEventListener('DOMContentLoaded', () => {
             wallpaperGrid.appendChild(wallpaperCard);
         });
 
+        dynamicContentContainer.innerHTML = '';
         dynamicContentContainer.appendChild(wallpaperGrid);
         renderPagination(wallpapersToRender.length, page);
     };
@@ -167,32 +166,11 @@ Document.addEventListener('DOMContentLoaded', () => {
     const renderContent = (type) => {
         if (!dynamicContentContainer || !contentTabsSection) return;
         
-        // Hide all sections first
-        contentTabsSection.style.display = 'none';
-        dynamicContentContainer.style.display = 'none';
-        if (contactSection) contactSection.style.display = 'none';
-        
-        // Show the relevant section
+        // Hide mobile hero section if not on home
         if (type === 'categories' || type === 'home' || type === '') {
             contentTabsSection.style.display = 'block';
-            dynamicContentContainer.style.display = 'block';
-            renderCategories();
-        } else if (type === 'search') {
-            dynamicContentContainer.style.display = 'block';
-            dynamicContentContainer.innerHTML = `
-                <section class="search-page-section">
-                    <h2 class="section-title">Search Wallpapers</h2>
-                    <p class="search-intro">Find the perfect wallpaper for your device.</p>
-                    <div class="search-container-desktop">
-                        <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input-page">
-                    </div>
-                    <div id="search-results-container">
-                        </div>
-                </section>
-            `;
-            setupSearchFunctionality();
-        } else if (type === 'contact') {
-            if (contactSection) contactSection.style.display = 'block';
+        } else {
+            contentTabsSection.style.display = 'none';
         }
 
         // Handle hero section visibility
@@ -203,85 +181,55 @@ Document.addEventListener('DOMContentLoaded', () => {
             mobileHeroSection.style.display = 'none';
             heroSection.style.display = (type === 'categories' || type === 'home' || type === '') ? 'flex' : 'none';
         }
-    };
 
-    // --- NEW SEARCH FUNCTIONALITY ---
-    const setupSearchFunctionality = () => {
-        const searchInput = document.getElementById('search-input-page');
-        const searchResultsContainer = document.getElementById('search-results-container');
-        
-        const performSearch = (query) => {
-            searchResultsContainer.innerHTML = '';
-            const lowerCaseQuery = query.toLowerCase();
-            const allWallpapers = [];
-            
-            // Flatten all wallpapers into a single array
-            allCategories.forEach(category => {
-                category.wallpapers.forEach(wallpaper => {
-                    allWallpapers.push(wallpaper);
-                });
-            });
-
-            // Filter wallpapers based on title
-            const filteredWallpapers = allWallpapers.filter(wallpaper => 
-                wallpaper.title.toLowerCase().includes(lowerCaseQuery)
-            );
-
-            if (filteredWallpapers.length === 0) {
-                searchResultsContainer.innerHTML = '<p class="no-results">No wallpapers found matching your search.</p>';
-                return;
-            }
-
-            // Render the results in a grid
-            const searchGrid = document.createElement('div');
-            searchGrid.className = 'wallpaper-grid';
-
-            filteredWallpapers.forEach(wallpaper => {
-                const wallpaperCard = document.createElement('div');
-                wallpaperCard.className = 'wallpaper-card';
-                wallpaperCard.dataset.id = wallpaper.id;
-    
-                const wallpaperImage = document.createElement('img');
-                wallpaperImage.src = wallpaper.url;
-                wallpaperImage.alt = wallpaper.title;
-    
-                const buttonContainer = document.createElement('div');
-                buttonContainer.className = 'button-container';
-    
-                const previewBtn = document.createElement('button');
-                previewBtn.className = 'preview-btn';
-                previewBtn.textContent = 'Preview';
-                previewBtn.dataset.url = wallpaper.url;
-    
-                const downloadBtn = document.createElement('a');
-                downloadBtn.href = wallpaper.url;
-                downloadBtn.className = 'download-btn';
-                downloadBtn.download = `${wallpaper.title}.jpg`;
-                downloadBtn.textContent = 'Download';
-    
-                buttonContainer.appendChild(previewBtn);
-                buttonContainer.appendChild(downloadBtn);
-                wallpaperCard.appendChild(wallpaperImage);
-                wallpaperCard.appendChild(buttonContainer);
-                searchGrid.appendChild(wallpaperCard);
-            });
-
-            searchResultsContainer.appendChild(searchGrid);
-        };
-
-        if (searchInput) {
-            searchInput.addEventListener('input', (e) => {
-                const query = e.target.value;
-                if (query.length > 2) {
-                    performSearch(query);
-                } else {
-                    searchResultsContainer.innerHTML = '<p class="no-results">Type at least 3 characters to search.</p>';
-                }
-            });
+        if (type === 'categories' || type === 'home' || type === '') {
+            renderCategories();
+        } else if (type === 'search') {
+            dynamicContentContainer.innerHTML = `
+                <section class="search-page-section">
+                    <h2 class="section-title">Search Wallpapers</h2>
+                    <p class="search-intro">Find the perfect wallpaper for your device.</p>
+                    <div class="search-container-desktop">
+                        <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input-page">
+                    </div>
+                    <div id="search-results-container">
+                        <p class="no-results">Search is not yet functional. Please check back later.</p>
+                    </div>
+                </section>
+            `;
+        } else if (type === 'contact') {
+            dynamicContentContainer.innerHTML = `
+                <section class="contact-container">
+                    <h2 class="section-title">Contact Dev</h2>
+                    <a href="https://wa.me/212684255286" target="_blank" class="contact-card">
+                        <i class="fab fa-whatsapp contact-icon"></i>
+                        <div class="contact-info">
+                            <h3>WhatsApp</h3>
+                            <p>wa.me/212684255286</p>
+                        </div>
+                        <i class="fas fa-arrow-right contact-arrow"></i>
+                    </a>
+                    <a href="https://t.me/zedside" target="_blank" class="contact-card">
+                        <i class="fab fa-telegram-plane contact-icon"></i>
+                        <div class="contact-info">
+                            <h3>Telegram</h3>
+                            <p>t.me/zedside</p>
+                        </div>
+                        <i class="fas fa-arrow-right contact-arrow"></i>
+                    </a>
+                    <a href="https://whatsapp.com/channel/0029VbB6Xu9CXC3FaGdkpZ3s" target="_blank" class="contact-card">
+                        <i class="fab fa-whatsapp contact-icon"></i>
+                        <div class="contact-info">
+                            <h3>WhatsApp Channel</h3>
+                            <p>For updates</p>
+                        </div>
+                        <i class="fas fa-arrow-right contact-arrow"></i>
+                    </a>
+                </section>
+            `;
         }
     };
-    // --- END NEW SEARCH FUNCTIONALITY ---
-
+    
     // Event listeners for new layout
     if (contentTabs) {
         contentTabs.addEventListener('click', (e) => {
