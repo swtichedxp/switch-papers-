@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('sidebar');
     const sidebarClose = document.getElementById('sidebar-close');
     const sidebarOverlay = document.getElementById('sidebar-overlay');
-    const searchInput = document.getElementById('search-input');
-    const autocompleteResults = document.getElementById('autocomplete-results');
     const dynamicContentContainer = document.getElementById('dynamic-content-container');
     const contentTabsSection = document.querySelector('.content-tabs-section');
     const contentTabs = document.querySelector('.content-tabs');
@@ -168,64 +166,67 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderContent = (type) => {
         if (!dynamicContentContainer || !contentTabsSection) return;
         
-        // Toggle tabs and mobile hero section based on the page
-        if (type === 'categories' || type === 'home') {
+        // Hide mobile hero section if not on home
+        if (type === 'categories' || type === 'home' || type === '') {
             contentTabsSection.style.display = 'block';
-            if (window.innerWidth <= 768) {
-                if (mobileHeroSection) mobileHeroSection.style.display = 'flex';
-            } else {
-                if (heroSection) heroSection.style.display = 'flex';
-            }
-            renderCategories();
         } else {
             contentTabsSection.style.display = 'none';
-            if (mobileHeroSection) mobileHeroSection.style.display = 'none';
-            if (heroSection) heroSection.style.display = 'none';
+        }
 
-            if (type === 'search') {
-                dynamicContentContainer.innerHTML = `
-                    <section class="search-page-section">
-                        <h2 class="section-title">Search Wallpapers</h2>
-                        <p class="search-intro">Find the perfect wallpaper for your device.</p>
-                        <div class="search-container-desktop">
-                            <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input-page">
+        // Handle hero section visibility
+        if (window.innerWidth <= 768) {
+            mobileHeroSection.style.display = (type === 'categories' || type === 'home' || type === '') ? 'flex' : 'none';
+            if (heroSection) heroSection.style.display = 'none';
+        } else {
+            mobileHeroSection.style.display = 'none';
+            heroSection.style.display = (type === 'categories' || type === 'home' || type === '') ? 'flex' : 'none';
+        }
+
+        if (type === 'categories' || type === 'home' || type === '') {
+            renderCategories();
+        } else if (type === 'search') {
+            dynamicContentContainer.innerHTML = `
+                <section class="search-page-section">
+                    <h2 class="section-title">Search Wallpapers</h2>
+                    <p class="search-intro">Find the perfect wallpaper for your device.</p>
+                    <div class="search-container-desktop">
+                        <input type="text" placeholder="Search wallpapers..." class="search-input" id="search-input-page">
+                    </div>
+                    <div id="search-results-container">
+                        <p class="no-results">Search is not yet functional. Please check back later.</p>
+                    </div>
+                </section>
+            `;
+        } else if (type === 'contact') {
+            dynamicContentContainer.innerHTML = `
+                <section class="contact-container">
+                    <h2 class="section-title">Contact Dev</h2>
+                    <a href="https://wa.me/212684255286" target="_blank" class="contact-card">
+                        <i class="fab fa-whatsapp contact-icon"></i>
+                        <div class="contact-info">
+                            <h3>WhatsApp</h3>
+                            <p>wa.me/212684255286</p>
                         </div>
-                        <div id="search-results-container">
-                            <p class="no-results">Search is not yet functional. Please check back later.</p>
+                        <i class="fas fa-arrow-right contact-arrow"></i>
+                    </a>
+                    <a href="https://t.me/zedside" target="_blank" class="contact-card">
+                        <i class="fab fa-telegram-plane contact-icon"></i>
+                        <div class="contact-info">
+                            <h3>Telegram</h3>
+                            <p>t.me/zedside</p>
                         </div>
-                    </section>
-                `;
-            } else if (type === 'contact') {
-                dynamicContentContainer.innerHTML = `
-                    <section class="contact-container">
-                        <h2 class="section-title">Contact Dev</h2>
-                        <a href="https://wa.me/212684255286" target="_blank" class="contact-card">
-                            <i class="fab fa-whatsapp contact-icon"></i>
-                            <div class="contact-info">
-                                <h3>WhatsApp</h3>
-                                <p>wa.me/212684255286</p>
-                            </div>
-                            <i class="fas fa-arrow-right contact-arrow"></i>
-                        </a>
-                        <a href="https://t.me/zedside" target="_blank" class="contact-card">
-                            <i class="fab fa-telegram-plane contact-icon"></i>
-                            <div class="contact-info">
-                                <h3>Telegram</h3>
-                                <p>t.me/zedside</p>
-                            </div>
-                            <i class="fas fa-arrow-right contact-arrow"></i>
-                        </a>
-                        <a href="https://whatsapp.com/channel/0029VbB6Xu9CXC3FaGdkpZ3s" target="_blank" class="contact-card">
-                            <i class="fab fa-whatsapp contact-icon"></i>
-                            <div class="contact-info">
-                                <h3>WhatsApp Channel</h3>
-                                <p>For updates</p>
-                            </div>
-                            <i class="fas fa-arrow-right contact-arrow"></i>
-                        </a>
-                    </section>
-                `;
-            }
+                        <i class="fas fa-arrow-right contact-arrow"></i>
+                    </a>
+                    <a href="https://whatsapp.com/channel/0029VbB6Xu9CXC3FaGdkpZ3s" target="_blank" class="contact-card">
+                        <i class="fab fa-whatsapp contact-icon"></i>
+                        <div class="contact-info">
+                            <h3>WhatsApp Channel</h3>
+                            <p>For updates</p>
+                        </div>
+                        <i class="fas fa-arrow-right contact-arrow"></i>
+                    </a>
+                </section>
+            `;
         }
     };
     
