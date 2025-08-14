@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dynamicContentContainer.appendChild(searchGrid);
     };
 
-    // Autocomplete functionality
+    // New keyboard filter (autocomplete) functionality
     const renderAutocompleteResults = (query) => {
         if (!autocompleteResults) return;
 
@@ -288,11 +288,25 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        const lowerCaseQuery = query.toLowerCase();
+        const allTitles = new Set();
+
+        // Add category names
+        allCategories.forEach(category => {
+            if (category.name.toLowerCase().includes(lowerCaseQuery)) {
+                allTitles.add(category.name);
+            }
+        });
+
+        // Add wallpaper titles
         const allWallpapers = allCategories.flatMap(category => category.wallpapers);
-        const filteredTitles = [...new Set(allWallpapers
-            .filter(wallpaper => wallpaper.title.toLowerCase().includes(query.toLowerCase()))
-            .map(wallpaper => wallpaper.title)
-        )];
+        allWallpapers.forEach(wallpaper => {
+            if (wallpaper.title.toLowerCase().includes(lowerCaseQuery)) {
+                allTitles.add(wallpaper.title);
+            }
+        });
+
+        const filteredTitles = Array.from(allTitles);
 
         if (filteredTitles.length > 0) {
             autocompleteResults.classList.add('active');
@@ -350,7 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- End search functionality ---
-
 
     // Event listeners for category navigation and tabs
     if (contentTabs) {
