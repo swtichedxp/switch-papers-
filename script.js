@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentTabs = document.querySelector('.content-tabs');
     const heroSection = document.querySelector('.hero-section');
     const mobileHeroSection = document.querySelector('.mobile-hero-section');
+    const autocompleteResults = document.getElementById('autocomplete-results');
 
     let allCategories = [];
     let currentPage = 1;
@@ -236,7 +237,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (heroSection) heroSection.style.display = 'none';
         if (mobileHeroSection) mobileHeroSection.style.display = 'none';
 
-
         if (filteredWallpapers.length === 0) {
             dynamicContentContainer.innerHTML = '<p class="no-results">No wallpapers found matching your search.</p>';
             return;
@@ -278,39 +278,77 @@ document.addEventListener('DOMContentLoaded', () => {
         dynamicContentContainer.appendChild(searchGrid);
     };
 
+    // Autocomplete functionality
+    const renderAutocompleteResults = (query) => {
+        if (!autocompleteResults) return;
+
+        autocompleteResults.innerHTML = '';
+        if (query.length < 2) {
+            autocompleteResults.classList.remove('active');
+            return;
+        }
+
+        const allWallpapers = allCategories.flatMap(category => category.wallpapers);
+        const filteredTitles = [...new Set(allWallpapers
+            .filter(wallpaper => wallpaper.title.toLowerCase().includes(query.toLowerCase()))
+            .map(wallpaper => wallpaper.title)
+        )];
+
+        if (filteredTitles.length > 0) {
+            autocompleteResults.classList.add('active');
+            filteredTitles.slice(0, 5).forEach(title => { // Limit to 5 suggestions
+                const item = document.createElement('div');
+                item.className = 'autocomplete-item';
+                item.textContent = title;
+                item.addEventListener('click', () => {
+                    if (mobileSearchInput && searchBarContainer.classList.contains('active')) {
+                        mobileSearchInput.value = title;
+                        performSearch(title);
+                    } else if (desktopSearchInput) {
+                        desktopSearchInput.value = title;
+                        performSearch(title);
+                    }
+                    autocompleteResults.classList.remove('active');
+                });
+                autocompleteResults.appendChild(item);
+            });
+        } else {
+            autocompleteResults.classList.remove('active');
+        }
+    };
+
+    // Event listeners for search inputs
     if (mobileSearchInput) {
         mobileSearchInput.addEventListener('input', (e) => {
-            const query = e.target.value;
-            if (query.length > 2) {
-                performSearch(query);
-            } else {
-                if (contentTabs) contentTabs.style.display = 'flex';
-                if (window.innerWidth <= 768 && mobileHeroSection) {
-                    mobileHeroSection.style.display = 'flex';
-                } else if (heroSection) {
-                    heroSection.style.display = 'flex';
-                }
-                renderCategories();
+            renderAutocompleteResults(e.target.value);
+        });
+        mobileSearchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                performSearch(e.target.value);
+                autocompleteResults.classList.remove('active');
             }
         });
     }
 
     if (desktopSearchInput) {
         desktopSearchInput.addEventListener('input', (e) => {
-            const query = e.target.value;
-            if (query.length > 2) {
-                performSearch(query);
-            } else {
-                if (contentTabs) contentTabs.style.display = 'flex';
-                if (window.innerWidth <= 768 && mobileHeroSection) {
-                    mobileHeroSection.style.display = 'flex';
-                } else if (heroSection) {
-                    heroSection.style.display = 'flex';
-                }
-                renderCategories();
+            renderAutocompleteResults(e.target.value);
+        });
+        desktopSearchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                performSearch(e.target.value);
+                autocompleteResults.classList.remove('active');
             }
         });
     }
+
+    // Close autocomplete on outside click
+    document.addEventListener('click', (e) => {
+        if (!autocompleteResults.contains(e.target) && e.target !== mobileSearchInput && e.target !== desktopSearchInput) {
+            autocompleteResults.classList.remove('active');
+        }
+    });
+
     // --- End search functionality ---
 
 
